@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Fger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方宗周的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fger">
+<meta property="og:url" content="https://fangzongzhou.github.io/page/8/index.html">
+<meta property="og:site_name" content="Fger">
+<meta property="og:description" content="方宗周的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="fangzongzhou">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Fger" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Fger</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fangzongzhou.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机/软件测试/单元测试/单元测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2020-12-14T04:17:32.000Z" itemprop="datePublished">2020-12-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>单元测试（英语：Unit Testing）又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。</p>
+</blockquote>
+<h2 id="单元测试的好处"><a href="#单元测试的好处" class="headerlink" title="单元测试的好处"></a>单元测试的好处</h2><ul>
+<li>提升软件质量 优质的单元测试可以保障开发质量和程序的鲁棒性。越早发现的缺陷，其修复的成本越低</li>
+<li>促进代码优化 会不断去审视自己的代码，从而（潜意识）去优化自己的代码</li>
+<li>提升研发效率 表面上是占用了项目研发时间，但是在后续的联调、集成、回归测试阶段，单测覆盖率高的代码缺陷少、问题已修复，有助于提升整体的研发效率</li>
+<li>增加重构自信 代码的重构一般会涉及较为底层的改动，比如修改底层的数据结构等，上层服务经常会受到影响；在有单元测试的保障下，我们对重构出来的代码会多一份底气</li>
+</ul>
+<h2 id="单元测试基本原则"><a href="#单元测试基本原则" class="headerlink" title="单元测试基本原则"></a>单元测试基本原则</h2><p>宏观上，单元测试要符合 AIR 原则</p>
+<ul>
+<li>A: Automatic（自动化）</li>
+<li>I: Independent（独立性）</li>
+<li>R: Repeatable（可重复）</li>
+</ul>
+<p>微观上，单元测试代码层面要符合 BCDE 原则：</p>
+<ul>
+<li>B: Border 边界性测试，包括循环边界、特殊取值、特殊时间点、数据顺序等</li>
+<li>C: Correct 正确的输入，并且得到预期的结果</li>
+<li>D: Design 与设计文档相符合，来编写单元测试</li>
+<li>E: Error 单元测试的目的是为了证明程序有错，而不是证明程序无错 为了发现代码中潜藏的错误，我们需要在编写测试用例时有一些强制的错误输入（如非法数据、异常流程、非业务允许输入等）来得到预期的错误结果</li>
+</ul>
+<h2 id="如何验证单元测试的有效性"><a href="#如何验证单元测试的有效性" class="headerlink" title="如何验证单元测试的有效性"></a>如何验证单元测试的有效性</h2><ol>
+<li>是否符合基本测试方法(边界值,条件组合)</li>
+<li>故障注入是否能被断言有效检出</li>
+</ol>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
+<li>开发前写单元测试，通过测试描述需求，由测试驱动开发。（如果不熟悉TDD的同学可以去google一下）</li>
+<li>在开发过程中及时得到反馈，提前发现问题</li>
+<li>应用于自动化构建或持续集成流程，对每次代码修改做回归测试。（CI/CD 质量保障）</li>
+<li>作为重构的基础，验证重构是否可靠</li>
+</ul>
+<h2 id="常见痛点"><a href="#常见痛点" class="headerlink" title="常见痛点"></a>常见痛点</h2><ul>
+<li>测试上下文依赖外部服务（如数据库服务）</li>
+<li>测试上下文存在代码依赖（如框架等）</li>
+<li>单元测试难以维护和理解（语义不清）</li>
+<li>对于多场景不同输入输出的函数，单元测试代码量会很多</li>
+</ul>
+<p>写单元测试的难易程度跟代码的质量关系最大，并且是决定性的。项目里无论用了哪个测试框架都不能解决代码本身难以测试的问题</p>
+<p>《重构-改善既有代码的设计》《修改代码的艺术》 《敏捷软件开发：原则、模式与实践》</p>
+<h2 id="代码执行过程"><a href="#代码执行过程" class="headerlink" title="代码执行过程"></a>代码执行过程</h2><p>代码执行过程可以看做一个数据分类,处理的过程.代码异常通常也都能归类到数据分类错误和数据处理错误两种错误原因上.</p>
+<p>为实现正确的业务逻辑代码,考虑过程:</p>
+<ul>
+<li>实现正确的功能逻辑的正常输入</li>
+<li>特殊处理的多种边界输入</li>
+<li>潜在的非法输入</li>
+</ul>
+<h2 id="单元测试详解"><a href="#单元测试详解" class="headerlink" title="单元测试详解"></a>单元测试详解</h2><p>单元测试用例是一个”输入数据”,”输出数据”的集合. 针对确定的数据,根据逻辑功能预先推算出正确的输出,并以执行被测代码的方式来进行验证.</p>
+<blockquote>
+<p>在明确代码需要实现的逻辑功能基础上,设计输入数据,并推算出输入数据应该对应的输出</p>
+</blockquote>
+<p>输入数据不仅仅是函数入参:</p>
+<ul>
+<li>输入参数</li>
+<li>内部需要读取的全局静态变量</li>
+<li>内部需要读取的成员变量</li>
+<li>函数调用内部子函数获取的数据</li>
+<li>函数内部调用子函数改写的数据</li>
+</ul>
+<p>输出数据,主要包含数据改写和动作执行</p>
+<ul>
+<li>被测函数的返回值</li>
+<li>被测函数的输出参数</li>
+<li>被测函数改写的成员变量</li>
+<li>被测函数改写的成员变量</li>
+<li>被测函数进行的文件更新</li>
+<li>被测函数进行的数据更新</li>
+<li>被测函数进行的消息队列更新</li>
+</ul>
+<p>设计单元测试应该首先定义操作行为,而不是根据代码实现填充行为判定.要脱离代码从行为需要编写断言</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" data-id="cklf3st92003rprfe4nx3b6wu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BPMN/Process(过程)/Activities" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/" class="article-date">
+  <time datetime="2020-12-09T10:00:38.000Z" itemprop="datePublished">2020-12-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/">Activities</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Activity 是在业务流程中执行的工作. 可以是原子的,也可以是非原子(复合)的. 作为 Process 一部分的活动类型有: Task ,Sub-Process 和 Call Activity,它们允许在图中包含可复用的任务和流程. 然而,Process 不是一个特定的图形对象. 它是一组图形对象,下面将重点介绍 <strong>Sub-Process</strong> 和 <strong>Task</strong> 两种图形对象</p>
+<p>Activities 表示 Process 中执行工作的点. 它们是BPMN流程的可执行元素.</p>
+<p><code>Activity</code>类是一个抽象元素,是<code>FlowElement</code>的子类. Activity具体子类声明了除通用 <code>Activity</code> 语义外的其他语义</p>
+<p><img src="https://s3.ax1x.com/2020/12/09/rCLjne.png" alt="Activity类图"></p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/" data-id="cklf3st88000wprfebcv83xvi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BPMN/Process(过程)/Basic-Process-Concepts-基本流程概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/" class="article-date">
+  <time datetime="2020-12-09T08:44:15.000Z" itemprop="datePublished">2020-12-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/">Basic Process Concepts(基本流程概念)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BPMN流程类型"><a href="#BPMN流程类型" class="headerlink" title="BPMN流程类型"></a>BPMN流程类型</h2><p>业务流程建模用于向各种各样的受众传达各种各样的信息. BPMN旨在涵盖多种类型的模型,并允许创建端到端的业务流程. 下面是三种基本的BPMN流程类型:</p>
+<ul>
+<li>Private Non-executable (internal) Business Processes</li>
+<li>Private Executable (internal) Business Processes</li>
+<li>Public Processes</li>
+</ul>
+<h3 id="Private-Internal-Business-Processes"><a href="#Private-Internal-Business-Processes" class="headerlink" title="Private (Internal) Business Processes"></a>Private (Internal) Business Processes</h3><p><em>Private</em> <strong>Business Process</strong> 是特定的组织内部的流程. 这些流程通常被叫做工作流或BPM流程. 在web服务中通常叫做服务编排. 两种典型的私有流程: <em>executable</em> 和 <em>non-executable</em>.可执行流程是指根据指定语义定义执行了建模的流程. 当然,在流程开发周期中,会有某些阶段,流程没有足够的细节可以执行. 不可执行流程是已建模的专用流程，目的是在建模者定义的详细级别上记录流程行为.因此,执行所需的信息（例如形式条件表达式）通常不包括在不可执行的流程中</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/" data-id="cklf3st89000xprfe7h0fbxih" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BPMN/Process(过程)/Process-过程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/" class="article-date">
+  <time datetime="2020-12-09T03:50:16.000Z" itemprop="datePublished">2020-12-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/">Process-过程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Process</strong> 相关内容是 <strong>BPMN</strong> 流程建模标准和 <strong>BPMN</strong> 完整性标准所必须的. 但是,对于<strong>BPMN</strong>编排标准,<strong>BPMN</strong>执行标准,或 <strong>BPMN BPEL</strong>流程执行标准等不是必须的.</p>
+<p><strong>Process</strong> 描述了一个组织中的一系列以开展工作为目的的活动或流程. 在BPMN中,一个 <strong>Process</strong> 被描述为一个由流程元素构成的图,它们是一系列的 <strong>Activities</strong>, <strong>Events</strong>, <strong>Gateways</strong>, 和那些定义了有限执行语义的 <strong>Sequence Flows</strong>. Process 可以在任何级别定义,从企业范围的 Process 到由单个人员执行的 Process. 低级的 Process 可以组合在一起,以实现共同的业务目标.</p>
+<p><img src="https://s3.ax1x.com/2020/12/09/rCKtv8.png" alt="流程示例"></p>
+<p>注意,<strong>BPMN</strong> 术语 <strong>Process</strong> 专指一组流程元素. 它使用协作和编排对流程间交互建模.</p>
+<p><strong>Process</strong> 包包含用于流程建模的 <strong>Activities</strong>,<strong>Events</strong> 和 <strong>Gateways</strong> 等类, 以及它们如何在一个 Process 中排序的. 定义一个 Process 时,这些内容都包含在定义中.</p>
+<p><img src="https://s3.ax1x.com/2020/12/09/rC1tij.png" alt="类图"></p>
+<p>一个 Process 是一个 CallableElement,使得其它 Process 可以通过 <strong>Call Activity</strong> 结构引用/重用它. 通过这种能力,一个 Process 可以引用一系列定义在外部的行为接口.</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/" data-id="cklf3st89000yprfe2fskevyu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-方法论/5W1H" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/" class="article-date">
+  <time datetime="2020-12-07T07:28:19.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/">5W1H</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/">https://fangzongzhou.github.io/2020/12/07/方法论/5W1H/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/" data-id="cklf3st83000mprfe7f0zaxg5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-方法论/PDCA" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/" class="article-date">
+  <time datetime="2020-12-07T07:02:52.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/">PDCA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>PDCA最早是由美国质量管理专家戴明提出</p>
+<p>PDCA四个英文字母及其在PDCA循环中所代表的含义</p>
+<ul>
+<li>P（Plan）–计划，确定方针和目标，确定活动计划</li>
+<li>D（Do）–执行，实地去做，实现计划中的内容</li>
+<li>C（Check）–检查，总结执行计划的结果，注意效果，找出问题</li>
+<li>A（Action）–行动，对总结检查的结果进行处理，成功的经验加以肯定并适当推广、标准化</li>
+</ul>
+<p><img src="https://s3.ax1x.com/2020/12/07/DxCmjS.jpg" alt="pdca"></p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/" data-id="cklf3st84000nprfea19latyv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-小知识/采购舞弊" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/" class="article-date">
+  <time datetime="2020-12-07T06:02:13.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/">采购舞弊</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="串标"><a href="#串标" class="headerlink" title="串标"></a>串标</h2><p>事先知道所有投标人，一般是投标人互相串通，也可以和招标人串通</p>
+<ul>
+<li>投标人互相串通</li>
+<li>投标人、招标人串通</li>
+<li>潜规则，轮流中标</li>
+</ul>
+<h2 id="陪标"><a href="#陪标" class="headerlink" title="陪标"></a>陪标</h2><p>预先确定意向中标单位，为达到三家报价要求，由意向中标单位邀请其熟悉或相关的单位进行陪衬，达到中标目的。 与招标人合伙，满足公司招投标要求，以达到中标目的</p>
+<h2 id="围标"><a href="#围标" class="headerlink" title="围标"></a>围标</h2><p>事先不知道哪些人投标，然后联合其它几家几十家公司，将报价控制在一定范围，确保某一家公司中标</p>
+<ul>
+<li>联合其他公司控制</li>
+<li>自己关联公司合谋</li>
+</ul>
+<h2 id="故意流标"><a href="#故意流标" class="headerlink" title="故意流标"></a>故意流标</h2><p>以不足三家、不合格不合规为名，宣布招标不合格，直接流标。<br>1、进行二次招标，以增加新投标人<br>2、更改新的投标价格</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/" data-id="cklf3st7z000cprfe9ybn4rxz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BPMN/BPMN" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/BPMN/BPMN/" class="article-date">
+  <time datetime="2020-12-07T03:57:42.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/BPMN/BPMN/">BPMN</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>BPMN（Business Process Modeling Notation），业务流程建模与标注，可以用其定义的一系列业务组件，组成业务流程图</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/07/BPMN/BPMN/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/07/BPMN/BPMN/" data-id="cklf3st7y0009prfe1d4b3tc3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BPMN/流程检查" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/07/BPMN/%E6%B5%81%E7%A8%8B%E6%A3%80%E6%9F%A5/" class="article-date">
+  <time datetime="2020-12-07T03:46:04.000Z" itemprop="datePublished">2020-12-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/07/BPMN/%E6%B5%81%E7%A8%8B%E6%A3%80%E6%9F%A5/">流程检查</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>业务流程定义是业务方通过实际业务需求绘制流程图,并添加相应节点/组件配置完成业务需求的过程.流程配置需要有一定的相关知识储备</p>
+<p>复杂的流程需要使用网关(条件表达式)做流程控制,现有条件下,需要配置人员了解配置含义及具有相对清晰的思考方式,才能确保流程控制相关的配置符合MECE原则</p>
+<p>统计数据发现,网关配置导致的流程配置异常占比80%,具有网关配置的流程图占比27%.</p>
+<p>网关配置是流程定义过程中极易出现错误的配置项,且网关配置错误平均需要耗费技术团队0.5-1pd时间,运维成本高</p>
+<p>相关问题从正向的设计上做了多次调整(可视化编辑,非必填字段不能做网关变量校验),未能有效降低相关问题数量</p>
+<p>了解相关问题后,尝试分析处理线上卡死流程</p>
+<h3 id="业务背景"><a href="#业务背景" class="headerlink" title="业务背景"></a>业务背景</h3><p>可能导致网关配置异常的场景:</p>
+<ul>
+<li>变量名填写错误</li>
+<li>排他网关所有条件组合未被当前配置条件覆盖</li>
+<li>不熟悉运算符优先级,误以为运算符是自左向右执行</li>
+<li>一个当前符合mece的配置因为变量枚举增加而破坏整体规则</li>
+</ul>
+<p>排他网关条件配置不正确可能带来的业务问题:</p>
+<ul>
+<li>配置在发起节点后,可能导致特定的组合无法发起流程(这个问题处理起来比较简单,直接修改图再发布就好了)</li>
+<li>排他网关导致某些路径完全不可达,运行一段时间后发现某些业务节点完全不可达,其他节点却命中的更多了</li>
+<li>流程运行了很长,到了某个节点后无法处理,如果业务无法接受重新走流程,需要手动根据业务期望修改订单</li>
+</ul>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>使用标准的算法持续检出流程控制中的潜在问题,辅助业务管理人员完成更缜密的流程设计.提升整体流程质量</p>
+<p>检出60%以上归因为网关配置导致的线上流程卡死问题</p>
+<h3 id="MECE"><a href="#MECE" class="headerlink" title="MECE"></a>MECE</h3><p>MECE分析法，全称 Mutually Exclusive Collectively Exhaustive，中文意思是“相互独立，完全穷尽”。 对一个重大的议题，能够做到不重叠、不遗漏的分类，而且能够借此有效把握问题的核心，并成为有效解决问题的方法</p>
+<h3 id="Exclusive-Gateway-排他网关"><a href="#Exclusive-Gateway-排他网关" class="headerlink" title="Exclusive Gateway 排他网关"></a>Exclusive Gateway 排他网关</h3><p>排他网关（也叫异或（XOR）网关，或更技术性的叫法 基于数据的排他网关）， 用来在流程中实现决策。 当流程执行到这个网关，所有外出顺序流都会被处理一遍.其中条件解析为true的顺序流（或者没有设置条件，概念上在顺序流上定义了一个’true’） 会被选中，让流程继续运行.排他网关只会选择一条顺序流执行</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/12/07/BPMN/%E6%B5%81%E7%A8%8B%E6%A3%80%E6%9F%A5/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/12/07/BPMN/%E6%B5%81%E7%A8%8B%E6%A3%80%E6%9F%A5/" data-id="cklf3st7x0007prfe16oh8byg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/软件测试/测试用例设计" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2020-11-27T02:04:01.000Z" itemprop="datePublished">2020-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/">测试用例设计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>好的用例是一个完备的集合,能覆盖尽可能多的等价类和边界值.和能否发现缺陷无关.</p>
+<p>好的测试用例</p>
+<ul>
+<li>整体完备性 是一个有效测试用例组成的集合,能够完全覆盖测试需求</li>
+<li>等价类划分准确 等价类集合中一个用例的表现能表达同一集合中其他数据的表现</li>
+<li>等价类集合的完备性 确保所有等价类和边界值都已正确识别</li>
+</ul>
+<p>深入了解被测软件的架构,才能设计出“有的放矢”的测试用例集，去发现系统边界以及系统集成上的潜在缺陷</p>
+<p>必须深入理解被测软件的设计与实现细节，深入理解软件内部的处理逻辑. 设计用例应该根据原始需求,而不是开发完成的代码.</p>
+<p>需要引入需求覆盖率和代码覆盖率来衡量测试执行的完备性，并以此为依据来找出遗漏的测试点</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1/" data-id="cklf3st8i001tprfe0sdkd0a8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Elasticsearch/" style="font-size: 17.78px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 12.22px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 17.78px;">JVM</a> <a href="/tags/Java/" style="font-size: 11.11px;">Java</a> <a href="/tags/Linux/" style="font-size: 11.11px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 12.22px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 11.11px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 15.56px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 16.67px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14.44px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.89px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 11.11px;">读书笔记</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 13.33px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/HTTP/%E7%8A%B6%E6%80%81%E7%A0%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">类加载器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">数据加密</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8/">接口安全</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 fangzongzhou<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

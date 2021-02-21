@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>标准库概览 | Fger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="操作系统接口os 模块提供一系列与操作系统进行交互的函数。 123456import osos.getcwd()      # 返回当前工作目录os.chdir(&amp;#x27;&#x2F;server&#x2F;accesslogs&amp;#x27;)   #  修改当前工作目录os.system(&amp;#x27;mkdir today&amp;#x27;)   # 在系统shell中运行mkdir命令   确保使用 import os">
+<meta property="og:type" content="article">
+<meta property="og:title" content="标准库概览">
+<meta property="og:url" content="https://fangzongzhou.github.io/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/index.html">
+<meta property="og:site_name" content="Fger">
+<meta property="og:description" content="操作系统接口os 模块提供一系列与操作系统进行交互的函数。 123456import osos.getcwd()      # 返回当前工作目录os.chdir(&amp;#x27;&#x2F;server&#x2F;accesslogs&amp;#x27;)   #  修改当前工作目录os.system(&amp;#x27;mkdir today&amp;#x27;)   # 在系统shell中运行mkdir命令   确保使用 import os">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-07-06T15:53:33.000Z">
+<meta property="article:modified_time" content="2021-02-21T11:46:41.695Z">
+<meta property="article:author" content="fangzongzhou">
+<meta property="article:tag" content="翻译">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Fger" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Fger</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fangzongzhou.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-计算机/技术文档/Python/Python教程/标准库概览" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/" class="article-date">
+  <time datetime="2018-07-06T15:53:33.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      标准库概览
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="操作系统接口"><a href="#操作系统接口" class="headerlink" title="操作系统接口"></a>操作系统接口</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/os.html#module-os">os</a><code> 模块提供一系列与操作系统进行交互的函数。</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.getcwd()      # 返回当前工作目录</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">&#x27;/server/accesslogs&#x27;</span>)   #  修改当前工作目录</span><br><span class="line">os.<span class="keyword">system</span>(<span class="string">&#x27;mkdir today&#x27;</span>)   # 在系统shell中运行mkdir命令</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>确保使用 <code>import os</code> 而不是 <code>from os import * </code>.它将导致<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/os.html#os.open">os.open()</a></code>覆盖隐式内建函数<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#open">open()</a></code>，它们是完全不同的.</p>
+<p>诸如os等大模块工作时，一些内建函数<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#dir">dir()</a></code> , <code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#help">help()</a></code>的交互式帮助是很有用的.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"><span class="function"><span class="title">dir</span><span class="params">(os)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">help</span><span class="params">(os)</span></span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>针对日常的文件、目录的管理任务，<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/shutil.html#module-shutil">shutil</a></code>模块提供了易用的高级接口.</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">shutil</span></span><br><span class="line"><span class="selector-tag">shutil</span><span class="selector-class">.copyfile</span>(<span class="string">&#x27;data.db&#x27;</span>, <span class="string">&#x27;archive.db&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">shutil</span><span class="selector-class">.move</span>(<span class="string">&#x27;/build/executables&#x27;</span>, <span class="string">&#x27;installdir&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件通配符"><a href="#文件通配符" class="headerlink" title="文件通配符"></a>文件通配符</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/glob.html#module-glob">glob</a> 模块提供了通过通配符列出文件列表的功能.</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import <span class="built_in">glob</span></span><br><span class="line"><span class="built_in">glob</span>.<span class="built_in">glob</span>(<span class="string">&#x27;*.py&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="命令行参数"><a href="#命令行参数" class="headerlink" title="命令行参数"></a>命令行参数</h2><p>常见的实用脚本通常需要处理命令行参数,这些参数以list的形式存储在<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/sys.html#module-sys">sys</a> 模块的argv属性中.</p>
+<p>使用下面的代码运行<code>python demo.py one two three```</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(sys.argv)</span></span></span><br></pre></td></tr></table></figure>
+<p>结果为<code>['demo.py', 'one', 'two', 'three']</code></p>
+<p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/getopt.html#module-getopt">getopt</a></code> 模块约定使用Unix的 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/getopt.html#module-getopt">getopt()</a> 函数处理sys.argv,<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/argparse.html#module-argparse">argparse</a> 模块提供了更强大易拓展的命令行处理流程.</p>
+<h2 id="错误输出重定向-amp-程序终止"><a href="#错误输出重定向-amp-程序终止" class="headerlink" title="错误输出重定向&amp;程序终止"></a>错误输出重定向&amp;程序终止</h2><p>[sys]模块拥有 stdin,stdout和stderr属性,stderr是很有用的，即使在stdout被重定向后，由它发出警告和错误信息也都是可见的.</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys.stderr.<span class="built_in">write</span>(&#x27;Warning, <span class="built_in">log</span> <span class="built_in">file</span> <span class="keyword">not</span> found starting a new one\n&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><code> sys.exit() </code>是停掉脚本最直接的方式</p>
+<h2 id="字符模式匹配"><a href="#字符模式匹配" class="headerlink" title="字符模式匹配"></a>字符模式匹配</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/re.html#module-re">re</a></code> 模块为高级的字符处理提供了正则表达式工具. 针对复杂的匹配和处理，正则表达式提供了简明的解决方式.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.findall(<span class="string">r&#x27;\bf[a-z]*&#x27;</span>, <span class="string">&#x27;which foot or hand fell fastest&#x27;</span>)</span><br><span class="line">re.sub(<span class="string">r&#x27;(\b[a-z]+) \1&#x27;</span>, <span class="string">r&#x27;\1&#x27;</span>, <span class="string">&#x27;cat in the the hat&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<p>当仅仅需要一些简单的功能时，string 方法是更合适的选择，它的可读性更高，更易进行debug.</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;tea for too&#x27;</span>.<span class="built_in">replace</span>(<span class="string">&#x27;too&#x27;</span>, <span class="string">&#x27;two&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/math.html#module-math">math</a></code> 模块为浮点运算提供了基于C  library 函数的入口</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import <span class="built_in">math</span></span><br><span class="line"><span class="built_in">math</span>.<span class="built_in">cos</span>(<span class="built_in">math</span>.<span class="built_in">pi</span> / <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">math</span>.<span class="built_in">log</span>(<span class="number">1024</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/random.html#module-random">random</a> 模块提供了进行随机选择的工具.</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">random</span></span><br><span class="line"><span class="built_in">random</span>.choice([<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="built_in">random</span>.sample(range(<span class="number">100</span>), <span class="number">10</span>)   # sampling without replacement</span><br><span class="line"></span><br><span class="line"><span class="built_in">random</span>.<span class="built_in">random</span>()    # <span class="built_in">random</span> <span class="built_in">float</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">random</span>.randrange(<span class="number">6</span>)    # <span class="built_in">random</span> integer chosen from range(<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/statistics.html#module-statistics">statistic</a>模块计算数值的基本统计属性(均值，中位数，方差等)</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> statistics</span><br><span class="line"><span class="class"><span class="keyword">data</span> = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]</span></span><br><span class="line"><span class="title">statistics</span>.mean(<span class="class"><span class="keyword">data</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="title">statistics</span>.median(<span class="class"><span class="keyword">data</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="title">statistics</span>.variance(<span class="class"><span class="keyword">data</span>)</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://scipy.org/">SciPy</a> 工程有很多进行数值运算的模块</p>
+<h2 id="接入互联网"><a href="#接入互联网" class="headerlink" title="接入互联网"></a>接入互联网</h2><p>有很多模块可用于接入互联网并处理互联网协议，这里列举两个最简单的：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/urllib.request.html#module-urllib.request">urllib.request</a> 从互联网地址获取数据</li>
+</ul>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">from</span> urllib.request import urlopen</span><br><span class="line"><span class="keyword">with</span> urlopen(<span class="string">&#x27;http://tycho.usno.navy.mil/cgi-bin/timer.pl&#x27;</span>) <span class="keyword">as</span> response:</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">line</span> <span class="keyword">in</span> response:</span><br><span class="line">        <span class="built_in">line</span> = <span class="built_in">line</span>.decode(<span class="string">&#x27;utf-8&#x27;</span>)  <span class="comment"># Decoding the binary data to text.</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;EST&#x27;</span> <span class="keyword">in</span> <span class="built_in">line</span> <span class="keyword">or</span> <span class="string">&#x27;EDT&#x27;</span> <span class="keyword">in</span> <span class="built_in">line</span>:  <span class="comment"># look for Eastern Time</span></span><br><span class="line">            print(<span class="built_in">line</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/smtplib.html#module-smtplib">smtplib</a></code> 发送邮件</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import smtplib</span><br><span class="line">server = smtplib.SMTP(<span class="string">&#x27;localhost&#x27;</span>)</span><br><span class="line">server.sendmail(<span class="string">&#x27;soothsayer@example.org&#x27;</span>, <span class="string">&#x27;jcaesar@example.org&#x27;</span>,</span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;To: jcaesar@example.org</span></span><br><span class="line"><span class="string">From: soothsayer@example.org</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Beware the Ides of March.</span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span>)</span><br><span class="line">server.quit()</span><br></pre></td></tr></table></figure>
+
+<p>(注意: 这个例子需要localhost运行一个邮件服务)</p>
+<h2 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h2><p><code><a href="">datetime</a></code> 提供了可以通过简单或复杂方式处理日期和时间的类，在提供日期时间运算的同时，侧重于高效的为格式化输出和处理进行成员导出，也支持时区相关的对象.</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dates are easily constructed and formatted</span></span><br><span class="line">from datetime import date</span><br><span class="line">now = date.today()</span><br><span class="line">now</span><br><span class="line"></span><br><span class="line">now.strftime(<span class="string">&quot;%m-%d-%y. %d %b %Y is a %A on the %d day of %B.&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># dates support calendar arithmetic</span></span><br><span class="line">birthday = date(<span class="number">1964</span>, <span class="number">7</span>, <span class="number">31</span>)</span><br><span class="line">age = now - birthday</span><br><span class="line">age.days</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h2><p><code>(<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zlib.html#module-zlib">zlib</a></code>,<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/gzip.html#module-gzip">gzip</a></code>,<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/bz2.html#module-bz2">bz2</a></code>,<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/lzma.html#module-lzma">lzma</a></code>,<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zipfile.html#module-zipfile">zipfile</a></code>,<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/tarfile.html#module-tarfile">tarfile</a></code>)等模块支持常见的文件归档和压缩格式</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import zlib</span><br><span class="line">s = b<span class="string">&#x27;witch which has which witches wrist watch&#x27;</span></span><br><span class="line"><span class="function"><span class="title">len</span><span class="params">(s)</span></span></span><br><span class="line"></span><br><span class="line">t = zlib.compress(s)</span><br><span class="line"><span class="function"><span class="title">len</span><span class="params">(t)</span></span></span><br><span class="line"></span><br><span class="line">zlib.decompress(t)</span><br><span class="line"></span><br><span class="line">zlib.crc32(s)</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能衡量"><a href="#性能衡量" class="headerlink" title="性能衡量"></a>性能衡量</h2><p>一些Python用户对了解解决同一问题的不同解决方式的实际性能有着很深的兴趣，Python为直接地这些问题提供了测量工具。</p>
+<p>例如：直接使用tuple装包和开包特性替代传统的参数交换方式是很有吸引力的，<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/timeit.html#module-timeit">timeit</a></code> 快速示范了一定程度上的性能优势。</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from timeit import Timer</span><br><span class="line"><span class="constructor">Timer(&#x27;<span class="params">t</span>=<span class="params">a</span>; <span class="params">a</span>=<span class="params">b</span>; <span class="params">b</span>=<span class="params">t</span>&#x27;, &#x27;<span class="params">a</span>=1; <span class="params">b</span>=2&#x27;)</span>.timeit<span class="literal">()</span></span><br><span class="line"></span><br><span class="line"><span class="constructor">Timer(&#x27;<span class="params">a</span>,<span class="params">b</span> = <span class="params">b</span>,<span class="params">a</span>&#x27;, &#x27;<span class="params">a</span>=1; <span class="params">b</span>=2&#x27;)</span>.timeit<span class="literal">()</span></span><br></pre></td></tr></table></figure>
+<p>与<code><a href="">timeit</a></code>的细粒度相反，<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/profile.html#module-profile">profile</a></code>和<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/profile.html#module-pstats">pstats</a></code> 提供了可以识别大块代码时间临界的工具.</p>
+<h2 id="质量控制"><a href="#质量控制" class="headerlink" title="质量控制"></a>质量控制</h2><p>开发高质量的软件的一种方法是在开发软件的过程中为每个function编写测试，并在开发过程中频繁的运行这些测试.</p>
+<p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/doctest.html#module-doctest">doctest</a></code> 提供可以扫描并验证通过程序文档注入的测试.测试的构建和剪切粘贴一个调用和结果到文档中一样简单，它通过提供给用户一个例子和一个文档测试来确保代码和文档的一致性来改善文档。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">average</span>(<span class="params">values</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;Computes the arithmetic mean of a list of numbers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; print(average([20, 30, 70]))</span></span><br><span class="line"><span class="string">    40.0</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(values) / <span class="built_in">len</span>(values)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> doctest</span><br><span class="line">doctest.testmod()   <span class="comment"># automatically validate the embedded tests</span></span><br></pre></td></tr></table></figure>
+<p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/unittest.html#module-unittest">unittest</a></code>没有<code><a href="">doctest</a></code> 那么简洁易用，但是它允许在一个单独的测试文件中维护更为复杂的测试集</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="constructor">TestStatisticalFunctions(<span class="params">unittest</span>.TestCase)</span>:</span><br><span class="line"></span><br><span class="line">    def test<span class="constructor">_average(<span class="params">self</span>)</span>:</span><br><span class="line">        self.<span class="keyword">assert</span><span class="constructor">Equal(<span class="params">average</span>([20, 30, 70])</span>, <span class="number">40.0</span>)</span><br><span class="line">        self.<span class="keyword">assert</span><span class="constructor">Equal(<span class="params">round</span>(<span class="params">average</span>([1, 5, 7])</span>, <span class="number">1</span>), <span class="number">4.3</span>)</span><br><span class="line">        <span class="keyword">with</span> self.<span class="keyword">assert</span><span class="constructor">Raises(ZeroDivisionError)</span>:</span><br><span class="line">            average(<span class="literal">[]</span>)</span><br><span class="line">        <span class="keyword">with</span> self.<span class="keyword">assert</span><span class="constructor">Raises(TypeError)</span>:</span><br><span class="line">            average(<span class="number">20</span>, <span class="number">30</span>, <span class="number">70</span>)</span><br><span class="line"></span><br><span class="line">unittest.main<span class="literal">()</span>  # Calling from the command line invokes all tests</span><br></pre></td></tr></table></figure>
+<h2 id="内置电池"><a href="#内置电池" class="headerlink" title="内置电池"></a>内置电池</h2><p>Python有一个’内置电池’理念，它能很好地通过一些成熟并且健壮的package表现出来。例如：</p>
+<ul>
+<li><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/xmlrpc.client.html#module-xmlrpc.client">xmlrpc.client</a></code>和<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/xmlrpc.server.html#module-xmlrpc.server">xmlrpc.server</a></code> 将远程程序调用实现成了简单的任务，尽管叫这个名字，但不需直接了解或处理xml。</li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/email.html#module-email">email</a>package是一个负责管理邮件消息的库,包含MIME和其他RFC2822-base消息文件，不像<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/smtplib.html#module-smtplib">smtplib</a>和<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/poplib.html#module-poplib">piplib</a>一样真正的进行消息收发，email package有一个复杂工具集来构建或解码复杂消息结构（包括附件）及实现网络编码和报头协议</li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/json.html#module-json">json</a>为解析这种流行的数据交换格式提供了强大的支持，<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/csv.html#module-csv">csv</a>支持以逗号进行分隔值的形式进行文件的读写，通常支持数据库和电子表格，<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree">xml.etree.ElementTree</a>, <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/xml.dom.html#module-xml.dom">xml.dom</a> 和 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/xml.dom.html#module-xml.dom">xml.sax</a>对xml程序提供支持，这些package极大地简化了Python和其他工具间的数据交换。</li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/sqlite3.html#module-sqlite3">sqlite3</a>是对SQLite数据库库的包装，提供了一个持久性数据库，可以使用稍微不标准SQL语法对数据库进行更新和访问。</li>
+<li>国际化由<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/gettext.html#module-gettext">gettext</a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/locale.html#module-locale">local</a>和<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/codecs.html#module-codecs">codecs</a>等package提供支持</li>
+</ul>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/">https://fangzongzhou.github.io/2018/07/06/计算机/技术文档/Python/Python教程/标准库概览/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/" data-id="cklf3st960046prfegrqnahp3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%882/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          标准库概览2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/NodeJs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">NodeJs</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Elasticsearch/" style="font-size: 17.78px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 12.22px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 17.78px;">JVM</a> <a href="/tags/Java/" style="font-size: 11.11px;">Java</a> <a href="/tags/Linux/" style="font-size: 11.11px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 12.22px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13.33px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 11.11px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 15.56px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 16.67px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14.44px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.89px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 11.11px;">读书笔记</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 13.33px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/HTTP/%E7%8A%B6%E6%80%81%E7%A0%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">类加载器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86/">数据加密</a>
+          </li>
+        
+          <li>
+            <a href="/2021/02/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/%E6%8E%A5%E5%8F%A3%E5%AE%89%E5%85%A8/">接口安全</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 fangzongzhou<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
