@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-计算机/技术栈/Java/并发编程/happens-before" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/Java/JVM/JVM垃圾回收器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/happens-before/" class="article-date">
-  <time datetime="2020-10-19T12:42:18.000Z" itemprop="datePublished">2020-10-19</time>
+    <a href="/2020/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/" class="article-date">
+  <time datetime="2020-11-12T14:20:22.000Z" itemprop="datePublished">2020-11-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/happens-before/">happens-before</a>
+      <a class="article-title" href="/2020/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/">JVM垃圾回收器</a>
     </h1>
   
 
@@ -92,185 +92,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>重排序根据是否会改变程序执行结果分为:</p>
+        <p>Java 虚拟机的垃圾回收器可以分为四大类别：串行回收器、并行回收器、CMS 回收器、G1 回收器</p>
+<h2 id="串行回收器"><a href="#串行回收器" class="headerlink" title="串行回收器"></a>串行回收器</h2><p>串行回收器进行垃圾回收时,会触发<code>Stop-The-World</code>现象</p>
+<p>新生代串行回收器使用的是复制算法,老年代串行回收器使用的是标记压缩算法</p>
+<p>若要启用老年代串行回收器，可以尝试以下参数</p>
 <ul>
-<li>会改变程序执行结果的重排序,JMM要求编译器和处理器必须禁止这种重排序</li>
-<li>不会改变程序执行结果的重排序</li>
-</ul>
-<p>对happens-before关系的定义如下:</p>
-<ol>
-<li>如果一个操作happens-before另一个操作，那么第一个操作的执行结果将对第二个操作<br>可见，而且第一个操作的执行顺序排在第二个操作之前</li>
-<li>两个操作之间存在happens-before关系，并不意味着Java平台的具体实现必须要按照 happens-before关系指定的顺序来执行。如果重排序之后的执行结果，与按happens-before关系 来执行的结果一致，那么这种重排序并不非法</li>
-</ol>
-<p>happens-before规则:</p>
-<ol>
-<li>程序顺序规则:一个线程中的每个操作，happens-before于该线程中的任意后续操作</li>
-<li>监视器锁规则:对一个锁的解锁，happens-before于随后对这个锁的加锁</li>
-<li>volatile变量规则:对一个volatile域的写，happens-before于任意后续对这个volatile域的 读</li>
-<li>传递性:如果A happens-before B，且B happens-before C，那么A happens-before C</li>
-<li>start()规则:如果线程A执行操作ThreadB.start()(启动线程B)，那么A线程的ThreadB.start()操作happens-before于线程B中的任意操作</li>
-<li>join()规则:如果线程A执行操作ThreadB.join()并成功返回，那么线程B中的任意操作happens-before于线程A从ThreadB.join()操作成功返回</li>
-</ol>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/happens-before/">https://fangzongzhou.github.io/2020/10/19/计算机/技术栈/Java/并发编程/happens-before/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/happens-before/" data-id="cklf3st9d004nprfe61uxd1k9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/final域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/final%E5%9F%9F/" class="article-date">
-  <time datetime="2020-10-19T12:24:26.000Z" itemprop="datePublished">2020-10-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/final%E5%9F%9F/">final域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于final域,编译器和处理器需要遵守两个原则</p>
-<ul>
-<li>在构造函数内对一个final域的写入，与随后把这个被构造对象的引用赋值给一个引用变量，这两个操作之间不能重排序</li>
-<li>初次读一个包含final域的对象的引用，与随后初次读这个final域，这两个操作之间不能重排序</li>
-</ul>
-<p>写final域的重排序规则禁止把final域的写重排序到构造函数之外,写final域的重排序规则可以确保:在对象引用为任意线程可见之前，对象的final域已经被 正确初始化过了，而普通域不具有这个保障</p>
-<ul>
-<li>JMM禁止编译器把final域的写重排序到构造函数之外</li>
-<li>编译器会在final域的写之后，构造函数return之前，插入一个StoreStore屏障</li>
-</ul>
-<p>读final域重排序规则: 在一个线程中,初次读对象引用与初次读包含该对象的final域,这两个操作会被禁止处理器重排序. 编译器会在读final域操作前插入一个LoadLoad屏障. 读final域的重排序规则可以确保:在读一个对象的final域之前，一定会先读包含这个final 域的对象的引用</p>
-<p>对于引用类型，写final域的重 排序规则对编译器和处理器增加了如下约束:在构造函数内对一个final引用的对象的成员域 的写入，与随后在构造函数外把这个被构造对象的引用赋值给一个引用变量，这两个操作之间不能重排序</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/final%E5%9F%9F/">https://fangzongzhou.github.io/2020/10/19/计算机/技术栈/Java/并发编程/final域/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/final%E5%9F%9F/" data-id="cklf3st9c004mprfe1ne9d70w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/锁" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%94%81/" class="article-date">
-  <time datetime="2020-10-19T12:10:51.000Z" itemprop="datePublished">2020-10-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%94%81/">锁</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>锁可以让临界区互斥执行</p>
-<h2 id="锁的内存语义"><a href="#锁的内存语义" class="headerlink" title="锁的内存语义"></a>锁的内存语义</h2><p>锁是Java并发编程中重要的同步机制. 锁除了可以让临界区互斥执行外,还可以让释放锁的线程向获取同一个锁的线程发送消息</p>
-<p>线程释放锁时,JMM会把该线程对应的本地内存中的共享变量刷新到内存中.</p>
-<p>线程获取锁时,JMM会把该线程对应的本地内存置为无效.从而使得临界区代码必须从主内存中读取共享变量</p>
-<p>锁获取与volatile读有相同的内存语义</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%94%81/">https://fangzongzhou.github.io/2020/10/19/计算机/技术栈/Java/并发编程/锁/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/19/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%94%81/" data-id="cklf3st9k004xprfehv9q7g1p" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/Java内存屏障" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" class="article-date">
-  <time datetime="2020-10-16T01:52:32.000Z" itemprop="datePublished">2020-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/">Java内存屏障</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>硬件层的内存屏障分为两种：<code>Load Barrier</code> 和 <code>Store Barrier</code>即读屏障和写屏障.</p>
-<p>内存屏障有两个作用:</p>
-<ul>
-<li>组织屏障两侧指令重排序</li>
-<li>强制把写缓冲区/高速缓存中的数据写回主内存,让缓存中相应的数据失效</li>
-</ul>
-<p>对于Load Barrier来说，在指令前插入Load Barrier，可以让高速缓存中的数据失效，强制从新从主内存加载数据</p>
-<p>对于Store Barrier来说，在指令后插入Store Barrier，能让写入缓存中的最新数据更新写入主内存，让其他线程可见</p>
-<h2 id="Java内存屏障"><a href="#Java内存屏障" class="headerlink" title="Java内存屏障"></a>Java内存屏障</h2><p>Java的内存屏障通常所谓的四种即<code>LoadLoad</code>,<code>StoreStore</code>,<code>LoadStore</code>,<code>StoreLoad</code>实际上也是<code>Load Barrier</code> 和 <code>Store Barrier</code>两种的组合，完成一系列的屏障和数据同步功能</p>
+<li><code>-XX:UseSerialGC</code>  新生代、老年代都使用串行回收器</li>
+<li><code>-XX:UseParNewGC</code> 新生代使用 ParNew 回收器，老年代使用串行回收器</li>
+<li><code>-XX:UseParallelGC</code> 新生代使用 ParallelGC 回收器，老年代使用串行回收器
         
           <p class="article-more-link">
-            <a href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/#more">Read More</a>
+            <a href="/2020/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/" data-id="cklf3st9a004jprfe4z7uaqjf" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2020/11/12/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%99%A8/" data-id="cklf3st98004aprfe0oq17uk8" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
     </footer>
   </div>
   
@@ -278,14 +120,14 @@
 
 
   
-    <article id="post-计算机/技术栈/Java/并发编程/顺序一致性" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/Java/JVM/JVM垃圾回收机制" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/" class="article-date">
-  <time datetime="2020-10-16T01:07:07.000Z" itemprop="datePublished">2020-10-16</time>
+    <a href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" class="article-date">
+  <time datetime="2020-11-11T02:42:12.000Z" itemprop="datePublished">2020-11-11</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
   </div>
 
   </div>
@@ -296,7 +138,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/">顺序一致性</a>
+      <a class="article-title" href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">JVM垃圾回收机制</a>
     </h1>
   
 
@@ -304,30 +146,104 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当程序未正确同步时，就可能会存在数据竞争</p>
-<p>Java内存模型规范对数据竞争的定义如下</p>
-<ol>
-<li>在一个线程中写一个变量</li>
-<li>在另一个线程中读同一个变量</li>
-<li>写和读操作没有通过同步来排序</li>
-</ol>
-<p>JMM对正确同步的多线程程序的内存一致性做了如下保证. 如果程序是正确同步的，程序的执行将具有顺序一致性(Sequentially Consistent)——即程 序的执行结果与该程序在顺序一致性内存模型中的执行结果相同.  这里的同步是指广义上的同步，包括对常用同步原语 (synchronized、volatile和final)的正确使用</p>
-<h2 id="顺序一致性内存模型"><a href="#顺序一致性内存模型" class="headerlink" title="顺序一致性内存模型"></a>顺序一致性内存模型</h2><p>顺序一致性内存模型是一个被计算机科学家理想化了的理论参考模型. 顺序一致性内存模型有两大特性</p>
+        <h3 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h3><p>判断一个对象是否是垃圾.在一个对象被引用时加一，被去除引用时减一</p>
+<h3 id="GC-Root-Tracing-算法"><a href="#GC-Root-Tracing-算法" class="headerlink" title="GC Root Tracing 算法"></a>GC Root Tracing 算法</h3><p>解决引用计数法存在的循环引用问题. 从 GC Root 出发，所有可达的对象都是存活的对象，而所有不可达的对象都是垃圾</p>
+<p>GC Root 是一组活跃引用的集合</p>
 <ul>
-<li>一个线程中的所有操作必须按照程序的顺序来执行</li>
-<li>(不管程序是否同步)所有线程都只能看到一个单一的操作执行顺序. 在顺序一致性内存模型中，每个操作都必须原子执行且立刻对所有线程可见</li>
+<li>所有当前被加载的 Java 类</li>
+<li>Java 类的引用类型静态变量</li>
+<li>Java类的运行时常量池里的引用类型常量</li>
+<li>VM的一些静态数据结构里指向GC堆里的对象的引用</li>
+<li>等等</li>
+</ul>
+<h2 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h2><p>垃圾回收算法简单地说有三种算法：标记清除算法、复制算法、标记压缩算法</p>
+<h3 id="标记清除算法"><a href="#标记清除算法" class="headerlink" title="标记清除算法"></a>标记清除算法</h3><p>分为两个阶段：标记阶段和清除阶段.</p>
+<ul>
+<li>标记阶段，标记所有由 GC Root 触发的可达对象.所有未被标记的对象就是垃圾对象</li>
+<li>清除阶段，清除所有未被标记的对象</li>
+</ul>
+<p>会产生内存碎片，但是不需要移动太多对象，比较适合在存活对象比较多的情况</p>
+<h3 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h3><p>将原有的内存空间分为两块，每次只使用一块，在垃圾回收时，将正在使用的内存中的存活对象复制到未使用的内存块中。之后清除正在使用的内存块中的所有对象，之后交换两个内存块的角色，完成垃圾回收</p>
+<p>需要将内存空间折半，并且需要移动存活对象. 但清理后不会有空间碎片，比较适合存活对象比较少的情况</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" data-id="cklf3st98004bprfe9ulbhk54" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/JVM/JVM类加载机制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" class="article-date">
+  <time datetime="2020-11-10T16:22:12.000Z" itemprop="datePublished">2020-11-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">JVM类加载机制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JVM 虚拟机执行 class 字节码的过程可以分为七个阶段：加载、验证、准备、解析、初始化、使用、卸载</p>
+<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><p>加载阶段是类加载过程的第一个阶段</p>
+<p>在这个阶段，JVM 的主要目的是将字节码从各个位置（网络、磁盘等）转化为二进制字节流加载到内存中，接着会为这个类在 JVM 的方法区创建一个对应的 Class 对象，这个 Class 对象就是这个类各种数据的访问入口</p>
+<ul>
+<li>通过一个类的全限定名获取该类的二进制流</li>
+<li>将该二进制流中的静态存储结构转化为方法的运行时数据结构</li>
+<li>在内存中生成该类的Class对象,作为该类的数据访问入口</li>
+</ul>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>当 JVM 加载完 Class 字节码文件并在方法区创建对应的 Class 对象之后，JVM 便会启动对该字节码流的校验，只有符合 JVM 字节码规范的文件才能被 JVM 正确执行</p>
+<ul>
+<li>JVM规范校验。JVM 会对字节流进行文件格式校验，判断其是否符合 JVM 规范，是否能被当前版本的虚拟机处理</li>
+<li>代码逻辑校验。JVM 会对代码组成的数据流和控制流进行校验，确保 JVM 运行该字节码文件后不会出现致命错误</li>
+</ul>
+<p>验证的目的是为了确保Class文件的字节流中的信息不会危害到虚拟机,主要完成以下四种验证</p>
+<ul>
+<li>文件格式验证:验证字节流是否符合Class文件规范,如主次版本是否在当前虚拟机支持范围内,常量池中的常量是否有不支持类型</li>
+<li>元数据验证: 对字节码描述的信息进行语义分析,如这个类是否有父类,是否集成了不被继承的类等</li>
+<li>字节码验证: 通过验证数据流和控制流的分析,确定程序语义是否正确,跳转指令是否正确等</li>
+<li>符号引用验证: 在后边的解析过程中发生,主要为了确保解析动作能正确执行</li>
 </ul>
         
           <p class="article-more-link">
-            <a href="/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/#more">Read More</a>
+            <a href="/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E9%A1%BA%E5%BA%8F%E4%B8%80%E8%87%B4%E6%80%A7/" data-id="cklf3st9l004yprfeaiw2bzd4" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2020/11/11/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/" data-id="cklf3st99004eprfe6c0f4ckj" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
     </footer>
   </div>
   
@@ -335,14 +251,14 @@
 
 
   
-    <article id="post-计算机/技术栈/Java/并发编程/指令重排" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/Java/JVM/JVM内存结构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92/" class="article-date">
-  <time datetime="2020-10-15T14:42:53.000Z" itemprop="datePublished">2020-10-15</time>
+    <a href="/2020/11/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" class="article-date">
+  <time datetime="2020-11-10T15:17:42.000Z" itemprop="datePublished">2020-11-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
   </div>
 
   </div>
@@ -353,7 +269,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92/">指令重排</a>
+      <a class="article-title" href="/2020/11/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/">JVM内存结构</a>
     </h1>
   
 
@@ -361,45 +277,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>重排序是指编译器和处理器为了优化程序性能而对指令序列进行重新排序的一种手段</p>
-<h2 id="数据依赖"><a href="#数据依赖" class="headerlink" title="数据依赖"></a>数据依赖</h2><p>如果两个操作访问同一变量,且存在一个写操作,这两个操作就存在数据依赖</p>
-<p>数据依赖的三种类型:</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>代码示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>写后读</td>
-<td>a=1;b=a;</td>
-</tr>
-<tr>
-<td>写后写</td>
-<td>a=1;a=2;</td>
-</tr>
-<tr>
-<td>读后写</td>
-<td>a=b;b=1;</td>
-</tr>
-</tbody></table>
-<p>存在数据依赖的操作进行指令重排,程序的执行结果可能就会被改变. 编译器和处理器在重排序时，会遵守数据依赖性，编译器和处理器不会改变存在数据依赖关系的两个操作的执行顺序</p>
-<blockquote>
-<p>这里所说的数据依赖性仅针对单个处理器中执行的指令序列和单个线程中执行的操作， 不同处理器之间和不同线程之间的数据依赖性不被编译器和处理器考虑</p>
-</blockquote>
-<h2 id="as-if-serial-语义"><a href="#as-if-serial-语义" class="headerlink" title="as-if-serial 语义"></a>as-if-serial 语义</h2><p>as-if-serial语义的意思是:不管怎么重排序(编译器和处理器为了提高并行度)，(单线程)程序的执行结果不能被改变</p>
+        <p>JVM虚拟内存结构可以分为公有和私有两部分.</p>
+<h2 id="公有部分内存"><a href="#公有部分内存" class="headerlink" title="公有部分内存"></a>公有部分内存</h2><p>公有指所有线程共享的部分: Java堆,方法区,常量池</p>
+<h3 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h3><p>用于Java实例对象的内存分配的区域.几乎所有的实例对象都会在这里进行内存分配(栈上分配)</p>
+<p>Java 堆根据对象存活时间的不同，Java 堆还被分为年轻代、老年代两个区域，年轻代还被进一步划分为 Eden 区、From Survivor 0、To Survivor 1 区</p>
+<p><img src="https://img2018.cnblogs.com/blog/595137/201901/595137-20190103103329413-247778313.png" alt="JVM堆"></p>
+<p>当有对象需要分配时，一个对象永远优先被分配在年轻代的 Eden 区，等到 Eden 区域内存不够时，Java 虚拟机会启动垃圾回收。此时 Eden 区中没有被引用的对象的内存就会被回收，而一些存活时间较长的对象则会进入到老年代。在 JVM 中有一个名为 <code>-XX:MaxTenuringThreshold</code> 的参数专门用来设置晋升到老年代所需要经历的 GC 次数，即在年轻代的对象经过了指定次数的 GC 后，将在下次 GC 时进入老年代</p>
+<p>默认的虚拟机配置，Eden：from ：to = 8:1:1</p>
         
           <p class="article-more-link">
-            <a href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92/#more">Read More</a>
+            <a href="/2020/11/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%8C%87%E4%BB%A4%E9%87%8D%E6%8E%92/" data-id="cklf3st9f004tprfe4x0a6pft" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2020/11/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" data-id="cklf3st970048prfeeuy74rop" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
     </footer>
   </div>
   
@@ -407,10 +304,209 @@
 
 
   
-    <article id="post-计算机/技术栈/Java/并发编程/Java内存模型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/Java/JVM/jinfo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" class="article-date">
-  <time datetime="2020-10-15T14:06:20.000Z" itemprop="datePublished">2020-10-15</time>
+    <a href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jinfo/" class="article-date">
+  <time datetime="2020-11-06T03:21:18.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jinfo/">jinfo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>全称Java Configuration Info. 主要作用是实时查看和调整JVM配置参数</p>
+<h2 id="查看JVM参数"><a href="#查看JVM参数" class="headerlink" title="查看JVM参数"></a>查看JVM参数</h2><p>用法：<code>jinfo -flag &lt;name&gt; PID</code>  例:<code>jinfo -flag ThreadStackSize 18348</code>，得到结果-XX:ThreadStackSize=256，即Xss为256K</p>
+<h2 id="调整JVM参数"><a href="#调整JVM参数" class="headerlink" title="调整JVM参数"></a>调整JVM参数</h2><p>用法：<br>如果是布尔类型的JVM参数: <code>jinfo -flag [+|-]&lt;name&gt; PID</code>，enable or disable the named VM flag</p>
+<p>如果是数字/字符串类型的JVM参数 <code>jinfo -flag &lt;name&gt;=&lt;value&gt; PID</code>，to set the named VM flag to the given value</p>
+<h3 id="查看所有支持动态修改的JVM参数"><a href="#查看所有支持动态修改的JVM参数" class="headerlink" title="查看所有支持动态修改的JVM参数"></a>查看所有支持动态修改的JVM参数</h3><p><code>java -XX:+PrintFlagsInitial | grep manageable</code></p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jinfo/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jinfo/" data-id="cklf3st99004gprfea3zd48hs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/JVM/jstat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jstat/" class="article-date">
+  <time datetime="2020-11-06T03:19:58.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jstat/">jstat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jstat/">https://fangzongzhou.github.io/2020/11/06/计算机/技术栈/Java/JVM/jstat/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jstat/" data-id="cklf3st9a004hprfefb9ngcve" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/JVM/jcmd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jcmd/" class="article-date">
+  <time datetime="2020-11-06T02:18:37.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jcmd/">jcmd</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可以用它来导出堆、查看Java进程、导出线程信息、执行GC、还可以进行采样分析</p>
+<h2 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h2><p>命令:<code>jcmd -l</code>,等价于<code>jcmd</code>,<code>jps</code></p>
+<h2 id="查看性能统计"><a href="#查看性能统计" class="headerlink" title="查看性能统计"></a>查看性能统计</h2><p><code>jcmd pid PerfCounter.print</code></p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jcmd/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/jcmd/" data-id="cklf3st99004fprfe1vegcga1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/JVM/JVM参数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%8F%82%E6%95%B0/" class="article-date">
+  <time datetime="2020-11-05T11:40:15.000Z" itemprop="datePublished">2020-11-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/JVM/">JVM</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%8F%82%E6%95%B0/">JVM参数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://opts.console.perfma.com/">perfma JVM参数线上解析</a></p>
+<h2 id="HeapSize"><a href="#HeapSize" class="headerlink" title="HeapSize"></a>HeapSize</h2><p>512*page_size 对齐,page_size通常情况下是4kb,如果取值不是其倍数,向上取整</p>
+<h3 id="Xmx"><a href="#Xmx" class="headerlink" title="Xmx"></a>Xmx</h3><p>堆的最大值</p>
+<p>和<code>MaxHeapSize</code>等价</p>
+<h3 id="Xms"><a href="#Xms" class="headerlink" title="Xms"></a>Xms</h3><p>设置堆的最小值(堆的初始值)<br>和<code>InitialHeapSize</code>等价</p>
+<h3 id="Xminf-Xmaxf"><a href="#Xminf-Xmaxf" class="headerlink" title="Xminf/Xmaxf"></a>Xminf/Xmaxf</h3><p>等价于<code>MinHeapFreeRatio/MaxHeapFreeRatio</code>,默认值分别为40/80</p>
+<p>G1下作用于整个heap,其他算法作用于老生代,GC后根据使用情况对堆内存进行扩/缩容</p>
+<h3 id="MinHeapDeltaBytes"><a href="#MinHeapDeltaBytes" class="headerlink" title="MinHeapDeltaBytes"></a>MinHeapDeltaBytes</h3><p>尝试扩容/缩容的时候,决定是否要做或尝试扩容的时候最小扩多少,默认为192k</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/11/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%8F%82%E6%95%B0/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/11/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/JVM/JVM%E5%8F%82%E6%95%B0/" data-id="cklf3st980049prfe6p886lng" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/并发编程/ThreadLocal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/ThreadLocal/" class="article-date">
+  <time datetime="2020-10-28T14:39:37.000Z" itemprop="datePublished">2020-10-28</time>
 </a>
     
   <div class="article-category">
@@ -425,7 +521,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/">Java内存模型</a>
+      <a class="article-title" href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/ThreadLocal/">ThreadLocal</a>
     </h1>
   
 
@@ -433,194 +529,71 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>并发编程中，需要处理两个关键问题:线程之间如何通信及线程之间如何同步(这里的 线程是指并发执行的活动实体).通信是指线程之间以何种机制来交换信息.线程之间的通信机制有两种:共享内存和消息传递</p>
-<p>共享内存的并发模型里，线程之间共享程序的公共状态，通过写-读内存中的公共状态 进行隐式通信.消息传递的并发模型里，线程之间没有公共状态，线程之间必须通过发送消 息来显式进行通信</p>
-<p>同步是指程序中用于控制不同线程间操作发生相对顺序的机制.在共享内存并发模型 里，同步是显式进行的.程序员必须显式指定某个方法或某段代码需要在线程之间互斥执行.在消息传递的并发模型里，由于消息的发送必须在消息的接收之前，因此同步是隐式进行的</p>
-<p>Java的并发采用的是共享内存模型，Java线程之间的通信总是隐式进行，整个通信过程对 程序员完全透明</p>
-<h2 id="Java内存模型的抽象结构"><a href="#Java内存模型的抽象结构" class="headerlink" title="Java内存模型的抽象结构"></a>Java内存模型的抽象结构</h2><p>Java中，所有实例域、静态域和数组元素都存储在堆内存中，堆内存在线程之间共享. 局部变量(Local Variables)，方 法定义参数(Java语言规范称之为Formal Method Parameters)和异常处理器参数(Exception Handler Parameters)不会在线程之间共享，它们不会有内存可见性问题，也不受内存模型的影响</p>
-<p>Java线程之间的通信由Java内存模型(JMM)控制,JMM决定一个线程对共享 变量的写入何时对另一个线程可见. JMM定义了线程和主内存之间的抽 象关系:线程之间的共享变量存储在主内存(Main Memory)中，每个线程都有一个私有的本地 内存(Local Memory)，本地内存中存储了该线程以读/写共享变量的副本。本地内存是JMM的 一个抽象概念，并不真实存在</p>
-<p>如果线程A与线程B之间要通信的话，必须要经历下面2个步骤</p>
-<ul>
-<li>线程A把本地内存A中更新过的共享变量刷新到主内存中去</li>
-<li>线程B到主内存中去读取线程A之前已更新过的共享变量</li>
+        <p>ThreadLocal，即线程变量，是一个以ThreadLocal对象为键、任意对象为值的存储结构.这个结构被附带在线程上</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/ThreadLocal/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/10/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/ThreadLocal/" data-id="cklf3st9b004lprfefpyjdimf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/并发编程/线程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <time datetime="2020-10-27T03:19:07.000Z" itemprop="datePublished">2020-10-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E7%BA%BF%E7%A8%8B/">线程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>现代操作系统的最小操作单元</p>
+<h2 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h2><ul>
+<li>NEW: 初始状态,线程被构建,但是还没有调用start()方法</li>
+<li>RUNABLE: 运行状态,就绪和运行中两种状态统称为’运行中’</li>
+<li>BLOCKED: 阻塞状态</li>
+<li>WAITING: 等待状态,表示线程进入等待状态.进入该状态表示当前线程需要等待其他线程做出一些特定动作(通知/中断)</li>
+<li>TIME_WAITING: 超时等待状态,不同于WAITING,可以在指定时间自行返回</li>
+<li>TERMINATED: 终止状态,表示当前线程已经执行完成</li>
 </ul>
-<p>JMM通过控制主内存与每个线程的本地内存之间的交互，来为Java程序员提供 内存可见性保证</p>
-<h2 id="指令重排"><a href="#指令重排" class="headerlink" title="指令重排"></a>指令重排</h2><p>执行程序时，为了提高性能，编译器和处理器常常会对指令做重排序.重排序分3种类型</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/4/30/163159b8a740b329?imageslim" alt="线程状态迁移"></p>
+<h2 id="Daemon线程"><a href="#Daemon线程" class="headerlink" title="Daemon线程"></a>Daemon线程</h2><p>Daemon线程是一种支持型线程，因为它主要被用作程序中后台调度以及支持性工作。这 意味着，当一个Java虚拟机中不存在非Daemon线程的时候，Java虚拟机将会退出。可以通过调 用Thread.setDaemon(true)将线程设置为Daemon线程</p>
         
           <p class="article-more-link">
-            <a href="/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/#more">Read More</a>
+            <a href="/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E7%BA%BF%E7%A8%8B/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/" data-id="cklf3st9a004kprfeg1pi51at" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/原子操作" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/" class="article-date">
-  <time datetime="2020-10-14T01:54:40.000Z" itemprop="datePublished">2020-10-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/">原子操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>原子操作(atomic operation)意 为“不可被中断的一个或一系列操作</p>
-<h2 id="处理器如何实现原子操作"><a href="#处理器如何实现原子操作" class="headerlink" title="处理器如何实现原子操作"></a>处理器如何实现原子操作</h2><h3 id="总线锁定"><a href="#总线锁定" class="headerlink" title="总线锁定"></a>总线锁定</h3><p>使用处理器提供的一个 LOCK#信号，当一个处理器在总线上输出此信号时，其他处理器的请求将被阻塞住，那么该 处理器可以独占共享内存</p>
-<p>总线锁定把CPU和内存之间的通信锁住了，这使得锁定期间，其他处 理器不能操作其他内存地址的数据，所以总线锁定的开销比较大</p>
-<h3 id="缓存锁定"><a href="#缓存锁定" class="headerlink" title="缓存锁定"></a>缓存锁定</h3><p>同一时刻,我们通常仅需要保证对某个内存地址的操作是原子性即可,由于总线锁定开销大,某些场合下,处理器会使用缓存锁定替代总线锁定</p>
-<p>缓存锁定是指内存区域如果被缓存在处理器的缓存行中，并且在Lock操作期间被锁定，那么当它执行锁操作回写到内存时，处理器不在总线上声明LOCK#信号，而是修改内部的内存地址，并允许它的缓存一致性机制来保证操作的原子性</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C/" data-id="cklf3st9e004rprfe4asggzca" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/synchronized" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/synchronized/" class="article-date">
-  <time datetime="2020-10-13T15:39:35.000Z" itemprop="datePublished">2020-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/synchronized/">synchronized</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java中的每一个对象都可以作为锁。具体表现 为以下3种形式</p>
-<ul>
-<li>对于普通同步方法，锁是当前实例对象</li>
-<li>对于静态同步方法，锁是当前类的Class对象</li>
-<li>对于同步方法块，锁是Synchonized括号里配置的对象</li>
-</ul>
-<p>当一个线程试图访问同步代码块时，它首先必须得到锁，退出或抛出异常时必须释放锁</p>
-<p>JVM基于进入和退出Monitor对象来实现方法同步和代码块同步,代码块同步是使用monitorenter 和monitorexit指令实现的</p>
-<p>monitorenter指令是在编译后插入到同步代码块的开始位置，而monitorexit是插入到方法结 束处和异常处，JVM要保证每个monitorenter必须有对应的monitorexit与之配对.任何对象都有 一个monitor与之关联，当且一个monitor被持有后，它将处于锁定状态.线程执行到monitorenter 指令时，将会尝试获取对象所对应的monitor的所有权，即尝试获得对象的锁.</p>
-<h2 id="Java对象头"><a href="#Java对象头" class="headerlink" title="Java对象头"></a>Java对象头</h2><p>synchronized用的锁是存在Java对象头里的,Java对象头里的Mark Word里默认存储对象的HashCode、分代年龄和锁标记位.</p>
-<h2 id="锁的升级与对比"><a href="#锁的升级与对比" class="headerlink" title="锁的升级与对比"></a>锁的升级与对比</h2><p>锁一共有4种状态，级别从低到高依次是:无锁状态、偏向锁状态、轻量级锁状 态和重量级锁状态，这几个状态会随着竞争情况逐渐升级.</p>
-<p>锁可以升级但不能降级，意味着偏 向锁升级成轻量级锁后不能降级成偏向锁.这种锁升级却不能降级的策略，目的是为了提高 获得锁和释放锁的效率</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/synchronized/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/synchronized/" data-id="cklf3st9d004oprfe8pjh03gp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/并发编程/volatile" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/volatile/" class="article-date">
-  <time datetime="2020-10-13T15:12:58.000Z" itemprop="datePublished">2020-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/volatile/">volatile</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>volatile是轻量级的synchronized,它在多处理器开发中保证了共享变量的’可见性’.可见性的意思是当一个线程修改一个共享变量时,另一个线程能读取到这个修改的值.</p>
-<p>volatile变量修饰符使用恰当 的话，它比synchronized的使用和执行成本更低，因为它不会引起线程上下文的切换和调度.</p>
-<p>把对volatile变量的单个读/写，看成是使用同一个锁对这些单个读/写操作做了同步. 锁的happens-before规则保证释放锁和获取锁的两个线程之间的内存可见性，这意味着对 一个volatile变量的读，总是能看到(任意线程)对这个volatile变量最后的写入</p>
-<p>volatile变量具有以下特性</p>
-<ul>
-<li>可见性: 对一个volatile变量的读，总是能看到(任意线程)对这个volatile变量最后的写入</li>
-<li>原子性:对任意单个volatile变量的读/写具有原子性，但类似于volatile++这种复合操作不具有原子性</li>
-</ul>
-<h2 id="volatile的定义与实现原理"><a href="#volatile的定义与实现原理" class="headerlink" title="volatile的定义与实现原理"></a>volatile的定义与实现原理</h2><blockquote>
-<p>Java编程语言允许线程访问共享变量，为了 确保共享变量能被准确和一致地更新，线程应该确保通过排他锁单独获得这个变量。Java语言 提供了volatile，在某些情况下比锁要更加方便。如果一个字段被声明成volatile，Java线程内存 模型确保所有线程看到这个变量的值是一致的  – Java官方定义</p>
-</blockquote>
-<p>有volatile变量修饰的共享变量进行写操作时,处理器会额外进行如下操作</p>
-<ol>
-<li>将当前处理器缓存行的数据写回到系统内存</li>
-<li>写回内存的操作会使在其他CPU里缓存了该内存地址的数据无效</li>
-</ol>
-<p>volatile写的内存语义: 写一个volatile变量时，JMM会把该线程对应的本地内存中的共享变量值刷新到主内存. 线程A写一个volatile变量，实质上是线程A向接下来将要读这个volatile变量的某个线程发出了(其对共享变量所做修改的)消息</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/volatile/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/volatile/" data-id="cklf3st9d004pprfe8drbgh6o" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2020/10/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E7%BA%BF%E7%A8%8B/" data-id="cklf3st9g004vprfe2bhtbu7r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -634,7 +607,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/11/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/13/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/11/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/13/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -655,7 +628,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -665,7 +638,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Elasticsearch/" style="font-size: 18px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 12px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 17px;">JVM</a> <a href="/tags/Java/" style="font-size: 11px;">Java</a> <a href="/tags/Linux/" style="font-size: 11px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 12px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 11px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 15px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 16px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 19px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 16px;">随笔</a>
+      <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.18px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.73px;">随笔</a>
     </div>
   </div>
 
@@ -687,23 +660,23 @@
       <ul>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A1%8C%E6%9C%89%E4%B8%8D%E5%BE%97%E8%80%85%E7%9A%86%E5%8F%8D%E6%B1%82%E8%AF%B8%E5%B7%B1%EF%BC%8C%E5%85%B6%E8%BA%AB%E6%AD%A3%E8%80%8C%E5%A4%A9%E4%B8%8B%E5%BD%92%E4%B9%8B/">行有不得者皆反求诸己，其身正而天下归之</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%AD%98%E4%B9%8E%E4%BA%BA%E8%80%85%EF%BC%8C%E8%8E%AB%E8%89%AF%E4%BA%8E%E7%9C%B8%E5%AD%90/">存乎人者，莫良于眸子</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%A4%A9%E5%AD%90%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E5%9B%9B%E6%B5%B7%EF%BC%9B%E8%AF%B8%E4%BE%AF%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E7%A4%BE%E7%A8%B7/">天子不仁，不保四海；诸侯不仁，不保社稷</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%89%E5%9C%B0%E4%BB%A5%E6%88%98%EF%BC%8C%E6%9D%80%E4%BA%BA%E7%9B%88%E9%87%8E/">争地以战，杀人盈野</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A7%84%E7%9F%A9%EF%BC%8C%E6%96%B9%E5%91%98%E4%B9%8B%E8%87%B3%E4%B9%9F/">规矩，方员之至也</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%BA%E6%94%BF%E4%BA%8E%E5%A4%A9%E4%B8%8B/">为政于天下</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%8D%E4%BB%A5%E8%A7%84%E7%9F%A9%E4%B8%8D%E8%83%BD%E6%88%90%E6%96%B9%E5%9C%86/">不以规矩不能成方圆</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%AF%9A%E8%80%85%EF%BC%8C%E5%A4%A9%E4%B9%8B%E9%81%93%E4%B9%9F/">诚者，天之道也</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%BA%E4%B9%8B%E5%BF%8C-%E5%9C%A8%E5%A5%BD%E4%B8%BA%E4%BA%BA%E5%B8%88/">人之忌,在好为人师</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%B2%E5%85%B6%E4%BA%B2%EF%BC%8C%E9%95%BF%E5%85%B6%E9%95%BF/">亲其亲，长其长</a>
           </li>
         
       </ul>

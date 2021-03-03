@@ -66,14 +66,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-计算机/技术文档/Elasticsearch/文档和索引" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-行业分析/便利店" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E6%96%87%E6%A1%A3%E5%92%8C%E7%B4%A2%E5%BC%95/" class="article-date">
-  <time datetime="2019-07-24T15:23:44.000Z" itemprop="datePublished">2019-07-24</time>
+    <a href="/2020/10/13/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/%E4%BE%BF%E5%88%A9%E5%BA%97/" class="article-date">
+  <time datetime="2020-10-13T00:58:35.000Z" itemprop="datePublished">2020-10-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
+    <a class="article-category-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a>
   </div>
 
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E6%96%87%E6%A1%A3%E5%92%8C%E7%B4%A2%E5%BC%95/">文档和索引</a>
+      <a class="article-title" href="/2020/10/13/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/%E4%BE%BF%E5%88%A9%E5%BA%97/">便利店</a>
     </h1>
   
 
@@ -92,526 +92,690 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="数据输入-文档和索引"><a href="#数据输入-文档和索引" class="headerlink" title="数据输入:文档和索引"></a>数据输入:文档和索引</h2><p>Elasticsearch 是分布式文档仓库. Elasticsearch存储那些已经被序列化成JSON格式的复杂数据. 当在集群中有多个Elasticsearch节点时,存储的文档会被分发到集群中, 并且可以立刻从任意节点进行访问.</p>
-<p>当文档被存储后,它会被创建索引,并且能近实时地进行搜索. Elasticsearch 通过一种被称作倒排索引的数据结构来支持快速的全文搜索. 倒排索引包含了所有文档中出现的所有词汇,并标记出包含它的文档.</p>
-<p>索引可以被看做文档的优化集合, 每个文档都是字段的集合,它们是包含了你的数据的键值对. 默认情况下, Elasticsearch 中所有字段和字段值都建立了专用的优化过的数据结构. 例如:文本字段存储在倒排索引中,数字和地理位置信息被存储在BKD tree 中,正是因为有了这种通过组装各个字段数据结构来构造查询结果的能力,才使得Elasticsearch如此之快.</p>
-<p>Elasticsearch 同时也拥有无模式数据存储的能力, 这意味着通过文档中未显示声明过该如何处理的字段,同样能索引到文档. 当启用动态索引时, Elasticsearch 将自动检测并将新的字段添加到索引中,这种默认行为将使得索引和查找数据都变得简单,只需要开启文档索引,Elasticsearch将监测数据类型,并将它们映射成相应的Elasticsearch数据类型.</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E6%96%87%E6%A1%A3%E5%92%8C%E7%B4%A2%E5%BC%95/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E6%96%87%E6%A1%A3%E5%92%8C%E7%B4%A2%E5%BC%95/" data-id="cklf3st8p002cprfehgs53fk1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/MYSQL/Chapter_3_教程/3-Tutorial" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_3_%E6%95%99%E7%A8%8B/3-Tutorial/" class="article-date">
-  <time datetime="2019-05-14T10:19:48.000Z" itemprop="datePublished">2019-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_3_%E6%95%99%E7%A8%8B/3-Tutorial/">3-Tutorial</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本章通过演示如何通过mysql客户端程序创建并使用一个简单的数据库来介绍MySQL，mysql是一个可以连接MySQL服务，执行查询，并能展示结果的交互程序。mysql可以使用批量模式：先将查询放置在文件中，然后告诉mysql执行包含在文件中的命令。这两种使用mysql的方式都会有相应示例。</p>
-<p>可以添加<code>--help</code>选项来列出mysql提供的选项</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="comment">--help</span></span><br></pre></td></tr></table></figure>
-
-<p>本章假定<code>mysql</code>已经安装在你的机器上，并且你可以连接到一个MySQL服务．如果不能连接，请联系你的MySQL服务administrator(如果你就是administrator,你可以参照<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/server-administration.html">MySQL Server Administrator</a>中的相关部分)</p>
-<p>本章介绍了设置使用数据库的所有过程,如果你只对访问已经存在的数据库感兴趣,你可以跳过那些描述如何创建数据库和表的部分.</p>
-<p>本章的本质是教程,因此会省略很多细节.这里涉及的相关主题可以参阅手册的其他相关章节.</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_3_%E6%95%99%E7%A8%8B/3-Tutorial/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2019/05/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_3_%E6%95%99%E7%A8%8B/3-Tutorial/" data-id="cklf3st950045prfe7np7409y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/MYSQL/Chapter_1_通用信息/1-通用信息" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/" class="article-date">
-  <time datetime="2019-05-13T13:29:57.000Z" itemprop="datePublished">2019-05-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/">Chapter 1 通用信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>MYSQL</code>提供了一个快速、多线程、多用户的健壮SQL（Structured Query Language） database server.</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/">https://fangzongzhou.github.io/2019/05/13/计算机/技术文档/MYSQL/Chapter_1_通用信息/1-通用信息/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/" data-id="cklf3st950044prfefdqpgdfu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/MYSQL/Chapter_1_通用信息/1-3-MySQL概述" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-3-MySQL%E6%A6%82%E8%BF%B0/" class="article-date">
-  <time datetime="2019-05-13T06:29:57.000Z" itemprop="datePublished">2019-05-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-3-MySQL%E6%A6%82%E8%BF%B0/">1.3 MySQL概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是MySQL"><a href="#什么是MySQL" class="headerlink" title="什么是MySQL"></a>什么是MySQL</h2><p>MySQL,是Oracle公司开发、推广、支持的开源SQL数据管理系统。</p>
-<p><a target="_blank" rel="noopener" href="http://www.mysql.com/">官网地址</a></p>
-<ul>
-<li>MySQL 是一个数据库管理系统</li>
+        <h2 id="行业现状"><a href="#行业现状" class="headerlink" title="行业现状"></a>行业现状</h2><ul>
+<li>门店数量达到 13.2 万家</li>
+<li>日均销售额为 5,297元</li>
+<li>二线城市典型便利店净利润率水平约 5%</li>
+<li>本土便利店和夫妻店对即食商品的涉足较少</li>
+<li>便利店企业的平均平效为69元/平方米/天，企业运营效率远低于国际领先企业水平</li>
+<li>建立会员体系的企业比例持续增加</li>
 </ul>
-<p>数据库是结构化的数据集合.它可能是任何东西，从简单的购物单到图片库，或者是企业网络中的大量信息。为了添加、访问、处理存储在计算机数据库中数据，就需要像MySQL一样的数据库管理系统。由于计算机擅长处理大量数据，数据库管理系统作为独立工具或其他应用的一部分在计算任务中扮演了很重要的角色。</p>
-<ul>
-<li>MySQL是关系型数据库</li>
-</ul>
-<p>关系型数据库将数据分别存储在单独的表中，而不是将所有数据都存储在一个存储空间中。为优化速度，数据库结构被组织成物理文件。通过数据库，表，视图，行，列等逻辑模型为编程提供了灵活的操作环境。你可以设置规则来管理不同数据字段间的关系，例如一对一，一对多，唯一，必选，可选和不同表间的“指针”。数据库强制执行这些规则，因此，在一个设计良好的数据库中，应该不会看到不一致，重复，孤立，过期，丢失的数据。</p>
-<p>MySQL的SQL代表’structured query language’，SQL是访问数据库的通用标准。根据你的编程环境，你可以直接执行SQL，在其他语言中嵌入SQL语法，或者通过语言特定API隐藏SQL语法</p>
-<ul>
-<li><p>MySQL是开源软件</p>
-</li>
-<li><p>MySQL数据库服务快，可靠，可拓展，易用</p>
-</li>
-</ul>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-3-MySQL%E6%A6%82%E8%BF%B0/">https://fangzongzhou.github.io/2019/05/13/计算机/技术文档/MYSQL/Chapter_1_通用信息/1-3-MySQL概述/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2019/05/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/Chapter_1_%E9%80%9A%E7%94%A8%E4%BF%A1%E6%81%AF/1-3-MySQL%E6%A6%82%E8%BF%B0/" data-id="cklf3st950043prfe68o3534u" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/Java/javap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/javap/" class="article-date">
-  <time datetime="2018-10-08T14:53:54.000Z" itemprop="datePublished">2018-10-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/javap/">javap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javap可以用来反编译class文件</p>
-<h2 id="命令参数"><a href="#命令参数" class="headerlink" title="命令参数"></a>命令参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-<span class="built_in">help</span>  --<span class="built_in">help</span>  -?                输出此用法消息</span><br><span class="line"> -version                         版本信息</span><br><span class="line"> -v  -verbose                     输出附加信息</span><br><span class="line"> -l                               输出行号和本地变量表</span><br><span class="line"> -public                          仅显示公共类和成员</span><br><span class="line"> -protected                       显示受保护的/公共类和成员</span><br><span class="line"> -package                         显示程序包/受保护的/公共类</span><br><span class="line">                                  和成员 (默认)</span><br><span class="line"> -p  -private                     显示所有类和成员</span><br><span class="line"> -c                               对代码进行反汇编</span><br><span class="line"> -s                               输出内部类型签名</span><br><span class="line"> -sysinfo                         显示正在处理的类的</span><br><span class="line">                                  系统信息 (路径, 大小, 日期, MD5 散列)</span><br><span class="line"> -constants                       显示最终常量</span><br><span class="line"> --module &lt;模块&gt;, -m &lt;模块&gt;       指定包含要反汇编的类的模块</span><br><span class="line"> --module-path &lt;路径&gt;             指定查找应用程序模块的位置</span><br><span class="line"> --system &lt;jdk&gt;                   指定查找系统模块的位置</span><br><span class="line"> --class-path &lt;路径&gt;              指定查找用户类文件的位置</span><br><span class="line"> -classpath &lt;路径&gt;                指定查找用户类文件的位置</span><br><span class="line"> -cp &lt;路径&gt;                       指定查找用户类文件的位置</span><br><span class="line"> -bootclasspath &lt;路径&gt;            覆盖引导类文件的位置</span><br></pre></td></tr></table></figure>
-
-<h2 id="verbose结果组成"><a href="#verbose结果组成" class="headerlink" title="verbose结果组成"></a>verbose结果组成</h2><h3 id="1-基本信息"><a href="#1-基本信息" class="headerlink" title="1.基本信息"></a>1.基本信息</h3><ul>
-<li>class文件版本号（对应的是jre版本，高版本编译的文件不能用低版本的javap反编译）</li>
-<li>类的访问权限</li>
-<li>类及父类名</li>
-<li>接口、字段、属性、方法及对应数量</li>
-</ul>
-<h3 id="2-常量池"><a href="#2-常量池" class="headerlink" title="2.常量池"></a>2.常量池</h3><p>存放各种常量以及符号引用</p>
-<h3 id="3-字段区域"><a href="#3-字段区域" class="headerlink" title="3.字段区域"></a>3.字段区域</h3><p>列举该类中的各个字段，里边包含字段类型和访问权限</p>
-<h3 id="4-方法区域"><a href="#4-方法区域" class="headerlink" title="4.方法区域"></a>4.方法区域</h3><p>包含方法描述符和访问权限，以及代码区域，代码区域开始位置声明了操作数栈及局部变量的最大值，方法接收参数的数量。这里的局部变量指的是字节码文件中变量的数量。</p>
-<ul>
-<li>字节码</li>
-<li>异常表</li>
-<li>行数映射表</li>
-</ul>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/javap/">https://fangzongzhou.github.io/2018/10/08/计算机/技术栈/Java/javap/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/javap/" data-id="cklf3st8t002tprfegr5w55rq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-日记/日记-20181001" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/02/%E6%97%A5%E8%AE%B0/%E6%97%A5%E8%AE%B0-20181001/" class="article-date">
-  <time datetime="2018-10-02T14:02:07.000Z" itemprop="datePublished">2018-10-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/02/%E6%97%A5%E8%AE%B0/%E6%97%A5%E8%AE%B0-20181001/">日记-20181001</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2018国庆节去了天安门和故宫，走了很远的路，以后进景点一定要带着吃的喝的。</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/10/02/%E6%97%A5%E8%AE%B0/%E6%97%A5%E8%AE%B0-20181001/">https://fangzongzhou.github.io/2018/10/02/日记/日记-20181001/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/10/02/%E6%97%A5%E8%AE%B0/%E6%97%A5%E8%AE%B0-20181001/" data-id="cklf3st86000qprfef3zghdl7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/Elasticsearch/Elasticsearch-索引" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-%E7%B4%A2%E5%BC%95/" class="article-date">
-  <time datetime="2018-09-30T11:45:14.000Z" itemprop="datePublished">2018-09-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-%E7%B4%A2%E5%BC%95/">Elasticsearch-索引</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Elasticsearch中所有文档都是被存储在一个有一个的索引中</p>
-<h2 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h2><p>最基本的创建索引的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT twitter</span><br></pre></td></tr></table></figure>
-
-<p>使用所有默认配置创建一个叫做Twitter的索引</p>
-<blockquote>
-<p>索引名称限制<br>这里有几个命名索引的限制。所有限制包含：</p>
-</blockquote>
-<ul>
-<li>只能小写字符</li>
-<li>不能包含, /, *, ?, “, &lt;, &gt;, |, <code> </code> (空格字符), ,, #</li>
-<li>不能以-, _, +开始</li>
-<li>不能是.或..</li>
-<li>不能长于255字节</li>
-</ul>
-<h3 id="索引设置"><a href="#索引设置" class="headerlink" title="索引设置"></a>索引设置</h3><p>每个创建的索引可以有一个定义在body中的关联配置：</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-%E7%B4%A2%E5%BC%95/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-%E7%B4%A2%E5%BC%95/" data-id="cklf3st8o0026prfegosacbam" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/Elasticsearch/Elasticsearch-Mapping" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-Mapping/" class="article-date">
-  <time datetime="2018-09-30T09:56:48.000Z" itemprop="datePublished">2018-09-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-Mapping/">Elasticsearch-Mapping</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mapping是定义文档和其包含的字段的存储和索引的过程，可以使用它来定义：</p>
-<ul>
-<li>哪些string字段应该被看做全文字段</li>
-<li>哪些字段包含数字，日期或地理位置</li>
-<li>是否应将文档中所有字段的值索引到<a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-all-field.html">catch-all</a>字段中</li>
-<li>日期数据的<a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-date-format.html">格式</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic-mapping.html">动态添加字段</a>控制映射的自定义规则</li>
-</ul>
-<h3 id="字段数据类型"><a href="#字段数据类型" class="headerlink" title="字段数据类型"></a>字段数据类型</h3><p>每个字段都有一个数据类型，它可以是：</p>
-<ul>
-<li>一个简单类型，例如：<code>text</code>,<code>keyword</code>,<code>date</code>,<code>long</code>,<code>double</code>,<code>boolean</code>或<code>ip</code></li>
-<li>支持json分层特性的类型，例如：<code>object</code>或<code>nested</code></li>
-<li>或是一些专业类型<code>geo_point</code>,<code>geo_shape</code>或<code>completion</code></li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-Mapping/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/Elasticsearch-Mapping/" data-id="cklf3st8m0024prfe8mwxeg92" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/Elasticsearch/设置/Elasticsearch-配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E8%AE%BE%E7%BD%AE/Elasticsearch-%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2018-09-30T08:47:25.000Z" itemprop="datePublished">2018-09-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E8%AE%BE%E7%BD%AE/Elasticsearch-%E9%85%8D%E7%BD%AE/">Elasticsearch-配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Elasticsearch提供了不错的默认配置，只需要进行很少的配置即可。多数设置可以在运行的集群上通过[Cluster Update Settings] API来进行修改。</p>
-<p>配置文件应该包含节点特定的配置（<code>node.name</code> <code>paths</code>）或是节点加入集群需要的配置(<code>cluster.name</code> <code>network.host</code>)</p>
-<h3 id="配置文件位置"><a href="#配置文件位置" class="headerlink" title="配置文件位置"></a>配置文件位置</h3><p>Elasticsearch有三个配置文件：</p>
-<ul>
-<li><code>elasticsearch.yml</code> 用来配置Elasticsearch</li>
-<li><code>jvm.options</code> 用来配置Elasticsearch的JVM配置</li>
-<li><code>log4j2.properties</code> 来配置Elasticsearch的日志</li>
-</ul>
-<p>这些文件在配置目录下，默认依赖于你的文档分发位置（tar.gz 或zip）或包分发（Debian或RPM包）位置.</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E8%AE%BE%E7%BD%AE/Elasticsearch-%E9%85%8D%E7%BD%AE/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E8%AE%BE%E7%BD%AE/Elasticsearch-%E9%85%8D%E7%BD%AE/" data-id="cklhdw8sf0002c4fe4podbx4m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术文档/Elasticsearch/开始/Elasticsearch-安装" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E5%BC%80%E5%A7%8B/Elasticsearch-%E5%AE%89%E8%A3%85/" class="article-date">
-  <time datetime="2018-09-30T08:23:44.000Z" itemprop="datePublished">2018-09-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E5%BC%80%E5%A7%8B/Elasticsearch-%E5%AE%89%E8%A3%85/">Elasticsearch-安装</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Elasticsearch提供以下格式的安装包</p>
+<p>典型便利店品牌在二线城市的成本结构测算:</p>
 <table>
 <thead>
 <tr>
-<th>包类型</th>
-<th>适用情况</th>
+<th>成本项</th>
+<th>GMV占比</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-targz.html">zip/tar.gz</a></td>
-<td>适用于任何操作系统的安装，是最简单的安装方式</td>
+<td>销货成本</td>
+<td>65</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">deb</a></td>
-<td>适用于Debian，Ubuntu和其他基于Debian的操作系统，</td>
+<td>租金</td>
+<td>7</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html">rpm</a></td>
-<td>适用于Red Hat,Centos,OpenSuSE和其他基于RPM的系统</td>
+<td>人工</td>
+<td>5.8</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/windows.html">msi</a></td>
-<td>适用于Windows 64位操作系统</td>
+<td>水电</td>
+<td>3.5</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/elasticsearch/reference/6.4/docker.html">docker</a></td>
-<td>通过镜像运行Elasticsearch容器</td>
+<td>其它</td>
+<td>4</td>
+</tr>
+<tr>
+<td>仓储</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>后台部门</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>物流成本</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>各种税</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>净利润</td>
+<td>4.9</td>
+</tr>
+</tbody></table>
+<p>一线城市中,北京单店覆盖人口数最多,便利店密度最低</p>
+<p>二线城市中，重庆、昆明、南宁、青岛等地的单店覆盖人口数远高于同等经济水平城市，发展潜力大</p>
+<table>
+<thead>
+<tr>
+<th>城市名</th>
+<th>城市等级</th>
+<th>便利店数量</th>
+<th>单店覆盖人口数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>广州</td>
+<td>一线城市</td>
+<td>5,317</td>
+<td>2,803</td>
+</tr>
+<tr>
+<td>深圳</td>
+<td>一线城市</td>
+<td>7,524</td>
+<td>1,731</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>一线城市</td>
+<td>6,430</td>
+<td>3,769</td>
+</tr>
+<tr>
+<td>北京</td>
+<td>一线城市</td>
+<td>2,250</td>
+<td>8,889</td>
+</tr>
+<tr>
+<td>东莞</td>
+<td>二线城市</td>
+<td>6,843</td>
+<td>1,242</td>
+</tr>
+<tr>
+<td>长沙</td>
+<td>二线城市</td>
+<td>5,000</td>
+<td>1,409</td>
+</tr>
+<tr>
+<td>太原</td>
+<td>二线城市</td>
+<td>2,650</td>
+<td>1,586</td>
+</tr>
+<tr>
+<td>中山</td>
+<td>二线城市</td>
+<td>1,650</td>
+<td>1,976</td>
+</tr>
+<tr>
+<td>惠州</td>
+<td>二线城市</td>
+<td>2,000</td>
+<td>2,378</td>
+</tr>
+<tr>
+<td>成都</td>
+<td>二线城市</td>
+<td>5,000</td>
+<td>3,266</td>
+</tr>
+<tr>
+<td>杭州</td>
+<td>二线城市</td>
+<td>2,453</td>
+<td>3,547</td>
+</tr>
+<tr>
+<td>天津</td>
+<td>二线城市</td>
+<td>2,625</td>
+<td>5,941</td>
+</tr>
+<tr>
+<td>西安</td>
+<td>二线城市</td>
+<td>1,520</td>
+<td>6,581</td>
+</tr>
+<tr>
+<td>青岛</td>
+<td>二线城市</td>
+<td>1,150</td>
+<td>7,578</td>
+</tr>
+<tr>
+<td>南宁</td>
+<td>二线城市</td>
+<td>800</td>
+<td>8,327</td>
+</tr>
+<tr>
+<td>昆明</td>
+<td>二线城市</td>
+<td>600</td>
+<td>10,720</td>
+</tr>
+<tr>
+<td>重庆</td>
+<td>二线城市</td>
+<td>1,845</td>
+<td>16,812</td>
+</tr>
+<tr>
+<td>乌鲁木齐</td>
+<td>三线城市</td>
+<td>1,000</td>
+<td>3,110</td>
+</tr>
+<tr>
+<td>呼和浩特</td>
+<td>三线城市</td>
+<td>656</td>
+<td>4,370</td>
+</tr>
+<tr>
+<td>银川</td>
+<td>三线城市</td>
+<td>370</td>
+<td>5,387</td>
+</tr>
+<tr>
+<td>莆田</td>
+<td>三线城市</td>
+<td>500</td>
+<td>5,700</td>
+</tr>
+<tr>
+<td>宜昌</td>
+<td>三线城市</td>
+<td>219</td>
+<td>18,790</td>
+</tr>
+<tr>
+<td>西宁</td>
+<td>四线城市</td>
+<td>220</td>
+<td>10,040</td>
+</tr>
+<tr>
+<td>临汾</td>
+<td>四线城市</td>
+<td>266</td>
+<td>16,918</td>
 </tr>
 </tbody></table>
         
           <p class="article-more-link">
-            <a href="/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E5%BC%80%E5%A7%8B/Elasticsearch-%E5%AE%89%E8%A3%85/#more">Read More</a>
+            <a href="/2020/10/13/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/%E4%BE%BF%E5%88%A9%E5%BA%97/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/09/30/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E5%BC%80%E5%A7%8B/Elasticsearch-%E5%AE%89%E8%A3%85/" data-id="cklhdw8sg0003c4fefu6n5lj6" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2020/10/13/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/%E4%BE%BF%E5%88%A9%E5%BA%97/" data-id="cklf3st87000tprfe9s3tcskq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-方法论/快速阅读" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/10/12/%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" class="article-date">
+  <time datetime="2020-10-11T17:33:24.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/12/%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/">快速阅读</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>读书是投入成本最低,收入最高的行为</p>
+<ul>
+<li>带着问题读书</li>
+<li>读书前保持愉悦心态</li>
+<li>影像阅读</li>
+<li>梳理内容</li>
+<li>整理出的关键深入了解,重组,添加自己的理解</li>
+</ul>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/10/12/%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/">https://fangzongzhou.github.io/2020/10/12/方法论/快速阅读/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/10/12/%E6%96%B9%E6%B3%95%E8%AE%BA/%E5%BF%AB%E9%80%9F%E9%98%85%E8%AF%BB/" data-id="cklf3st84000oprfe20mw2l72" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Logstash/通过Logstash解析Logs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E9%80%9A%E8%BF%87Logstash%E8%A7%A3%E6%9E%90Logs/" class="article-date">
+  <time datetime="2020-09-27T16:55:01.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E9%80%9A%E8%BF%87Logstash%E8%A7%A3%E6%9E%90Logs/">通过Logstash解析Logs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/logstash/current/advanced-pipeline.html#configuring-geoip-plugin">原文链接</a></p>
+<p>上一节中,通过创建一个基本的Logstash pipline测试你的Logstash安装成功.在真实场景中,一个Logstash往往更复杂些,典型的Logstash pipline往往有一个或多个input,filter,和output插件.&nbsp;&nbsp;</p>
+<p>在本节中,你将创建一个使用Filebeat来采集Apache web logs作为输入,从这些日志中创建具体的,重命名过的属性,并将这些解析过的数据写入到Elasticsearch集群中.你将在一个配置文件中定义这个pipline,而不是在一个命令行中.</p>
+<p>本例中,你可以从这里<a target="_blank" rel="noopener" href="https://download.elastic.co/demos/logstash/gettingstarted/logstash-tutorial.log.gz">下载数据集</a>,解压这个文件.</p>
+<h2 id="配置Filebeat发送日志到Logstash"><a href="#配置Filebeat发送日志到Logstash" class="headerlink" title="配置Filebeat发送日志到Logstash"></a>配置Filebeat发送日志到Logstash</h2><p>在你创建Logstash pipline前,你需要配置Filebeat发送日志到Logstash.  </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/elastic/beats/tree/master/filebeat">Filebeat</a>客户端是一个轻量的开源工具,它可以完成从你的服务器文件收集日志并将它们转发到你的Logstash实例的过程.专为可靠性和低延迟设计,Filebeat只在主机上占用少量资源,<a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/logstash/7.9/plugins-inputs-beats.html">Beats input</a> 插件将Logstash 实例资源需求最小化.  </p>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E9%80%9A%E8%BF%87Logstash%E8%A7%A3%E6%9E%90Logs/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E9%80%9A%E8%BF%87Logstash%E8%A7%A3%E6%9E%90Logs/" data-id="cklf3st8q002hprfebividgqb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/并发编程/资源限制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/" class="article-date">
+  <time datetime="2020-09-27T16:46:03.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/">资源限制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>资源限制指并发编程时,程序受制于计算机硬件资源或软件资源.</p>
+<ul>
+<li>网络速度</li>
+<li>硬盘读写</li>
+<li>数据库连接</li>
+<li>socket连接</li>
+</ul>
+<h2 id="资源限制引发的问题"><a href="#资源限制引发的问题" class="headerlink" title="资源限制引发的问题"></a>资源限制引发的问题</h2><p>并发能提升速度的根本原因是改串行执行为并行执行,如果受制于资源,程序无法串行执行,并行执行只能徒增上下文切换及调度开销.</p>
+<h2 id="如何解决资源限制"><a href="#如何解决资源限制" class="headerlink" title="如何解决资源限制"></a>如何解决资源限制</h2><ul>
+<li>对于硬件资源限制,可以考虑使用集群并行执行程序</li>
+<li>对于软件资源限制,可以考虑使用资源池将资源复用</li>
+</ul>
+<p>以为受制于资源限制,进行并发编程时要考虑根据资源限制调整并发度.尽量避免线程数远远超出资源限制而产生的线程阻塞.</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/">https://fangzongzhou.github.io/2020/09/28/计算机/技术栈/Java/并发编程/资源限制/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6/" data-id="cklf3st9i004wprfeg4kb94sv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/并发编程/死锁" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%AD%BB%E9%94%81/" class="article-date">
+  <time datetime="2020-09-27T16:37:45.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%AD%BB%E9%94%81/">死锁</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>避免死锁的常见方法</p>
+<ul>
+<li>避免一个线程同时获取多个锁</li>
+<li>避免一个线程内同时占用多个资源,尽量保证一个线程仅占用一个资源</li>
+<li>尝试使用定时锁lock.tryLock(timeout)来替代内部锁机制</li>
+<li>对于数据库锁,加锁和解锁必须在一个数据库连接内,否则会出现解锁失败的情况</li>
+</ul>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%AD%BB%E9%94%81/">https://fangzongzhou.github.io/2020/09/28/计算机/技术栈/Java/并发编程/死锁/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E6%AD%BB%E9%94%81/" data-id="cklf3st9f004uprfe94ml9u1a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Java/并发编程/上下文切换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/" class="article-date">
+  <time datetime="2020-09-25T00:05:07.000Z" itemprop="datePublished">2020-09-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/">上下文切换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>单核处理器也支持多线程代码,CPU通过给每个线程分配CPU时间片来实现.</p>
+<p>CPU通过时间片分配算法来循环执行业务,任务执行一个时间片后会切换到下一个任务.任务从保存到加载的过程就是一次上下文切换.</p>
+<p>上下文切换会影响多线程的执行速度.</p>
+<p>并发操作不一定快,创建线程及上下文切换有固有的开销.</p>
+<h2 id="测试切换次数及时长"><a href="#测试切换次数及时长" class="headerlink" title="测试切换次数及时长"></a>测试切换次数及时长</h2><p>使用 <a target="_blank" rel="noopener" href="http://www.bitmover.com/lmbench/">LMbench3</a> 测量上下文切换时长</p>
+<p>使用<code>vmstat</code>测量上下文切换次数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vmstat 1</span><br><span class="line"></span><br><span class="line">procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----</span><br><span class="line"> r  b   swpd   free   buff  cache   si   so    bi    bo   <span class="keyword">in</span>   cs us sy id wa st</span><br><span class="line"> 6  0      0 24836616 1829476 41996652    0    0    48   153    0    0 17  8 75  0  0</span><br><span class="line">19  0      0 24830244 1829476 41997324    0    0     0     0 250198 624179 12  8 80  0  0</span><br></pre></td></tr></table></figure>
+
+<p>CS(Content Switch)表示上下文切换的次数</p>
+<h2 id="如何减少上下文切换次数"><a href="#如何减少上下文切换次数" class="headerlink" title="如何减少上下文切换次数"></a>如何减少上下文切换次数</h2><ul>
+<li>无锁并发编程.多线程竞争锁时,会引起上下文切换,所以处理数据时,可以通过避免使用锁减少上下文切换(例:数据Hash取模分段,不同线程处理不同的数据).</li>
+<li>CAS算法.(例:Atomic包使用了CAS算法来更新数据,不需要加锁)</li>
+<li>使用最少线程.避免创建不需要的线程,线程数创建过多会导致大量线程处于等待状态.</li>
+<li>协程:在单线程里实现多任务调度,并在单线程里维持多个任务间的切换</li>
+</ul>
+<h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><p>用jstack命令dump线程信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jstack 203 &gt; /home/w/www/dump</span><br></pre></td></tr></table></figure>
+
+<p>统计线程状态分布</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&quot;java.lang.Thread.State&quot;</span> dump1 | sort | uniq -c</span><br><span class="line"></span><br><span class="line">    201    java.lang.Thread.State: RUNNABLE</span><br><span class="line">      2    java.lang.Thread.State: TIMED_WAITING (on object monitor)</span><br><span class="line">     79    java.lang.Thread.State: TIMED_WAITING (parking)</span><br><span class="line">     20    java.lang.Thread.State: TIMED_WAITING (sleeping)</span><br><span class="line">      3    java.lang.Thread.State: WAITING (on object monitor)</span><br><span class="line">    592    java.lang.Thread.State: WAITING (parking)</span><br></pre></td></tr></table></figure>
+
+<p>查看 WAITING (on object monitor)状态的线程的具体情况,例如线程闲置,需要调小线程池容量</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/">https://fangzongzhou.github.io/2020/09/25/计算机/技术栈/Java/并发编程/上下文切换/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%88%87%E6%8D%A2/" data-id="cklf3st9d004qprfe1jje9klb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/分布式系统/监控系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2020-09-24T08:45:13.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/">监控系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="监控的定义"><a href="#监控的定义" class="headerlink" title="监控的定义"></a>监控的定义</h3><p>通过技术手段发现服务异常，持续优化业务可用性与用户体验。这句话的关键词是 发现、持续优化、可用性，体验。</p>
+<p>监控告警是对某一个具化的对象做采集、存储、分析、展示、告警、处理的过程。</p>
+<p>一个业务线、一台物理服务器、一个接口都是监控对象,监控对象也是有关联关系的,一个机器挂掉了你不能指望着这台机器上的接口还是健康的吧</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F/" data-id="cklf3st8c0019prfehsv5hrdi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Logstash/存储第一个事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E5%AD%98%E5%82%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6/" class="article-date">
+  <time datetime="2020-09-24T08:42:05.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E5%AD%98%E5%82%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6/">存储第一个事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/logstash/current/first-event.html">原文链接</a><br>首先,我们通过运行一个最基础的<code>Logstash pipline</code>来测试你的Logstash.</p>
+<p>一个 <code>Logstash pipline</code> 有两个必要元素,<code>input</code> 和 <code>output</code>,和一个可选元素<code>filter</code>,input插件从来源消费数据,filter插件按照你的声明,定制修改数据,output插件将数据写入到目标中.</p>
+<p><img src="https://www.elastic.co/guide/en/logstash/current/static/images/basic_logstash_pipeline.png" alt="input-filter-output"></p>
+<p>最简单的<code>Logstash pipline</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> logstash-7.9.1</span><br><span class="line">bin/logstash -e <span class="string">&#x27;input &#123; stdin &#123; &#125; &#125; output &#123; stdout &#123;&#125; &#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E5%AD%98%E5%82%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/%E5%AD%98%E5%82%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BA%8B%E4%BB%B6/" data-id="cklf3st8q002gprfe9vdhdssf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Logstash/Logstash-install" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/Logstash-install/" class="article-date">
+  <time datetime="2020-09-24T08:21:06.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/Logstash-install/">Logstash-install</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/en/logstash/current/installing-logstash.html">原文链接</a></p>
+<h2 id="下载二进制文件安装"><a href="#下载二进制文件安装" class="headerlink" title="下载二进制文件安装"></a>下载二进制文件安装</h2><p><a target="_blank" rel="noopener" href="https://www.elastic.co/downloads/logstash">下载地址</a></p>
+<h2 id="通过包仓库安装"><a href="#通过包仓库安装" class="headerlink" title="通过包仓库安装"></a>通过包仓库安装</h2><h3 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -</span><br><span class="line"></span><br><span class="line">sudo apt-get install apt-transport-https</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb https://artifacts.elastic.co/packages/7.x/apt stable main&quot;</span> | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list</span><br><span class="line"></span><br><span class="line">sudo apt-get update &amp;&amp; sudo apt-get install logstash</span><br></pre></td></tr></table></figure>
+
+<h3 id="YUM"><a href="#YUM" class="headerlink" title="YUM"></a>YUM</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/Logstash-install/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2020/09/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/Logstash-install/" data-id="cklf3st8q002fprfe25ql3y3q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Elasticsearch/信息输出-查询&amp;分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E4%BF%A1%E6%81%AF%E8%BE%93%E5%87%BA-%E6%9F%A5%E8%AF%A2&%E5%88%86%E6%9E%90/" class="article-date">
+  <time datetime="2019-07-24T15:53:44.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E4%BF%A1%E6%81%AF%E8%BE%93%E5%87%BA-%E6%9F%A5%E8%AF%A2&%E5%88%86%E6%9E%90/">信息输出-查询&amp;分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虽然你可以使用Elasticsearch作为文档仓库来进行获取文档以及元数据,但它真正的优势在于能轻松使用基于Apache Luncene搜索引擎库构建的搜索能力.</p>
+<p>Elasticsearch提供一套简单,语义清晰的REST API来管理集群,索引 以及数据查询.为了测试,你可以直接通过命令行或Kibana的开发者控制台提交请求. 根据你的应用,你可以选用如下语言提供的Elasticsearch client ,Java, JavaScript, Go, .NET, PHP, Perl, Python.</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>Elasticsearch REST API 支持结构化查询, 全文本查询,以及结合两者的复杂查询. 结构化查询和在SQL中构建的类型查询类似. 例如,你可以在你的 <code>employee</code> 索引中查询 <code>gender</code>和<code>age</code>两个字段,然后通过 <code>hire_date</code> 对匹配结果进行排序. 全文本查询会找出所有匹配查询字符串的文档,并通过相关性(有多匹配你的查询条件)对它们进行排序.</p>
+<p>除了单条件搜索,还可以执行短语搜索,相似性搜索,前缀搜索.然后自动获得推荐数据.</p>
+<p>是否需要搜索地理位置和其他数字数据? Elasticsearch使用了优化的数据结构对非文本数据进行索引,以此来支持高性能的地理位置及数字查询.</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E4%BF%A1%E6%81%AF%E8%BE%93%E5%87%BA-%E6%9F%A5%E8%AF%A2&%E5%88%86%E6%9E%90/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2019/07/24/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/%E4%BF%A1%E6%81%AF%E8%BE%93%E5%87%BA-%E6%9F%A5%E8%AF%A2&%E5%88%86%E6%9E%90/" data-id="cklf3st8p002bprfeg2i5ha7y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
@@ -627,7 +791,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -648,7 +812,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -658,7 +822,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Elasticsearch/" style="font-size: 18px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 12px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 17px;">JVM</a> <a href="/tags/Java/" style="font-size: 11px;">Java</a> <a href="/tags/Linux/" style="font-size: 11px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 12px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 11px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 15px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 16px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 19px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 16px;">随笔</a>
+      <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.18px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.73px;">随笔</a>
     </div>
   </div>
 
@@ -680,23 +844,23 @@
       <ul>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A1%8C%E6%9C%89%E4%B8%8D%E5%BE%97%E8%80%85%E7%9A%86%E5%8F%8D%E6%B1%82%E8%AF%B8%E5%B7%B1%EF%BC%8C%E5%85%B6%E8%BA%AB%E6%AD%A3%E8%80%8C%E5%A4%A9%E4%B8%8B%E5%BD%92%E4%B9%8B/">行有不得者皆反求诸己，其身正而天下归之</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%AD%98%E4%B9%8E%E4%BA%BA%E8%80%85%EF%BC%8C%E8%8E%AB%E8%89%AF%E4%BA%8E%E7%9C%B8%E5%AD%90/">存乎人者，莫良于眸子</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%A4%A9%E5%AD%90%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E5%9B%9B%E6%B5%B7%EF%BC%9B%E8%AF%B8%E4%BE%AF%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E7%A4%BE%E7%A8%B7/">天子不仁，不保四海；诸侯不仁，不保社稷</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%89%E5%9C%B0%E4%BB%A5%E6%88%98%EF%BC%8C%E6%9D%80%E4%BA%BA%E7%9B%88%E9%87%8E/">争地以战，杀人盈野</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A7%84%E7%9F%A9%EF%BC%8C%E6%96%B9%E5%91%98%E4%B9%8B%E8%87%B3%E4%B9%9F/">规矩，方员之至也</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%BA%E6%94%BF%E4%BA%8E%E5%A4%A9%E4%B8%8B/">为政于天下</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%8D%E4%BB%A5%E8%A7%84%E7%9F%A9%E4%B8%8D%E8%83%BD%E6%88%90%E6%96%B9%E5%9C%86/">不以规矩不能成方圆</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%AF%9A%E8%80%85%EF%BC%8C%E5%A4%A9%E4%B9%8B%E9%81%93%E4%B9%9F/">诚者，天之道也</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%BA%E4%B9%8B%E5%BF%8C-%E5%9C%A8%E5%A5%BD%E4%B8%BA%E4%BA%BA%E5%B8%88/">人之忌,在好为人师</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%B2%E5%85%B6%E4%BA%B2%EF%BC%8C%E9%95%BF%E5%85%B6%E9%95%BF/">亲其亲，长其长</a>
           </li>
         
       </ul>

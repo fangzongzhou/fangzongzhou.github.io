@@ -66,12 +66,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-计算机/Linux/正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术文档/MYSQL/13-3-2-一些不能回滚的语句" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="article-date">
-  <time datetime="2018-08-07T17:12:38.000Z" itemprop="datePublished">2018-08-08</time>
+    <a href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-2-%E4%B8%80%E4%BA%9B%E4%B8%8D%E8%83%BD%E5%9B%9E%E6%BB%9A%E7%9A%84%E8%AF%AD%E5%8F%A5/" class="article-date">
+  <time datetime="2018-08-23T15:15:53.000Z" itemprop="datePublished">2018-08-23</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -80,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+      <a class="article-title" href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-2-%E4%B8%80%E4%BA%9B%E4%B8%8D%E8%83%BD%E5%9B%9E%E6%BB%9A%E7%9A%84%E8%AF%AD%E5%8F%A5/">13.3.2_一些不能回滚的语句</a>
     </h1>
   
 
@@ -88,18 +92,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h3><p>通常被用来检索、替换符合某个模式(规则)的文本aszooxiao  12qwyqrezwt</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more">Read More</a>
-          </p>
-        
+        <p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/cannot-roll-back.html">原文地址</a></p>
+<p>一些语句是不能被回滚的，通常，包括了数据定义语句（DDL），创建或删除数据库，创建删除或修改表或存储过程。</p>
+<p>应该设计不包含上述语句的事务，如果一个事务中发生错误前使用过无法回滚的句法，那么这个事务的整个生效结果无法通过 <code>ROLLBACK</code>进行回滚。</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-2-%E4%B8%80%E4%BA%9B%E4%B8%8D%E8%83%BD%E5%9B%9E%E6%BB%9A%E7%9A%84%E8%AF%AD%E5%8F%A5/">https://fangzongzhou.github.io/2018/08/23/计算机/技术文档/MYSQL/13-3-2-一些不能回滚的语句/</a> </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/08/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" data-id="cklf3st8b0014prfe7rmybi1q" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-2-%E4%B8%80%E4%BA%9B%E4%B8%8D%E8%83%BD%E5%9B%9E%E6%BB%9A%E7%9A%84%E8%AF%AD%E5%8F%A5/" data-id="cklf3st8r002jprfegcg72742" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
     </footer>
   </div>
   
@@ -107,14 +112,14 @@
 
 
   
-    <article id="post-计算机/技术栈/Java/并发编程/并发编程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术文档/MYSQL/13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time datetime="2018-08-01T13:02:56.000Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2018-08-23T13:29:57.000Z" itemprop="datePublished">2018-08-23</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
   </div>
 
   </div>
@@ -125,7 +130,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
+      <a class="article-title" href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/">13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法</a>
     </h1>
   
 
@@ -133,64 +138,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>线程间会共享进程内存，这使得资源共享变得容易，但同时会因此引入一些多线程特有的问题</p>
-<p>因为多线程的使用，使得串行的逻辑中产生了非串行因素。要使得多线程程序行为可以预测，必须对共享数据的访问操作进行协同，以此防止线程间的干扰</p>
-<p>并发编程的两个关键问题:</p>
+        <h2 id="13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法"><a href="#13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法" class="headerlink" title="13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法"></a>13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法</h2><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">原文地址</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span></span><br><span class="line">    [transaction_characteristic [, transaction_characteristic] ...]</span><br><span class="line"></span><br><span class="line">transaction_characteristic:</span><br><span class="line">    <span class="keyword">WITH</span> <span class="keyword">CONSISTENT</span> <span class="keyword">SNAPSHOT</span></span><br><span class="line">  | <span class="keyword">READ</span> WRITE</span><br><span class="line">  | <span class="keyword">READ</span> <span class="keyword">ONLY</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span> [<span class="keyword">WORK</span>]</span><br><span class="line"><span class="keyword">COMMIT</span> [<span class="keyword">WORK</span>] [<span class="keyword">AND</span> [<span class="keyword">NO</span>] <span class="keyword">CHAIN</span>] [[<span class="keyword">NO</span>] <span class="keyword">RELEASE</span>]</span><br><span class="line"><span class="keyword">ROLLBACK</span> [<span class="keyword">WORK</span>] [<span class="keyword">AND</span> [<span class="keyword">NO</span>] <span class="keyword">CHAIN</span>] [[<span class="keyword">NO</span>] <span class="keyword">RELEASE</span>]</span><br><span class="line"><span class="keyword">SET</span> autocommit = &#123;<span class="number">0</span> | <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>控制事务的声明</p>
 <ul>
-<li>线程间的通信,通信指的是线程间交换信息,主要通过共享内存和消息传递</li>
-<li>线程间如何同步</li>
+<li><code>START TRANSACTION</code> / <code>BEGIN</code> 开始一个新的事务</li>
+<li><code>COMMIT</code> 提交当前事务，使修改持久化</li>
+<li><code>ROLLBACK</code> 回滚当前事务，取消当前事务内做的修改</li>
+<li><code>SET autocommit</code>为当前会话开启或关闭autocommit模式</li>
 </ul>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/01/计算机/技术栈/Java/并发编程/并发编程/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" data-id="cklf3st9f004sprfe6kul7a5c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/技术栈" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="article-date">
-  <time datetime="2018-07-31T16:52:12.000Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/">能力栈</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为现在从事的行业和IT相关，这里的人都了解的一个名词叫做”技术栈”，一方面担心自己是否会一直从事相关行业，另一方面也想着从更好的角度看待类似的选择问题，所以用了“能力”这个词来替代”技术”。</p>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>选择掌握一种能力是需要深思熟虑的，很多时候我们努力就是为了获取更多选择的机会，所以在你有机会选择一项技能去学习时，请好好把握机会。</p>
-<p>能力是没有尽头的，按需索取很重要，当然最好能有一定的前瞻性。所有的能力都是用来解决问题的，所以我这里的前瞻性既不是对流行指数的预判，也不是单纯的“价值”，而是自己对未来的规划。</p>
+<p>MySQL默认开启autocommit模式，这意味着一旦你执行一个更新（修改）表的声明，MySQL会持久化地在disk上存储这些更新，这些修改不能被回滚。</p>
+<p>想要使一系列声明操作失效，可以使用<code>START TRANSACTION</code>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span>;</span><br><span class="line"><span class="keyword">SELECT</span> @A:=<span class="keyword">SUM</span>(salary) <span class="keyword">FROM</span> table1 <span class="keyword">WHERE</span> <span class="keyword">type</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> table2 <span class="keyword">SET</span> summary=@A <span class="keyword">WHERE</span> <span class="keyword">type</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/#more">Read More</a>
+            <a href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/" data-id="cklf3st8e001eprfea8zd1dby" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/" data-id="cklf3st8r002iprfe16v6a6q9" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
     </footer>
   </div>
   
@@ -198,10 +170,10 @@
 
 
   
-    <article id="post-计算机/操作系统/线程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术文档/MYSQL/事务" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/" class="article-date">
-  <time datetime="2018-07-31T16:39:38.000Z" itemprop="datePublished">2018-08-01</time>
+    <a href="/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/" class="article-date">
+  <time datetime="2018-08-21T14:34:47.000Z" itemprop="datePublished">2018-08-21</time>
 </a>
     
   </div>
@@ -212,7 +184,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/">线程</a>
+      <a class="article-title" href="/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/">事务</a>
     </h1>
   
 
@@ -220,18 +192,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>是操作系统能够进行运算调度的最小单位。</p>
-<p>线程是独立调度和分派的基本单位。</p>
-<p>线程可以操作系统内核调度的内核线程.</p>
-<p>同一进程中的多条线程将共享该进程中的全部系统资源</p>
-<p>线程是cpu调度的最小单位，多线程编程屏蔽了cpu核心数</p>
-<p>多线程是为了同步完成多项任务，不是为了提高运行效率，而是为了提高资源使用效率来提高系统的效率。</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/01/计算机/操作系统/线程/</a> </p>
+        <p>show VARIABLES like ‘%general_log%’</p>
+<p>set global general_log=”off”;</p>
+<p>mybatis实现事务</p>
+<p>执行失败</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-08-21T15:07:24.809453Z	   70 Query	SET autocommit=0</span><br><span class="line">2018-08-21T15:07:24.814319Z	   70 Query	select * from user_account</span><br><span class="line">2018-08-21T15:07:24.821225Z	   70 Query	select * from user_account</span><br><span class="line">2018-08-21T15:07:24.823496Z	   70 Query	select @@session.transaction_read_only</span><br><span class="line">2018-08-21T15:07:24.823972Z	   70 Query	INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (<span class="string">&#x27;fzz&#x27;</span>,<span class="string">&#x27;10&#x27;</span>,<span class="string">&#x27;1001&#x27;</span>)</span><br><span class="line">2018-08-21T15:07:24.825636Z	   70 Query	rollback</span><br><span class="line">2018-08-21T15:07:24.825907Z	   70 Query	SET autocommit=1</span><br><span class="line">2018-08-21T15:07:24.826190Z	   70 Query	select @@session.transaction_read_only</span><br></pre></td></tr></table></figure>
+
+<p>执行成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-08-21T15:30:17.288694Z	   80 Query	SET autocommit=0</span><br><span class="line">2018-08-21T15:30:17.289481Z	   80 Query	select * from user_account</span><br><span class="line">2018-08-21T15:30:17.291729Z	   80 Query	select * from user_account</span><br><span class="line">2018-08-21T15:30:17.293055Z	   80 Query	select @@session.transaction_read_only</span><br><span class="line">2018-08-21T15:30:17.293494Z	   80 Query	INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (<span class="string">&#x27;fzz&#x27;</span>,<span class="string">&#x27;6&#x27;</span>,<span class="string">&#x27;1001&#x27;</span>)</span><br><span class="line">2018-08-21T15:30:17.296491Z	   80 Query	commit</span><br><span class="line">2018-08-21T15:30:17.297089Z	   80 Query	SET autocommit=1</span><br><span class="line">2018-08-21T15:30:17.297414Z	   80 Query	select @@session.transaction_read_only</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A事务insert</span><br><span class="line"></span><br><span class="line">B事务insert</span><br><span class="line"></span><br><span class="line">A事务update</span><br><span class="line"></span><br><span class="line">B事务update产生死锁</span><br></pre></td></tr></table></figure>
+
+<p>事务隔离级别会影响死锁的发生的可能性么？</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/">https://fangzongzhou.github.io/2018/08/21/计算机/技术文档/MYSQL/事务/</a> </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/" data-id="cklf3st8f001iprfe1cnfavm7" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/" data-id="cklf3st8s002nprfe54nj487a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,105 +219,14 @@
 
 
   
-    <article id="post-计算机/技术栈/git" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术文档/MYSQL/MYSQL-13-3-事务和锁声明" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/git/" class="article-date">
-  <time datetime="2018-07-31T16:10:40.000Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/git/">git</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="工作区，暂存区，本地仓库"><a href="#工作区，暂存区，本地仓库" class="headerlink" title="工作区，暂存区，本地仓库"></a>工作区，暂存区，本地仓库</h2><p><strong>基本的 Git 工作流程如下：</strong></p>
-<ol>
-<li>在工作目录中修改某些文件。</li>
-<li>对修改后的文件进行快照，然后保存到暂存区域。</li>
-<li>提交更新，将保存在暂存区域的文件快照永久转储到 Git 目录中。</li>
-</ol>
-<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><ul>
-<li>初始化一个新的代码仓库，做一些适当配置；- 开始或停止跟踪某些文件；</li>
-<li>暂存或提交某些更新。</li>
-<li>让 Git 忽略某些文件，或是名称符合特定模式的文件；</li>
-<li>如何既快且容易地撤消犯下的小错误；</li>
-<li>如何浏览项目的更新历史，查看某两次更新之间的差异；</li>
-<li>如何从远程仓库拉数据下来或者推数据上去。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/git/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/git/" data-id="cklf3st8e001dprfealwg9pv0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/Linux/权限管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" class="article-date">
-  <time datetime="2018-07-31T04:02:02.000Z" itemprop="datePublished">2018-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">权限管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/">https://fangzongzhou.github.io/2018/07/31/计算机/Linux/权限管理/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/" data-id="cklf3st8a0013prfe2lga0qtp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-产品设计/用户管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/31/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="article-date">
-  <time datetime="2018-07-31T04:01:32.000Z" itemprop="datePublished">2018-07-31</time>
+    <a href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/" class="article-date">
+  <time datetime="2018-08-20T14:27:31.000Z" itemprop="datePublished">2018-08-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a>
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
   </div>
 
   </div>
@@ -350,7 +237,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">用户管理</a>
+      <a class="article-title" href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/">MYSQL_13.3_事务和锁声明</a>
     </h1>
   
 
@@ -358,14 +245,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/31/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">https://fangzongzhou.github.io/2018/07/31/产品设计/用户管理/</a> </p>
+        <h1 id="13-3-事务和锁声明"><a href="#13-3-事务和锁声明" class="headerlink" title="13.3_事务和锁声明"></a>13.3_事务和锁声明</h1><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/sql-syntax-transactions.html">原文地址</a></p>
+<p>MYSQL通过像<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">SET autocommit</a></code>，<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">START TRANSACTION</a></code>，<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">COMMIT</a></code>和<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">ROLLBACK</a></code>支持本地事务(通过指定的客户端会话)，<code><a href="">XA transaction</a></code>也能很好地支持MySQL参与到分布式事务中</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/">https://fangzongzhou.github.io/2018/08/20/计算机/技术文档/MYSQL/MYSQL-13-3-事务和锁声明/</a> </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/07/31/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" data-id="cklf3st7z000bprfehsjedph9" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/" data-id="cklf3st8s002mprfef6kvbf78" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
     </footer>
   </div>
   
@@ -373,14 +264,14 @@
 
 
   
-    <article id="post-计算机/Linux/系统监控-内存" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/MYSQL/事务" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-%E5%86%85%E5%AD%98/" class="article-date">
-  <time datetime="2018-07-31T04:01:14.000Z" itemprop="datePublished">2018-07-31</time>
+    <a href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/MYSQL/%E4%BA%8B%E5%8A%A1/" class="article-date">
+  <time datetime="2018-08-20T13:10:38.000Z" itemprop="datePublished">2018-08-20</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
   </div>
 
   </div>
@@ -391,7 +282,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-%E5%86%85%E5%AD%98/">系统监控-内存</a>
+      <a class="article-title" href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/MYSQL/%E4%BA%8B%E5%8A%A1/">事务</a>
     </h1>
   
 
@@ -399,23 +290,148 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="进程与内存"><a href="#进程与内存" class="headerlink" title="进程与内存"></a>进程与内存</h2><h3 id="内存空间的5种数据区"><a href="#内存空间的5种数据区" class="headerlink" title="内存空间的5种数据区"></a>内存空间的5种数据区</h3><p><strong><em>代码段：</em></strong> 存放可执行文件的操作指令，是可执行程序在内存中的镜像，代码段需要组织运行时的非法修改，因此是只读的</p>
-<p><strong><em>数据段：</em></strong> 用来存放可执行文件中已经初始化的全局变量，这里的全局变量包含静态分配的变量</p>
-<p><strong><em>BSS段：</em></strong> 包含了程序中未初始化的全局变量，内存中BSS段全部置零</p>
-<p><strong><em>堆（heap）：</em></strong> 用于存放进程运行中被动态分配的内存段，大小动态调整不固定，由malloc、free等内存管理函数进行动态调整</p>
-<p><strong><em>栈：</em></strong> 用户存放临时创建的局部变量，函数被调用时，参数会被加入到发起调用的进程中，函数调用结束后，函数的返回值也会存回栈中。可以把栈看成一个寄存、交换临时数据的内存区。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-%E5%86%85%E5%AD%98/#more">Read More</a>
-          </p>
-        
+        <p>mybatis开启事务</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Fetched SqlSession [org.apache.ibatis.session.defaults.<span class="symbol">DefaultSqlSession@</span><span class="number">78f</span>3fadc] <span class="keyword">from</span> current transaction</span><br><span class="line">==&gt;  Preparing: INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (?,?,?)</span><br><span class="line">==&gt; Parameters: fzz(String), <span class="number">4</span>(String), <span class="number">1001</span>(String)</span><br><span class="line">&lt;==    Updates: <span class="number">1</span></span><br><span class="line">Releasing transactional SqlSession [org.apache.ibatis.session.defaults.<span class="symbol">DefaultSqlSession@</span><span class="number">78f</span>3fadc]</span><br></pre></td></tr></table></figure>
+
+<p>mybatis没有开启事务</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Creating a new SqlSession</span><br><span class="line">SqlSession [org.apache.ibatis.session.defaults.<span class="symbol">DefaultSqlSession@</span><span class="number">7562231</span>a] was <span class="keyword">not</span> registered <span class="keyword">for</span> synchronization because synchronization <span class="keyword">is</span> <span class="keyword">not</span> active</span><br><span class="line">JDBC Connection [<span class="symbol">HikariProxyConnection@</span><span class="number">1777293548</span> wrapping com.mysql.jdbc.<span class="symbol">JDBC4Connection@</span><span class="number">65</span>d83289] will <span class="keyword">not</span> be managed by Spring</span><br><span class="line">==&gt;  Preparing: INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (?,?,?)</span><br><span class="line">==&gt; Parameters: fzz(String), <span class="number">4</span>(String), <span class="number">1001</span>(String)</span><br><span class="line">&lt;==    Updates: <span class="number">1</span></span><br><span class="line">Closing non transactional SqlSession [org.apache.ibatis.session.defaults.<span class="symbol">DefaultSqlSession@</span><span class="number">7562231</span>a]</span><br></pre></td></tr></table></figure>
+
+<p>By default, MySQL runs with autocommit mode enabled. This means that as soon as you execute a statement that updates (modifies) a table, MySQL stores the update on disk to make it permanent. The change cannot be rolled back.</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/MYSQL/%E4%BA%8B%E5%8A%A1/">https://fangzongzhou.github.io/2018/08/20/计算机/技术栈/MYSQL/事务/</a> </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-%E5%86%85%E5%AD%98/" data-id="cklf3st8b0017prfe42yf97kj" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/MYSQL/%E4%BA%8B%E5%8A%A1/" data-id="cklf3st8u002vprfe1mek27qg" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数学/微分方程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="article-date">
+  <time datetime="2018-08-11T09:43:35.000Z" itemprop="datePublished">2018-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a>►<a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">微分方程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>微分方程是联系自变量、未知函数及其导数的关系式</p>
+<h3 id="常微分方程"><a href="#常微分方程" class="headerlink" title="常微分方程"></a>常微分方程</h3><p>自变量的个数只有一个的微分方程</p>
+<h3 id="偏微分方程"><a href="#偏微分方程" class="headerlink" title="偏微分方程"></a>偏微分方程</h3><p>自变量的个数为两个或两个以上的微分方程</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/11/数学/微分方程/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" data-id="cklf3st83000lprfegzmp8rsv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数学/常微分方程/常微分方程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="article-date">
+  <time datetime="2018-08-11T09:38:44.000Z" itemprop="datePublished">2018-08-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a>►<a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a>►<a class="article-category-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/11/数学/常微分方程/常微分方程/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/11/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" data-id="cklf3st8a0011prfe2a0rgse4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Go/GO工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E5%B7%A5%E5%85%B7/" class="article-date">
+  <time datetime="2018-08-10T15:02:43.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E5%B7%A5%E5%85%B7/">GO工具</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E5%B7%A5%E5%85%B7/">https://fangzongzhou.github.io/2018/08/10/计算机/技术栈/Go/GO工具/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E5%B7%A5%E5%85%B7/" data-id="cklf3st8s002oprfe7tg279o8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GO/" rel="tag">GO</a></li></ul>
 
     </footer>
   </div>
@@ -424,10 +440,67 @@
 
 
   
-    <article id="post-计算机/Linux/系统监控-CPU负载" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/技术栈/Go/GO操作命令" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-CPU%E8%B4%9F%E8%BD%BD/" class="article-date">
-  <time datetime="2018-07-31T04:00:42.000Z" itemprop="datePublished">2018-07-31</time>
+    <a href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2018-08-10T14:33:31.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">GO操作命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="构建安装"><a href="#构建安装" class="headerlink" title="构建安装"></a>构建安装</h2><p>构建和安装前都会执行编译、打包等操作，这些操作生成的文件都会先保存在临时目录中</p>
+<p><strong><em>构建：</em></strong><code>go build</code><br>构建库源码文件时，操作结果只会在临时目录中生成，这时构建的意义主要是检查和验证。</p>
+<p>如果构建的是命令源码文件，操作结果文件会被搬运到源码文件所在的目录中。</p>
+<p><code>go build</code>默认不编译目标代码包所依赖的代码包，如果需要进行强制编译可以加入<code>-a</code>标记，</p>
+<p>如果在强制编译的基础上还要安装对应的归档文件，可以加入<code>-i</code>标记</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-x 显示build命令具体执行的操作</span></span><br><span class="line"><span class="deletion">-n 查看build命令会执行的操作而不真正执行</span></span><br><span class="line"><span class="deletion">-v 可以在编译的过程中看到编译的代码包的名称</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>安装：</em></strong><code>go install</code><br>安装会先执行构建，然后进行链接操作，将结果文件搬运到指定目录。</p>
+<p>安装库源码文件，结果文件会被搬运到所在工作区的pkg目录下的某个子目录中。</p>
+<p>安装命令源码文件，结果文件会被搬运到所在工作区的bin目录/环境变量GOBIN指定的目录中。</p>
+<h2 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h2><p><code>go get</code>会从github上下载目标代码包</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-u 下载并安装代码包，无论是否已经存在</span></span><br><span class="line"><span class="deletion">-d 只下载不安装</span></span><br><span class="line"><span class="deletion">-fix 下载代码包后先运行一个当前go版本的修正工具，然后再安装代码包</span></span><br><span class="line"><span class="deletion">-t 同时下载测试需要的代码包</span></span><br><span class="line"><span class="deletion">-insecure 允许通过非安全网络协议（http）下载安装代码包</span></span><br></pre></td></tr></table></figure>
+
+
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">https://fangzongzhou.github.io/2018/08/10/计算机/技术栈/Go/GO操作命令/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/GO%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" data-id="cklf3st8s002pprfe5flrg5um" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GO/" rel="tag">GO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/Go/工作区和GOPATH" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8CGOPATH/" class="article-date">
+  <time datetime="2018-08-10T14:07:12.000Z" itemprop="datePublished">2018-08-10</time>
 </a>
     
   </div>
@@ -438,7 +511,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-CPU%E8%B4%9F%E8%BD%BD/">系统监控-CPU负载</a>
+      <a class="article-title" href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8CGOPATH/">工作区和GOPATH</a>
     </h1>
   
 
@@ -446,58 +519,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="uptime"><a href="#uptime" class="headerlink" title="uptime"></a>uptime</h2><p>直接查看系统负载</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fangzongzhou</span>@fangzongzhoudeMacBook-Pro ~ $ uptime</span><br><span class="line"><span class="attribute">12</span>:<span class="number">33</span>  up <span class="number">8</span> days, <span class="number">12</span>:<span class="number">38</span>, <span class="number">3</span> users, load averages: <span class="number">1</span>.<span class="number">48</span> <span class="number">2</span>.<span class="number">26</span> <span class="number">2</span>.<span class="number">26</span></span><br></pre></td></tr></table></figure>
-<h2 id="w"><a href="#w" class="headerlink" title="w"></a>w</h2><p>显示负载同时提供登录用户及操作信息</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">fangzongzhou</span>@fangzongzhoudeMacBook-Pro ~ $ w</span><br><span class="line"><span class="attribute">12</span>:<span class="number">35</span>  up <span class="number">8</span> days, <span class="number">12</span>:<span class="number">40</span>, <span class="number">4</span> users, load averages: <span class="number">1</span>.<span class="number">82</span> <span class="number">2</span>.<span class="number">04</span> <span class="number">2</span>.<span class="number">16</span></span><br><span class="line"><span class="attribute">USER</span>     TTY      FROM              LOGIN@  IDLE WHAT</span><br><span class="line"><span class="attribute">fangzongzhou</span> console  -                <span class="number">22</span> <span class="number">718</span>  <span class="number">8</span>days -</span><br><span class="line"><span class="attribute">fangzongzhou</span> s<span class="number">005</span>     -                <span class="number">12</span>:<span class="number">33</span>       <span class="number">1</span> ssh relay</span><br><span class="line"><span class="attribute">fangzongzhou</span> s<span class="number">001</span>     -                <span class="number">10</span>:<span class="number">55</span>       - w</span><br><span class="line"><span class="attribute">fangzongzhou</span> s<span class="number">012</span>     -                 <span class="number">1</span>:<span class="number">17</span>    <span class="number">1</span>:<span class="number">40</span> -bash</span><br></pre></td></tr></table></figure>
+        <h2 id="GOPATH是什么"><a href="#GOPATH是什么" class="headerlink" title="GOPATH是什么"></a>GOPATH是什么</h2><p>是go的环境变量，可以是一个目录路径，也可以包含多个目录路径，每个目录都代表了一个workspace。</p>
+<p>这些workspace用来存放go源码文件及install后的归档文件和可执行文件。go生命周期的所有操作都是围绕着GOPATH来进行的。go要使用外部代码，必须install源码到当前的workspace中。</p>
+<h2 id="源码组织方式"><a href="#源码组织方式" class="headerlink" title="源码组织方式"></a>源码组织方式</h2><p>GO源码以代码包为基本组织单位。每个代码包都有导入路径，实际使用程序前，必须先导入其所在的代码包。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;github.com/qwer/asdf&quot;</span></span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
-            <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-CPU%E8%B4%9F%E8%BD%BD/#more">Read More</a>
+            <a href="/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8CGOPATH/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7-CPU%E8%B4%9F%E8%BD%BD/" data-id="cklf3st8b0016prfe1f2keqjn" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2018/08/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Go/%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8CGOPATH/" data-id="cklf3st8t002rprfegf9aefbb" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GO/" rel="tag">GO</a></li></ul>
 
-
-  
-    <article id="post-计算机/Linux/日志管理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" class="article-date">
-  <time datetime="2018-07-31T03:55:58.000Z" itemprop="datePublished">2018-07-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">日志管理</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/">https://fangzongzhou.github.io/2018/07/31/计算机/Linux/日志管理/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/" data-id="cklf3st8a0012prfedxak02mf" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -509,7 +547,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/16/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/18/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/16/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/18/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -530,7 +568,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -540,7 +578,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Elasticsearch/" style="font-size: 18px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 12px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 17px;">JVM</a> <a href="/tags/Java/" style="font-size: 11px;">Java</a> <a href="/tags/Linux/" style="font-size: 11px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 12px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 13px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 11px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 15px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 16px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 14px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 19px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 12px;">读书笔记</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 16px;">随笔</a>
+      <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.18px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.73px;">随笔</a>
     </div>
   </div>
 
@@ -562,23 +600,23 @@
       <ul>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A1%8C%E6%9C%89%E4%B8%8D%E5%BE%97%E8%80%85%E7%9A%86%E5%8F%8D%E6%B1%82%E8%AF%B8%E5%B7%B1%EF%BC%8C%E5%85%B6%E8%BA%AB%E6%AD%A3%E8%80%8C%E5%A4%A9%E4%B8%8B%E5%BD%92%E4%B9%8B/">行有不得者皆反求诸己，其身正而天下归之</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%AD%98%E4%B9%8E%E4%BA%BA%E8%80%85%EF%BC%8C%E8%8E%AB%E8%89%AF%E4%BA%8E%E7%9C%B8%E5%AD%90/">存乎人者，莫良于眸子</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E5%A4%A9%E5%AD%90%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E5%9B%9B%E6%B5%B7%EF%BC%9B%E8%AF%B8%E4%BE%AF%E4%B8%8D%E4%BB%81%EF%BC%8C%E4%B8%8D%E4%BF%9D%E7%A4%BE%E7%A8%B7/">天子不仁，不保四海；诸侯不仁，不保社稷</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%89%E5%9C%B0%E4%BB%A5%E6%88%98%EF%BC%8C%E6%9D%80%E4%BA%BA%E7%9B%88%E9%87%8E/">争地以战，杀人盈野</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%A7%84%E7%9F%A9%EF%BC%8C%E6%96%B9%E5%91%98%E4%B9%8B%E8%87%B3%E4%B9%9F/">规矩，方员之至也</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%BA%E6%94%BF%E4%BA%8E%E5%A4%A9%E4%B8%8B/">为政于天下</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%B8%8D%E4%BB%A5%E8%A7%84%E7%9F%A9%E4%B8%8D%E8%83%BD%E6%88%90%E6%96%B9%E5%9C%86/">不以规矩不能成方圆</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E8%AF%9A%E8%80%85%EF%BC%8C%E5%A4%A9%E4%B9%8B%E9%81%93%E4%B9%9F/">诚者，天之道也</a>
           </li>
         
           <li>
-            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%BA%E4%B9%8B%E5%BF%8C-%E5%9C%A8%E5%A5%BD%E4%B8%BA%E4%BA%BA%E5%B8%88/">人之忌,在好为人师</a>
+            <a href="/2021/03/03/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E7%A6%BB%E5%A8%84%E7%AB%A0%E5%8F%A5/%E4%BA%B2%E5%85%B6%E4%BA%B2%EF%BC%8C%E9%95%BF%E5%85%B6%E9%95%BF/">亲其亲，长其长</a>
           </li>
         
       </ul>
