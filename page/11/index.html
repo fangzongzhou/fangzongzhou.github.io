@@ -66,10 +66,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-计算机/软件测试/测试覆盖率" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/软件测试/测试为什么要了解架构设计" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87/" class="article-date">
-  <time datetime="2020-12-16T02:14:33.000Z" itemprop="datePublished">2020-12-16</time>
+    <a href="/2021/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BA%86%E8%A7%A3%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2021-01-27T01:25:32.000Z" itemprop="datePublished">2021-01-27</time>
 </a>
     
   <div class="article-category">
@@ -84,7 +84,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87/">测试覆盖率</a>
+      <a class="article-title" href="/2021/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BA%86%E8%A7%A3%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">测试为什么要了解架构设计</a>
     </h1>
   
 
@@ -92,24 +92,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>测试覆盖率主要分为两大类，一类是面向项目的需求覆盖率，另一类是更偏向技术的代码覆盖率</p>
-<h2 id="需求覆盖率"><a href="#需求覆盖率" class="headerlink" title="需求覆盖率"></a>需求覆盖率</h2><p>需求覆盖率是指测试对需求的覆盖程度，通常的做法是将每一条分解后的软件需求和对应的测试建立一对多的映射关系，最终目标是保证测试可以覆盖每个需求，以保证软件产品的质量</p>
-<p>采用ALM，Doors和TestLink 等需求管理工具来建立需求和测试的对应关系，并以此计算测试覆盖率</p>
-<h2 id="代码覆盖率"><a href="#代码覆盖率" class="headerlink" title="代码覆盖率"></a>代码覆盖率</h2><p>代码覆盖率是指，至少被执行了一次的条目数占整个条目数的百分比</p>
-<p>常用的三种代码覆盖率指标</p>
+        <p>需要针对互联网的架构来设计有针对性的测试,另外对于互联网的压力测试以及结果分析也需要对架构知识有比较清楚的认识.</p>
+<p>诸如负载均衡器、缓存集群、数据库读写分离、消息队列、CDN、 反向代理服务器和分布式数据库等概念，在测试执行中也经常会和这些系统打交道。但是，很多时候， 你只是知道网站在架构设计上有这些组件，并不清楚这些组件真正的作用，在对应的测试设计时也很难 做到“有的放矢”</p>
+<p>同样是对架构知识的学习和掌握，不同角色的工程技术人员都有不同的视角，需要了解和掌 握的全局知识和细节程度也各不相同.以消息队列知识为例:</p>
 <ul>
-<li>行覆盖率又称为语句覆盖率，指已经被执行到的语句占总可执行语句(不包含类似C++的头文件声明、代码注释、空行等等)的百分比。这是最常用也是要求最低的覆盖率指标。 实际项目中通常会结合判定覆盖率或者条件覆盖率一起使用</li>
-<li>判定覆盖又称分支覆盖，用以度量程序中每一个判定的分支是否都被测试到了，即代码中每个判断的取真分支和取假分支是否各被覆盖至少各一次。比如，对于if(a&gt;0 &amp;&amp; b&gt;0)，就要求覆盖“a&gt;0 &amp;&amp; b&gt;0”为TURE和FALSE各一次</li>
-<li>条件覆盖是指，判定中的每个条件的可能取值至少满足一次，度量判定中的每个条件的结果TRUE和FALSE是否都被测试到了。比如，对于if(a&gt;0 &amp;&amp; b&gt;0)，就要 求“a&gt;0”取TRUE和FALSE各一次，同时要求“b&gt;0”取TRUE和FALSE各一次。
+<li>系统架构师，不仅要掌握各个不同消息队列实现的技术细节，还清楚不同方案的优势和劣势，最关键的是能够根据业务的应用场景和特点来选择最合适的消息队列方案</li>
+<li>软件开发人员，掌握消息队列的使用方法、消息push和pull的模式，以及在应用中如何以异步方式来对消息进行妥善处理，并且还要考虑到异常场景的处理</li>
+<li>软件测试人员，你需要知道消息队列的基本原理以及在被测系统中的部署情况，同时应该知道如何访问消息队列或者队列中消息的情况。在需要模拟消息进行解耦测试的场合，你还需要知道如何添加测试消息以满足测试的目的</li>
+</ul>
+<p>学习架构知识遵循“由广度到深度”和“自 上而下”两个基本原则</p>
+<ul>
+<li>“广度”是指在平时工作以外的时间中，应该多注重全领域架构知识的积累，此 时那些系统性地介绍架构知识的书籍或者专栏就可以给你最大程度的帮助了</li>
+<li>“深度”是指，对于架构中某一领域的特定知识在项目中要实际使用的时候，必须要刨根问底，通过实际的测试来加深对架构知识细节的理解</li>
+<li>“自上而下”是指，在实际测试项目中，当需要设计涉及架构的测试用例和场景的时候，千万不要直接 基于“点”来设计测试，而是应该:首先通过全局阅读理解上层架构设计;然后，在理解了架构设计的 初衷和希望达成目的的基础上，再向下设计测试场景和用例</li>
+</ul>
+<p>这个过程，一方面可以帮你设计出有针对性的测试用例，另一方面可以帮助你理解架构在实际项目中是 如何落地的</p>
         
           <p class="article-more-link">
-            <a href="/2020/12/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87/#more">Read More</a>
+            <a href="/2021/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BA%86%E8%A7%A3%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/16/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87/" data-id="cklf3st8i001uprfe8ocf8d33" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BA%86%E8%A7%A3%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" data-id="cklf3st8h001oprfe6wg50zr2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
@@ -121,10 +127,60 @@
 
 
   
-    <article id="post-计算机/软件测试/自动化测试" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/形式化方法/形式化方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time datetime="2020-12-15T02:24:17.000Z" itemprop="datePublished">2020-12-15</time>
+    <a href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2021-01-26T02:34:37.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法(formal methods)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><p>英文名formal methods</p>
+<p>在逻辑科学中是指分析、研究思维形式结构的方法.它把各种具有不同内容的思维形式(主要是命题和推理)加以比较,找出其中各个部分相互联结的方式,如命题中包含概念彼此间的联结,推理中则是各个命题之间的联结,抽取出它们共同的形式结构;再引入表达形式结构的符号语言,用符号与符号之间的联系表达命题或推理的形式结构。例如,把全称肯定命题,用符号形式化为“SAP”;把联言命题、假言命题分别形式化为:“p∧q、“p→q”。又例如:一个具体的假言联言推理“如果这种金属是纯铝,那么它的物理性质必与纯铝相同;如果这种金属是纯铝,那么它的化学性质必与纯铝相同;但这种金属的物理性质和化学性质与纯铝不相同;所以,它不是纯铝。”这个推理的形式结构是:“如果p,则q;如果p,则r;非q且非r;所以非p。”可进而形式化为下列公式:((p→q)∧(p→r)）∧┐q∧┐r→┐p</p>
+<p>在计算机科学和软件工程领域，形式化方法是基于数学的特种技术，适合于软件和硬件系统的描述、开发和验证。将形式化方法用于软件和硬件设计，是期望能够像其它工程学科一样，使用适当的数学分析以提高设计的可靠性和鲁棒性。但是，由于采用形式化方法的成本高意味着它们通常只用于开发注重安全性的高度整合的系统。</p>
+<p>形式化方法在古代就运用了,而在现代逻辑中又有了进一步的发展和完善。这种方法特别在数学、计算机科学、人工智能等领域得到广泛运用。它能精确地揭示各种逻辑规律,制定相应的逻辑规则,使各种理论体系更加严密。同时也能正确地训练思维、提高思维的抽象能力。</p>
+<h2 id="发展过程"><a href="#发展过程" class="headerlink" title="发展过程"></a>发展过程</h2><p>20世纪60年代后期，针对当时所谓“软件危机”,人们提出种种解决方法,归纳起来有两类：一是采用工程方法来组织、管理软件的开发过程；二是深入探讨程 序和程序开发过程的规律，建立严密的理论，以其用来指导软件开发实践。前者导致“软件工程”的出现和发展，后者则推动了形式化方法的深入研究</p>
+<p>形式化方法的发展趋势逐渐融入软件开发过程的各个阶段,从需求分析、功能描述(规约)、(体 系结构/算法)设计、编程、测试直至维护</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/" data-id="cklf3st8d001aprfe606ifbim" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/软件测试/基于模型的测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2021-01-26T01:44:25.000Z" itemprop="datePublished">2021-01-26</time>
 </a>
     
   <div class="article-category">
@@ -139,7 +195,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">自动化测试</a>
+      <a class="article-title" href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%B5%8B%E8%AF%95/">基于模型的测试(MBT)</a>
     </h1>
   
 
@@ -147,24 +203,192 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>自动化测试: 把人工对软件的测试转化为由机器执行测试行为的一种实践，可以把测试工程师从机械重复的测试工作中解脱出来，将更多的精力放在新功能的测试和更全面的测试用例设计上</p>
-<p>发现自动化测试用例的维护成本高于其节省的测试成本时，自动化测试就失去了价值与意义</p>
-<p>自动化测试的优势:</p>
+        <p>基于模型的测试，即Model-Based-Testing ，简称MBT。</p>
+<p>MBT，是自动化测试的一个分支。它是将测试用例的设计依托于被测系统的模型，并基于该模型自动生成测试用例的技术</p>
+<p>只关注建立系统的正确性以及模型的规范性，再通过专门的MBT工具根 据不同的测试用例设计策略从系统模型生成可靠的测试用例</p>
+<h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>建立被测系统的设计模型，然后结合不同的算法和策略来遍历该模型，以此生成测试用例的设计</p>
+        
+          <p class="article-more-link">
+            <a href="/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%B5%8B%E8%AF%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2021/01/26/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%9F%BA%E4%BA%8E%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%B5%8B%E8%AF%95/" data-id="cklf3st8g001mprfealvaa79z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/软件测试/渗透测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2021-01-25T15:30:32.000Z" itemprop="datePublished">2021-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/">渗透测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>渗透测试指的是，由专业安全人员模拟黑客，从其可能存在的位置对系统进行攻击测试，在真正的黑客 入侵前找到隐藏的安全漏洞，从而达到保护系统安全的目的。</p>
+<p>开发人员通常并不是安全领域的专家，因此往往会缺少专业的安全知识，不 了解常用的系统攻击手段，从而导致他们并不能对安全相关的场景进行充分、客观的测试。</p>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><ul>
+<li>有针对性的测试,在测试人员完全了解系统内部情况的前提下开展</li>
+<li>外部测试,由内部的测试人员或者专业渗透测试团队，在假定完全不清楚系统内部情况的 前提下开展的</li>
+<li>内部测试</li>
+<li>盲测,由专业渗透测试团队在测试后期开展 的，通常会借助很多黑客攻击工具</li>
+<li>双盲测试
+        
+          <p class="article-more-link">
+            <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" data-id="cklf3st8k001xprfed7mr8rj0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/软件测试/精准测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2021-01-25T14:34:37.000Z" itemprop="datePublished">2021-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/">精准测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>所谓精准测试，就是借助一定的技术手段、通过 算法的辅助对传统软件测试过程进行可视化、分析以及优化的过程。也就是说，精准测试可以使得测试 过程可视、智能、可信和精准。</p>
+<p>借助一些高效的算法和工具，收 集、可视化并且分析原生的测试数据，从而建立起一套测试分析系统</p>
+<p>传统软件测试短板:</p>
+<ul>
+<li>测试的维护成本日益升高,一个项目的功能是有限的,但是测试用例集合多数情况下是只增不减的,很可能维护了很多实际等价的测试用例.陈旧过时的用例也没有对应的淘汰机制</li>
+<li>测试过程的低效,无法提供有效的影响范围,无法发现角落里的问题</li>
+<li>缺乏有效的回归用例选取机制,全量回归的成本比较高,但无法根据实际情况选取回归测试用例,只能采取执行全部用例,甚至本身根本也不会对用例进行有效分类</li>
+<li>测试结果的可信度不高,测试数据的统计分析人工因素占据了绝大部分比重，由此导致测试数据本身的技术公信力不够高，进而需要依靠管理手段来保证真实的测试数据被准确地记录.执行成本高
+        
+          <p class="article-more-link">
+            <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E7%B2%BE%E5%87%86%E6%B5%8B%E8%AF%95/" data-id="cklf3st8k001yprfe6sxbfp5s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/软件测试/测试驱动开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" class="article-date">
+  <time datetime="2021-01-25T04:48:28.000Z" itemprop="datePublished">2021-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/">测试驱动开发</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试驱动开发,Test-Driven Development,简称为TDD</p>
+<p>TDD的优势:</p>
+<ul>
+<li>保证开发的功能一定是符合实际需求的,用例根据实际使用场景编写</li>
+<li>更加灵活的迭代方式,使用测试用例描述需求,需求有变化,也可以很快地定位到需要修改的功能</li>
+<li>保证系统的可扩展性,测试用例开始仅有接口定义,相当于对开发过程添加了实现指导,有利于产出松耦合的设计</li>
+<li>更好的质量保证,TDD要求测试先于开发，也就是说在每次新增功能时，都需要先用测试用例去验证功能是否运行正常，并运行所有的测试来保证整个系统的质量.优化设计,重构代码等引入的新问题都能及时暴露出来</li>
+<li>测试用例即文档,编写的测试用例，首先一定是贴合用户实际需求的，然后又在开发调试的过程中经过 了千锤百炼，即一定是符合系统的业务逻辑的，所以我们直接将测试用例生成需求文档</li>
+</ul>
+<h2 id="实施过程"><a href="#实施过程" class="headerlink" title="实施过程"></a>实施过程</h2><p>遵循以下流程:</p>
 <ol>
-<li>自动化测试可以替代大量的手工机械重复性操作，测试工程师可以把更多的时间花在更全面的用例设计和新功能的测试上;</li>
-<li>自动化测试可以大幅提升回归测试的效率，非常适合敏捷开发过程;</li>
-<li>自动化测试可以更好地利用无人值守时间，去更频繁地执行测试，特别适合现在非工作时间执行测试，工作时间分析失败用例的工作模式;</li>
-<li>自动化测试可以高效实现某些手工测试无法完成或者代价巨大的测试类型，比如关键业务7×24小时持续运行的系统稳定性测试和高并发场景的压力测试等;</li>
-<li>自动化测试还可以保证每次测试执行的操作以及验证的一致性和可重复性，避免人为的遗漏或疏忽。
+<li>为需要实现的新功能添加一批测试</li>
+<li>运行所有测试，看看新添加的测试是否失败</li>
+<li>编写实现软件新功能的实现代码</li>
+<li>再次运行所有的测试，看是否有测试失败</li>
+<li>重构代码</li>
+<li>重复以上步骤直到所有测试通过</li>
+</ol>
+<p>每添加一个新的功能点，都会添加一个测试方法;完成新功能点的软件代码后，接着运行当 前所有的测试用例，以保证新加的功能代码能够满足现有的测试需求</p>
         
           <p class="article-more-link">
-            <a href="/2020/12/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/#more">Read More</a>
+            <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" data-id="cklf3st8l0020prfe9y2r12fv" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" data-id="cklf3st8j001wprfeabn8e6xc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
@@ -176,10 +400,10 @@
 
 
   
-    <article id="post-计算机/软件测试/单元测试/单元测试" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/软件测试/探索性测试" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" class="article-date">
-  <time datetime="2020-12-14T04:17:32.000Z" itemprop="datePublished">2020-12-14</time>
+    <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time datetime="2021-01-25T04:37:25.000Z" itemprop="datePublished">2021-01-25</time>
 </a>
     
   <div class="article-category">
@@ -194,7 +418,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a>
+      <a class="article-title" href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%B5%8B%E8%AF%95/">探索性测试</a>
     </h1>
   
 
@@ -202,85 +426,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>单元测试（英语：Unit Testing）又称为模块测试，是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。</p>
-</blockquote>
-<h2 id="单元测试的好处"><a href="#单元测试的好处" class="headerlink" title="单元测试的好处"></a>单元测试的好处</h2><ul>
-<li>提升软件质量 优质的单元测试可以保障开发质量和程序的鲁棒性。越早发现的缺陷，其修复的成本越低</li>
-<li>促进代码优化 会不断去审视自己的代码，从而（潜意识）去优化自己的代码</li>
-<li>提升研发效率 表面上是占用了项目研发时间，但是在后续的联调、集成、回归测试阶段，单测覆盖率高的代码缺陷少、问题已修复，有助于提升整体的研发效率</li>
-<li>增加重构自信 代码的重构一般会涉及较为底层的改动，比如修改底层的数据结构等，上层服务经常会受到影响；在有单元测试的保障下，我们对重构出来的代码会多一份底气</li>
-</ul>
-<h2 id="单元测试基本原则"><a href="#单元测试基本原则" class="headerlink" title="单元测试基本原则"></a>单元测试基本原则</h2><p>宏观上，单元测试要符合 AIR 原则</p>
-<ul>
-<li>A: Automatic（自动化）</li>
-<li>I: Independent（独立性）</li>
-<li>R: Repeatable（可重复）</li>
-</ul>
-<p>微观上，单元测试代码层面要符合 BCDE 原则：</p>
-<ul>
-<li>B: Border 边界性测试，包括循环边界、特殊取值、特殊时间点、数据顺序等</li>
-<li>C: Correct 正确的输入，并且得到预期的结果</li>
-<li>D: Design 与设计文档相符合，来编写单元测试</li>
-<li>E: Error 单元测试的目的是为了证明程序有错，而不是证明程序无错 为了发现代码中潜藏的错误，我们需要在编写测试用例时有一些强制的错误输入（如非法数据、异常流程、非业务允许输入等）来得到预期的错误结果</li>
-</ul>
-<h2 id="如何验证单元测试的有效性"><a href="#如何验证单元测试的有效性" class="headerlink" title="如何验证单元测试的有效性"></a>如何验证单元测试的有效性</h2><ol>
-<li>是否符合基本测试方法(边界值,条件组合)</li>
-<li>故障注入是否能被断言有效检出</li>
-</ol>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
-<li>开发前写单元测试，通过测试描述需求，由测试驱动开发。（如果不熟悉TDD的同学可以去google一下）</li>
-<li>在开发过程中及时得到反馈，提前发现问题</li>
-<li>应用于自动化构建或持续集成流程，对每次代码修改做回归测试。（CI/CD 质量保障）</li>
-<li>作为重构的基础，验证重构是否可靠</li>
-</ul>
-<h2 id="常见痛点"><a href="#常见痛点" class="headerlink" title="常见痛点"></a>常见痛点</h2><ul>
-<li>测试上下文依赖外部服务（如数据库服务）</li>
-<li>测试上下文存在代码依赖（如框架等）</li>
-<li>单元测试难以维护和理解（语义不清）</li>
-<li>对于多场景不同输入输出的函数，单元测试代码量会很多</li>
-</ul>
-<p>写单元测试的难易程度跟代码的质量关系最大，并且是决定性的。项目里无论用了哪个测试框架都不能解决代码本身难以测试的问题</p>
-<p>《重构-改善既有代码的设计》《修改代码的艺术》 《敏捷软件开发：原则、模式与实践》</p>
-<h2 id="代码执行过程"><a href="#代码执行过程" class="headerlink" title="代码执行过程"></a>代码执行过程</h2><p>代码执行过程可以看做一个数据分类,处理的过程.代码异常通常也都能归类到数据分类错误和数据处理错误两种错误原因上.</p>
-<p>为实现正确的业务逻辑代码,考虑过程:</p>
-<ul>
-<li>实现正确的功能逻辑的正常输入</li>
-<li>特殊处理的多种边界输入</li>
-<li>潜在的非法输入</li>
-</ul>
-<h2 id="单元测试详解"><a href="#单元测试详解" class="headerlink" title="单元测试详解"></a>单元测试详解</h2><p>单元测试用例是一个”输入数据”,”输出数据”的集合. 针对确定的数据,根据逻辑功能预先推算出正确的输出,并以执行被测代码的方式来进行验证.</p>
-<blockquote>
-<p>在明确代码需要实现的逻辑功能基础上,设计输入数据,并推算出输入数据应该对应的输出</p>
-</blockquote>
-<p>输入数据不仅仅是函数入参:</p>
-<ul>
-<li>输入参数</li>
-<li>内部需要读取的全局静态变量</li>
-<li>内部需要读取的成员变量</li>
-<li>函数调用内部子函数获取的数据</li>
-<li>函数内部调用子函数改写的数据</li>
-</ul>
-<p>输出数据,主要包含数据改写和动作执行</p>
-<ul>
-<li>被测函数的返回值</li>
-<li>被测函数的输出参数</li>
-<li>被测函数改写的成员变量</li>
-<li>被测函数改写的成员变量</li>
-<li>被测函数进行的文件更新</li>
-<li>被测函数进行的数据更新</li>
-<li>被测函数进行的消息队列更新</li>
-</ul>
-<p>设计单元测试应该首先定义操作行为,而不是根据代码实现填充行为判定.要脱离代码从行为需要编写断言</p>
+        <p>探索式测试发现的缺陷最多，而且发现的缺陷也很有代表性。从本质上来看，探索式测试具有即兴发挥、快速实验、随时调整等特征.</p>
+<p>根据软件功能描述来设计最初的测试用例，然后执行测试;测试执行后，可能你得到的输 出和预期输出不完全一致，于是你会猜测这种不一致是否可能是软件的缺陷造成的;为了验证你的想 法，你会根据错误输出设计新的测试用例，然后采用不同的输入再次检查软件的输出</p>
+<p>经过几轮这样的猜测和验证，进行反复“探索”，最终确定了一个软件的缺陷。 而这个过程中，你会发现，识别缺陷的思路和测试用例的设计，并没有出现在最初的测试设计和测试用 例文档中，而是以很快的速度在你的脑海中以及实际测试执行和验证中快速迭代</p>
+<p>上述的两个过程就是探索式测试最基本的思维模型了</p>
+<p>**探索式测试本身并不是一种测试技术，而是一种软件测试风格.**探索式 测试强调依据当前语境与上下文选择最合适的测试技术。所以，切记不要将探索式测试误认为是一种测 试技术，而应该理解为一种利用各种测试技术“探索”软件潜在缺陷的测试风格</p>
+<p>**探索式测试强调独立测试工程师的个人自由和责任，其目的是为了持续优化其工作的价值.**测试 工程师应该为软件产品负责，充分发挥主观能动性，在整体上持续优化个人和团队的产出。这种思想方 法，与精益生产、敏捷软件开发的理念高度一致，这也正是探索式测试受到敏捷团队欢迎的原因之一</p>
+<p>探索式测试对个人的能力有很高的依赖:同样的测试风格，由不同的人来具体 执行，得到的结果可能会差别巨大。因此，对执行探索式测试的工程师的要求就会比较高，除了要能够 从业务上深入理解被测系统外，还要有很强的逻辑分析与推理能力，当然对测试技术以及测试用例设计 的融会贯通也是必不可少的技能。</p>
+<p>探索式测试相比即兴测试更强调 及时“反馈”的重要性,测试工程师不断提出假设，通过测试执行去检验假设，通过解读测试结果证实或推翻 假设。在这个迭代过程中，测试工程师不断完善头脑中被测试应用的知识体系，并建立被测应用的模 型，然后利用模型、过往经验，以及测试技术驱动进一步的测试.探索式测试要不停地优化测试模型和测试设计。</p>
         
           <p class="article-more-link">
-            <a href="/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/#more">Read More</a>
+            <a href="/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%B5%8B%E8%AF%95/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/14/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" data-id="cklf3st92003rprfe4nx3b6wu" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/25/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%B5%8B%E8%AF%95/" data-id="cklf3st8g001nprfefk4g9p8p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
@@ -292,14 +454,14 @@
 
 
   
-    <article id="post-BPMN/Process(过程)/Activities" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/软件测试/测试基础架构" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/" class="article-date">
-  <time datetime="2020-12-09T10:00:38.000Z" itemprop="datePublished">2020-12-09</time>
+    <a href="/2021/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/" class="article-date">
+  <time datetime="2021-01-22T01:40:25.000Z" itemprop="datePublished">2021-01-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
   </div>
 
   </div>
@@ -310,7 +472,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/">Activities</a>
+      <a class="article-title" href="/2021/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/">测试基础架构</a>
     </h1>
   
 
@@ -318,72 +480,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Activity 是在业务流程中执行的工作. 可以是原子的,也可以是非原子(复合)的. 作为 Process 一部分的活动类型有: Task ,Sub-Process 和 Call Activity,它们允许在图中包含可复用的任务和流程. 然而,Process 不是一个特定的图形对象. 它是一组图形对象,下面将重点介绍 <strong>Sub-Process</strong> 和 <strong>Task</strong> 两种图形对象</p>
-<p>Activities 表示 Process 中执行工作的点. 它们是BPMN流程的可执行元素.</p>
-<p><code>Activity</code>类是一个抽象元素,是<code>FlowElement</code>的子类. Activity具体子类声明了除通用 <code>Activity</code> 语义外的其他语义</p>
-<p><img src="https://s3.ax1x.com/2020/12/09/rCLjne.png" alt="Activity类图"></p>
-        
-          <p class="article-more-link">
-            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Activities/" data-id="cklf3st88000wprfebcv83xvi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BPMN/Process(过程)/Basic-Process-Concepts-基本流程概念" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/" class="article-date">
-  <time datetime="2020-12-09T08:44:15.000Z" itemprop="datePublished">2020-12-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/">Basic Process Concepts(基本流程概念)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="BPMN流程类型"><a href="#BPMN流程类型" class="headerlink" title="BPMN流程类型"></a>BPMN流程类型</h2><p>业务流程建模用于向各种各样的受众传达各种各样的信息. BPMN旨在涵盖多种类型的模型,并允许创建端到端的业务流程. 下面是三种基本的BPMN流程类型:</p>
+        <p>广义的测试执行环境也被称为测试基础架构</p>
+<p>由于需要执行的自动化测试用例数量多，再加上测试本身的多样性需求，测试基础架构的设计是否高效和稳定将直接影响产品是否可以快速迭代、发布上线。因此，中大型的软件公司都会在测试基础架构上有比较大的投入</p>
+<p>中大型企业在测试基础架构上的投入，主要是为了解决以下这几方面的问题:</p>
 <ul>
-<li>Private Non-executable (internal) Business Processes</li>
-<li>Private Executable (internal) Business Processes</li>
-<li>Public Processes</li>
-</ul>
-<h3 id="Private-Internal-Business-Processes"><a href="#Private-Internal-Business-Processes" class="headerlink" title="Private (Internal) Business Processes"></a>Private (Internal) Business Processes</h3><p><em>Private</em> <strong>Business Process</strong> 是特定的组织内部的流程. 这些流程通常被叫做工作流或BPM流程. 在web服务中通常叫做服务编排. 两种典型的私有流程: <em>executable</em> 和 <em>non-executable</em>.可执行流程是指根据指定语义定义执行了建模的流程. 当然,在流程开发周期中,会有某些阶段,流程没有足够的细节可以执行. 不可执行流程是已建模的专用流程，目的是在建模者定义的详细级别上记录流程行为.因此,执行所需的信息（例如形式条件表达式）通常不包括在不可执行的流程中</p>
+<li><p>简化测试的执行过程</p>
+</li>
+<li><p>最大化测试执行机器的资源利用率</p>
+</li>
+<li><p>提供大量测试用例的并发执行能力</p>
+</li>
+<li><p>提供测试用例的版本控制机制</p>
+</li>
+<li><p>提供友好的用户界面,便于测试的统一管理、执行与结果展示</p>
+</li>
+<li><p>提供了与CI/CD流水线的统一集成机制</p>
         
           <p class="article-more-link">
-            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/#more">Read More</a>
+            <a href="/2021/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Basic-Process-Concepts-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%A6%82%E5%BF%B5/" data-id="cklf3st89000xprfe7h0fbxih" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84/" data-id="cklf3st8h001pprfee518aevx" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+
     </footer>
   </div>
   
@@ -391,14 +515,14 @@
 
 
   
-    <article id="post-BPMN/Process(过程)/Process-过程" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/软件测试/性能测试/性能测试类型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/" class="article-date">
-  <time datetime="2020-12-09T03:50:16.000Z" itemprop="datePublished">2020-12-09</time>
+    <a href="/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/" class="article-date">
+  <time datetime="2021-01-15T01:25:58.000Z" itemprop="datePublished">2021-01-15</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>►<a class="article-category-link" href="/categories/BPMN/Process/">Process</a>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>►<a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a>
   </div>
 
   </div>
@@ -409,58 +533,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/">Process-过程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Process</strong> 相关内容是 <strong>BPMN</strong> 流程建模标准和 <strong>BPMN</strong> 完整性标准所必须的. 但是,对于<strong>BPMN</strong>编排标准,<strong>BPMN</strong>执行标准,或 <strong>BPMN BPEL</strong>流程执行标准等不是必须的.</p>
-<p><strong>Process</strong> 描述了一个组织中的一系列以开展工作为目的的活动或流程. 在BPMN中,一个 <strong>Process</strong> 被描述为一个由流程元素构成的图,它们是一系列的 <strong>Activities</strong>, <strong>Events</strong>, <strong>Gateways</strong>, 和那些定义了有限执行语义的 <strong>Sequence Flows</strong>. Process 可以在任何级别定义,从企业范围的 Process 到由单个人员执行的 Process. 低级的 Process 可以组合在一起,以实现共同的业务目标.</p>
-<p><img src="https://s3.ax1x.com/2020/12/09/rCKtv8.png" alt="流程示例"></p>
-<p>注意,<strong>BPMN</strong> 术语 <strong>Process</strong> 专指一组流程元素. 它使用协作和编排对流程间交互建模.</p>
-<p><strong>Process</strong> 包包含用于流程建模的 <strong>Activities</strong>,<strong>Events</strong> 和 <strong>Gateways</strong> 等类, 以及它们如何在一个 Process 中排序的. 定义一个 Process 时,这些内容都包含在定义中.</p>
-<p><img src="https://s3.ax1x.com/2020/12/09/rC1tij.png" alt="类图"></p>
-<p>一个 Process 是一个 CallableElement,使得其它 Process 可以通过 <strong>Call Activity</strong> 结构引用/重用它. 通过这种能力,一个 Process 可以引用一系列定义在外部的行为接口.</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/09/BPMN/Process(%E8%BF%87%E7%A8%8B)/Process-%E8%BF%87%E7%A8%8B/" data-id="cklf3st89000yprfe2fskevyu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-方法论/5W1H" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/" class="article-date">
-  <time datetime="2020-12-07T07:28:19.000Z" itemprop="datePublished">2020-12-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/">5W1H</a>
+      <a class="article-title" href="/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/">性能测试类型</a>
     </h1>
   
 
@@ -469,25 +542,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li>WHY——为什么？为什么要这么做？理由何在？原因是什么？</li>
-<li>WHAT——是什么？目的是什么？做什么工作？</li>
-<li>WHERE——何处？在哪里做？从哪里入手？</li>
-<li>WHEN——何时？什么时间完成？什么时机最适宜？</li>
-<li>WHO——谁？由谁来承担？谁来完成？谁负责？</li>
-<li>HOW ——怎么做？如何提高效率？如何实施？方法怎样？</li>
-<li>HOW MUCH——多少？做到什么程度？数量如何？质量水平如何？费用产出如何？
+<li>性能基准测试，可以保证新发布系统的整体性能不会下降</li>
+<li>稳定性测试，主要通过长时间模拟被测系统的测试负载，观察系统在长期运行过程是否存在问题</li>
+<li>并发测试，往往被当作功能测试的补充去发现多线程、资源竞争、资源死锁之类的问题</li>
+<li>容量规划测试，主要用于确定给定负载下的系统集群规模，其测试结果可以被用作系统容量设计的 依据</li>
+</ul>
+<h2 id="性能基准测试"><a href="#性能基准测试" class="headerlink" title="性能基准测试"></a>性能基准测试</h2><p>通常被称为 Performance Benchmark Test,对外发布产品版前必须要完成的测试类型.</p>
+<p>基于固定的硬件环境和部署架构,通过执行固定的性能测试场景得到的性能测试报告.然后与上一版本指标进行对比,如有恶化趋势,需要排查问题.</p>
+<p>恶化表现:</p>
+<ul>
+<li>同一事务响应时间变慢</li>
+<li>系统资源占用率变高</li>
+<li>网络带宽使用率变高</li>
+</ul>
+<p>通过对每个预发布版本的性能基准测试，我们可以保 证新发布系统的整体性能不会下降，这也就是性能基准测试最终要达到的目的</p>
         
           <p class="article-more-link">
-            <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/#more">Read More</a>
+            <a href="/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/5W1H/" data-id="cklf3st83000mprfe7f0zaxg5" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%9E%8B/" data-id="cklf3st93003xprfe2bm96fkq" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
 
     </footer>
   </div>
@@ -496,14 +576,14 @@
 
 
   
-    <article id="post-方法论/PDCA" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-计算机/软件测试/性能测试/性能测试典型流程与步骤" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/" class="article-date">
-  <time datetime="2020-12-07T07:02:52.000Z" itemprop="datePublished">2020-12-07</time>
+    <a href="/2021/01/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%AD%A5%E9%AA%A4/" class="article-date">
+  <time datetime="2021-01-13T01:33:48.000Z" itemprop="datePublished">2021-01-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>►<a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a>
   </div>
 
   </div>
@@ -514,7 +594,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/">PDCA</a>
+      <a class="article-title" href="/2021/01/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%AD%A5%E9%AA%A4/">性能测试典型流程与步骤</a>
     </h1>
   
 
@@ -522,130 +602,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>PDCA最早是由美国质量管理专家戴明提出</p>
-<p>PDCA四个英文字母及其在PDCA循环中所代表的含义</p>
+        <p>获取测试需求,测试结果分析与性能问题定位是性能测试中两个最难的问题.</p>
+<h2 id="1-性能需求收集以及负载计划制定"><a href="#1-性能需求收集以及负载计划制定" class="headerlink" title="1.性能需求收集以及负载计划制定"></a>1.性能需求收集以及负载计划制定</h2><p>性能测试的具体需求，主要包含以下内容:</p>
 <ul>
-<li>P（Plan）–计划，确定方针和目标，确定活动计划</li>
-<li>D（Do）–执行，实地去做，实现计划中的内容</li>
-<li>C（Check）–检查，总结执行计划的结果，注意效果，找出问题</li>
-<li>A（Action）–行动，对总结检查的结果进行处理，成功的经验加以肯定并适当推广、标准化</li>
+<li>系统整体的并发用户数</li>
+<li>并发用户业务操作的分布情况</li>
+<li>单一业务操作的用户行为模式</li>
+<li>并发用户高峰期的时间分布规律</li>
+<li>达到最高峰负载的时间长度</li>
 </ul>
-<p><img src="https://s3.ax1x.com/2020/12/07/DxCmjS.jpg" alt="pdca"></p>
         
           <p class="article-more-link">
-            <a href="/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/#more">Read More</a>
+            <a href="/2021/01/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%AD%A5%E9%AA%A4/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E6%96%B9%E6%B3%95%E8%AE%BA/PDCA/" data-id="cklf3st84000nprfea19latyv" class="article-share-link">Share</a>
+      <a data-url="https://fangzongzhou.github.io/2021/01/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%AD%A5%E9%AA%A4/" data-id="cklf3st93003tprfe3udi57fe" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-小知识/采购舞弊" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/" class="article-date">
-  <time datetime="2020-12-07T06:02:13.000Z" itemprop="datePublished">2020-12-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/">采购舞弊</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="串标"><a href="#串标" class="headerlink" title="串标"></a>串标</h2><p>事先知道所有投标人，一般是投标人互相串通，也可以和招标人串通</p>
-<ul>
-<li>投标人互相串通</li>
-<li>投标人、招标人串通</li>
-<li>潜规则，轮流中标</li>
-</ul>
-<h2 id="陪标"><a href="#陪标" class="headerlink" title="陪标"></a>陪标</h2><p>预先确定意向中标单位，为达到三家报价要求，由意向中标单位邀请其熟悉或相关的单位进行陪衬，达到中标目的。 与招标人合伙，满足公司招投标要求，以达到中标目的</p>
-<h2 id="围标"><a href="#围标" class="headerlink" title="围标"></a>围标</h2><p>事先不知道哪些人投标，然后联合其它几家几十家公司，将报价控制在一定范围，确保某一家公司中标</p>
-<ul>
-<li>联合其他公司控制</li>
-<li>自己关联公司合谋</li>
-</ul>
-<h2 id="故意流标"><a href="#故意流标" class="headerlink" title="故意流标"></a>故意流标</h2><p>以不足三家、不合格不合规为名，宣布招标不合格，直接流标。<br>1、进行二次招标，以增加新投标人<br>2、更改新的投标价格</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/07/%E5%B0%8F%E7%9F%A5%E8%AF%86/%E9%87%87%E8%B4%AD%E8%88%9E%E5%BC%8A/" data-id="cklf3st7z000cprfe9ybn4rxz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BPMN/BPMN" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/07/BPMN/BPMN/" class="article-date">
-  <time datetime="2020-12-07T03:57:42.000Z" itemprop="datePublished">2020-12-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/BPMN/">BPMN</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/07/BPMN/BPMN/">BPMN</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>BPMN（Business Process Modeling Notation），业务流程建模与标注，可以用其定义的一系列业务组件，组成业务流程图</p>
-        
-          <p class="article-more-link">
-            <a href="/2020/12/07/BPMN/BPMN/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2020/12/07/BPMN/BPMN/" data-id="cklf3st7y0009prfe1d4b3tc3" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -657,7 +635,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -668,7 +646,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E9%87%8C%E5%AD%A6/">心里学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/">有趣的知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/">孟子</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E9%AB%98%E5%A8%84%E7%AB%A0%E5%8F%A5/">高娄章句</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8E%9F%E5%88%99/">原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E9%87%8C%E5%AD%A6/">心里学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/">有趣的知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%91%E6%8E%A7/">监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/">缓存</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">如何阅读一本书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/">孟子</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E9%AB%98%E5%A8%84%E7%AB%A0%E5%8F%A5/">高娄章句</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%BB%E8%BE%91%E5%AD%A6/">逻辑学</a></li></ul>
     </div>
   </div>
 
@@ -678,7 +656,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag">有趣的知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BPMN/" rel="tag">BPMN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%88%99/" rel="tag">原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag">有趣的知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" rel="tag">逻辑学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -688,7 +666,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 10px;">日记</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" style="font-size: 16.36px;">有趣的知识</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 18.18px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12.73px;">随笔</a>
+      <a href="/tags/BPMN/" style="font-size: 10px;">BPMN</a> <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%8E%9F%E5%88%99/" style="font-size: 10px;">原则</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" style="font-size: 16.36px;">有趣的知识</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.91px;">算法</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 11.82px;">经济学</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.91px;">缓存</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 17.27px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 10px;">逻辑学</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 18.18px;">随笔</a>
     </div>
   </div>
 
@@ -697,7 +675,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
     </div>
   </div>
 
@@ -710,23 +688,23 @@
       <ul>
         
           <li>
-            <a href="/2021/03/09/%E9%92%93%E9%B1%BC%E6%95%88%E5%BA%94/">钓鱼效应</a>
+            <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95/">缓存算法</a>
           </li>
         
           <li>
-            <a href="/2021/03/09/%E6%96%B9%E6%B3%95%E8%AE%BA/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/%E5%A4%9A%E7%B1%B3%E8%AF%BA%E9%AA%A8%E7%89%8C%E6%95%88%E5%BA%94/">多米诺骨牌效应</a>
+            <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98/">缓存</a>
           </li>
         
           <li>
-            <a href="/2021/03/09/%E6%96%B9%E6%B3%95%E8%AE%BA/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/%E4%B9%98%E6%B3%95%E6%95%88%E5%BA%94/">乘法效应</a>
+            <a href="/2021/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E6%8C%87%E6%A0%87/">监控指标</a>
           </li>
         
           <li>
-            <a href="/2021/03/09/%E6%96%B9%E6%B3%95%E8%AE%BA/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/%E4%B8%B2%E7%8F%A0%E7%BA%BF%E6%95%88%E5%BA%94/">串珠线效应</a>
+            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95/">随机数生成算法</a>
           </li>
         
           <li>
-            <a href="/2021/03/09/%E6%96%B9%E6%B3%95%E8%AE%BA/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/%E5%88%BA%E7%8C%AC%E6%B3%95%E5%88%99/">刺猬法则</a>
+            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/">数据压缩算法</a>
           </li>
         
       </ul>

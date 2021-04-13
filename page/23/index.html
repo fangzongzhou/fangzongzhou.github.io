@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Fger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="方宗周的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fger">
+<meta property="og:url" content="https://fangzongzhou.github.io/page/23/index.html">
+<meta property="og:site_name" content="Fger">
+<meta property="og:description" content="方宗周的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="fangzongzhou">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Fger" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Fger</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://fangzongzhou.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-计算机/操作系统/IO模型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time datetime="2018-07-10T01:59:53.000Z" itemprop="datePublished">2018-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E6%A8%A1%E5%9E%8B/">IO模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux下的系统调用recv ，用于从套接字上接收一个消息，调用时会从用户进程空间切换到内核空间运行一段时间再切换回来。</p>
+<h2 id="阻塞IO模型（bloking-IO）"><a href="#阻塞IO模型（bloking-IO）" class="headerlink" title="阻塞IO模型（bloking IO）"></a>阻塞IO模型（bloking IO）</h2><p>一直等数据直到拷贝到用户空间，这段时间内进程始终阻塞。这种方式是同步的。</p>
+<h2 id="同步非阻塞IO（non-blocking-IO）"><a href="#同步非阻塞IO（non-blocking-IO）" class="headerlink" title="同步非阻塞IO（non-blocking IO）"></a>同步非阻塞IO（non-blocking IO）</h2><p>不管有没有数据都直接返回，防止进程阻塞，如果没有数据可用的情况过一段时间之后再进行尝试</p>
+<h2 id="IO复用模型（multiplexing-IO）"><a href="#IO复用模型（multiplexing-IO）" class="headerlink" title="IO复用模型（multiplexing IO）"></a>IO复用模型（multiplexing IO）</h2><p>信号驱动式IO（signal-driven IO）</p>
+<p>异步IO（asynchronous IO）</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E6%A8%A1%E5%9E%8B/">https://fangzongzhou.github.io/2018/07/10/计算机/操作系统/IO模型/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/10/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/IO%E6%A8%A1%E5%9E%8B/" data-id="cklf3st8f001fprfeds0lbe45" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Util/Atom" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/09/Util/Atom/" class="article-date">
+  <time datetime="2018-07-09T11:02:51.000Z" itemprop="datePublished">2018-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/09/Util/Atom/">Atom</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拉取所有stars插件</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apm stars <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+
+
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/09/Util/Atom/">https://fangzongzhou.github.io/2018/07/09/Util/Atom/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/09/Util/Atom/" data-id="cklf3st7v0004prfefyp21fjh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Python/Python教程/标准库概览2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%882/" class="article-date">
+  <time datetime="2018-07-07T15:01:33.000Z" itemprop="datePublished">2018-07-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%882/">标准库概览2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第二部分涵盖了更高阶的模块，支持更专业的编程需求，这些模块很少出现在小的脚本中。</p>
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/reprlib.html#module-reprlib">reprlib</a></code> 提供一系列<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#repr">repr()</a></code> 对很大或深度层叠的容器进行定制化的压缩展示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> reprlib</span><br><span class="line">reprlib.<span class="built_in">repr</span>(<span class="built_in">set</span>(<span class="string">&#x27;supercalifragilisticexpialidocious&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pprint.html#module-pprint">pprint</a></code> 提供更成熟的控制，将内建对象和用户定义对象更易读地打印出来，当结果长于一行时，”pretty printer”添加行数和缩进来将数据结构更清楚地展现出来。</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import pprint</span><br><span class="line">t = [[[[<span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;cyan&#x27;</span>], <span class="string">&#x27;white&#x27;</span>, [<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;red&#x27;</span>]], [[<span class="string">&#x27;magenta&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;yellow&#x27;</span>], <span class="string">&#x27;blue&#x27;</span>]]]</span><br><span class="line"></span><br><span class="line">pprint.pprint(t, width=<span class="number">30</span>)</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%882/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%882/" data-id="cklf3st960047prfe91043m9h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/Python/Python教程/标准库概览" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/" class="article-date">
+  <time datetime="2018-07-06T15:53:33.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/">标准库概览</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="操作系统接口"><a href="#操作系统接口" class="headerlink" title="操作系统接口"></a>操作系统接口</h2><p><code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/os.html#module-os">os</a><code> 模块提供一系列与操作系统进行交互的函数。</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.getcwd()      # 返回当前工作目录</span><br><span class="line"></span><br><span class="line">os.chdir(<span class="string">&#x27;/server/accesslogs&#x27;</span>)   #  修改当前工作目录</span><br><span class="line">os.<span class="keyword">system</span>(<span class="string">&#x27;mkdir today&#x27;</span>)   # 在系统shell中运行mkdir命令</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>确保使用 <code>import os</code> 而不是 <code>from os import * </code>.它将导致<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/os.html#os.open">os.open()</a></code>覆盖隐式内建函数<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#open">open()</a></code>，它们是完全不同的.</p>
+<p>诸如os等大模块工作时，一些内建函数<code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#dir">dir()</a></code> , <code><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/functions.html#help">help()</a></code>的交互式帮助是很有用的.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"><span class="function"><span class="title">dir</span><span class="params">(os)</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">help</span><span class="params">(os)</span></span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/06/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python/Python%E6%95%99%E7%A8%8B/%E6%A0%87%E5%87%86%E5%BA%93%E6%A6%82%E8%A7%88/" data-id="cklf3st960046prfegrqnahp3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/前端/NodeJs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/NodeJs/" class="article-date">
+  <time datetime="2018-07-05T13:42:41.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/NodeJs/">NodeJs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">-v</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="nvm-node-version-manager"><a href="#nvm-node-version-manager" class="headerlink" title="nvm(node version manager)"></a>nvm(node version manager)</h2><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">node</span> <span class="title">*.js</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/NodeJs/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/NodeJs/" data-id="cklf3st8v0030prfe8xpvbx6s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术栈/前端/npm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/npm/" class="article-date">
+  <time datetime="2018-07-05T13:42:12.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/npm/">npm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="info"><a href="#info" class="headerlink" title="info"></a>info</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> -v <span class="regexp">//</span>查看版本</span><br><span class="line">sudo <span class="built_in">npm</span> install <span class="built_in">npm</span>@latest -g 更新</span><br><span class="line"><span class="built_in">npm</span> login</span><br><span class="line"><span class="built_in">npm</span> whoami</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="install-local-packages"><a href="#install-local-packages" class="headerlink" title="install local packages"></a>install local packages</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install <span class="built_in">npm</span>@next -g</span><br><span class="line"><span class="built_in">npm</span> install &lt;package_name&gt;</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;qr-image&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><h4 id="必要参数"><a href="#必要参数" class="headerlink" title="必要参数"></a>必要参数</h4><ul>
+<li>name</li>
+<li>version</li>
+</ul>
+<h4 id="create"><a href="#create" class="headerlink" title="create"></a>create</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
+<h4 id="modify"><a href="#modify" class="headerlink" title="modify"></a>modify</h4><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">set</span> <span class="keyword">init</span>.author.email <span class="string">&quot;wombat@npmjs.com&quot;</span></span><br><span class="line">npm <span class="keyword">set</span> <span class="keyword">init</span>.author.name <span class="string">&quot;ag_dubs&quot;</span></span><br><span class="line">npm <span class="keyword">set</span> <span class="keyword">init</span>.license <span class="string">&quot;MIT&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="npm-init-js"><a href="#npm-init-js" class="headerlink" title=".npm-init.js"></a>.npm-init.js</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~/.<span class="built_in">npm</span>-init.js</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.<span class="built_in">exports</span> = &#123;</span><br><span class="line">  customField: <span class="string">&#x27;Custom Field&#x27;</span>,</span><br><span class="line">  otherCustomField: <span class="string">&#x27;This field is really cool&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Running npm init with this file in your home directory would output a package.json that included these lines:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">customField</span>: <span class="string">&#x27;Custom Field&#x27;</span>,</span><br><span class="line">  otherCustomField: <span class="string">&#x27;This field is really cool&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>-</p>
+<h3 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h3><p>These packages are required by your application in production.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> &lt;package_name&gt; [<span class="comment">--save-prod]</span></span><br></pre></td></tr></table></figure>
+<p>-</p>
+<h3 id="devDependencies"><a href="#devDependencies" class="headerlink" title="devDependencies"></a>devDependencies</h3><p>These packages are only needed for development and testing.</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;package_name&gt; --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="update-local-package"><a href="#update-local-package" class="headerlink" title="update local package"></a>update local package</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">run npm update <span class="keyword">in</span> <span class="keyword">the</span> same <span class="built_in">directory</span> <span class="keyword">as</span> <span class="keyword">the</span> package.json <span class="built_in">file</span> <span class="keyword">of</span> <span class="keyword">the</span> application that you want <span class="built_in">to</span> update</span><br></pre></td></tr></table></figure>
+
+<h2 id="Uninstall-Local-Packages"><a href="#Uninstall-Local-Packages" class="headerlink" title="Uninstall Local Packages"></a>Uninstall Local Packages</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">uninstall</span> lodash</span><br><span class="line">npm <span class="keyword">uninstall</span> <span class="comment">--save lodash</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Global-Packages"><a href="#Global-Packages" class="headerlink" title="Global Packages"></a>Global Packages</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g &lt;<span class="keyword">package</span>&gt;</span><br><span class="line">npm <span class="keyword">update</span> -g &lt;<span class="keyword">package</span>&gt;</span><br><span class="line">// 查看需要升级的全局包</span><br><span class="line">npm outdated -g <span class="comment">--depth=0</span></span><br><span class="line">//更新所有包</span><br><span class="line">npm <span class="keyword">update</span> -g</span><br><span class="line"></span><br><span class="line">npm <span class="keyword">install</span> npm@latest -g</span><br><span class="line">npm <span class="keyword">uninstall</span> -g &lt;<span class="keyword">package</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="create-nodejs-model"><a href="#create-nodejs-model" class="headerlink" title="create nodejs model"></a>create nodejs model</h2><ul>
+<li>creating a package.json file</li>
+</ul>
+<h2 id="Publish-amp-Update-a-Package"><a href="#Publish-amp-Update-a-Package" class="headerlink" title="Publish &amp; Update a Package"></a>Publish &amp; Update a Package</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> publish</span><br><span class="line"><span class="built_in">npm</span> version patch|minor|major</span><br></pre></td></tr></table></figure>
+
+<h2 id="Update-the-Read-Me-File"><a href="#Update-the-Read-Me-File" class="headerlink" title="Update the Read Me File"></a>Update the Read Me File</h2><p>before Update the readme file , must update version ,it mean your version is a Snapshot</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/npm/">https://fangzongzhou.github.io/2018/07/05/计算机/技术栈/前端/npm/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E5%89%8D%E7%AB%AF/npm/" data-id="cklf3st8v0031prfeduh2a2rv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-产品设计/用户激活" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E6%BF%80%E6%B4%BB/" class="article-date">
+  <time datetime="2018-07-05T01:53:33.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E6%BF%80%E6%B4%BB/">用户激活</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="产品生命周期"><a href="#产品生命周期" class="headerlink" title="产品生命周期"></a>产品生命周期</h2><p>很多时候用户的流失仅仅就是因为遗忘，小到一个活动，大到一个品牌，一个产品被大多数人遗忘就代表着生命周期的结束。</p>
+<h2 id="如何激活用户"><a href="#如何激活用户" class="headerlink" title="如何激活用户"></a>如何激活用户</h2><h3 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h3><p>用户所进行的操作需要得到准确及时的反馈，通过延时方法妄想获取用户更多的留存时间是不明智的行为。即使是本身要进行等待的行为活动也需要通过推送等方式及时通知进度状态。我们要获取用户时间，而不是浪费用户时间。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/05/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E6%BF%80%E6%B4%BB/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/%E7%94%A8%E6%88%B7%E6%BF%80%E6%B4%BB/" data-id="cklf3st7y000aprfebul7hdr4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/设计模式/结构型模式/修饰者模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E4%BF%AE%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time datetime="2018-07-05T01:34:48.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E4%BF%AE%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">修饰者模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="给一个类或对象增加行为"><a href="#给一个类或对象增加行为" class="headerlink" title="给一个类或对象增加行为"></a>给一个类或对象增加行为</h3><ul>
+<li>继承机制，使用继承机制是给现有类添加功能的一种有效途径，通过继承一个现有类可以使得子类在拥有自身方法的同时还拥有父类的方法。但是这种方法是静态的，用户不能控制增加行为的方式和时机。</li>
+<li>关联机制，即将一个类的对象嵌入另一个对象中，由另一个对象来决定是否调用嵌入对象的行为以便扩展自己的行为，我们称这个嵌入的对象为装饰器(Decorator)</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>装饰模式(Decorator Pattern) ：动态地给一个对象增加一些额外的职责(Responsibility)，就增加对象功能来说，装饰模式比生成子类实现更为灵活。其别名也可以称为包装器(Wrapper)，与适配器模式的别名相同，但它们适用于不同的场合。根据翻译的不同，装饰模式也有人称之为“油漆工模式”，它是一种对象结构型模式。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
+<li>Component: 抽象构件</li>
+<li>ConcreteComponent: 具体构件</li>
+<li>Decorator: 抽象装饰类</li>
+<li>ConcreteDecorator: 具体装饰类</li>
+</ul>
+<p>使用场景：</p>
+<ul>
+<li>需要扩展一个类的功能，或给一个类增加附加功能</li>
+<li>需要动态地给一个对象增加功能，这些功能可以再动态地撤销</li>
+<li>需要为一批的兄弟类进行改装或加装功能，当然是首选装饰模式</li>
+</ul>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E4%BF%AE%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">https://fangzongzhou.github.io/2018/07/05/计算机/设计模式/结构型模式/修饰者模式/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E7%BB%93%E6%9E%84%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E4%BF%AE%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" data-id="cklf3st8x003aprfe9o9zc9rb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="design-计算机/操作系统/分时操作系统" class="article article-type-design" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2018-07-05T00:56:30.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">分时操作系统</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使一台计算机同时为几个、几十个甚至几百个用户服务的一种操作系统。将系统处理机时间与内存空间按一定的时间间隔，轮流地切换给各终端用户的程序使用。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><ul>
+<li>时间片 ：是把计算机的系统资源（尤其是 CPU时间）进行时间上的分割，每个时间段称为一个时间片，每个用户依次轮流使用时间片。</li>
+<li>分时技术：把处理机的运行时间分为很短的时间片，按时间片轮流把处理机分给各联机作业使用。</li>
+<li>分时操作系统：是一种联机的多用户交互式的操作系统。一般采用时间片轮转的方式使一台计算机为多个终端服务。对每个用户能保证足够快的响应时间，并提供交互会话能力。</li>
+<li>设计目标： 对用户的请求及时响应，并在可能条件下尽量提高系统资源的利用率。
+        
+          <p class="article-more-link">
+            <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%88%86%E6%97%B6%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" data-id="cklf3st8f001gprfe47gl94fa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="design-计算机/设计模式/创建型模式/简单工厂模式" class="article article-type-design" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="article-date">
+  <time datetime="2018-07-05T00:56:30.000Z" itemprop="datePublished">2018-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a>►<a class="article-category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">工厂模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>定义：Defineaninterfaceforcreatinganobject,butletsubclassesdecidewhichclasstoinstantiate.FactoryMethodletsaclassdeferinstantiationtosubclasses.（定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法使一个类的实例化延迟到其子类。）</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>简单工厂模式(Simple Factory Pattern)：又称为静态工厂方法(Static Factory Method)模式，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><h3 id="Factory"><a href="#Factory" class="headerlink" title="Factory"></a>Factory</h3><p>负责实现创建实例对象</p>
+<h3 id="Product"><a href="#Product" class="headerlink" title="Product"></a>Product</h3><p>抽象的对象，定义实例的公共部分</p>
+<h3 id="ConcreteProduct"><a href="#ConcreteProduct" class="headerlink" title="ConcreteProduct"></a>ConcreteProduct</h3><p>具体的创建对象，所有需要Factory创建的对象都属于该部分。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>简化业务方创建成本，简化创建流程</li>
+<li>独立化了对象的创建，实现了系统的责任分割</li>
+</ul>
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
+<li>拓展困难，一旦需要添加新的目标对象需要直接修改原有代码</li>
+<li>逻辑复杂，相关类创建的逻辑需要进行把控</li>
+<li>新的对象创建逻辑异常可能直接导致旧有对象创建失败</li>
+</ul>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>需要工厂创建的对象较少，不会导致创建逻辑太过复杂</li>
+<li>调用方不关心如何创建对象</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/07/05/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" data-id="cklf3st8w0038prfe9cuuadxg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/22/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/24/">Next &amp;raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8E%9F%E5%88%99/">原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E9%87%8C%E5%AD%A6/">心里学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/">有趣的知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%91%E6%8E%A7/">监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/">缓存</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">如何阅读一本书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/">孟子</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E9%AB%98%E5%A8%84%E7%AB%A0%E5%8F%A5/">高娄章句</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%BB%E8%BE%91%E5%AD%A6/">逻辑学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BPMN/" rel="tag">BPMN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%88%99/" rel="tag">原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag">有趣的知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" rel="tag">逻辑学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BPMN/" style="font-size: 10px;">BPMN</a> <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%8E%9F%E5%88%99/" style="font-size: 10px;">原则</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" style="font-size: 16.36px;">有趣的知识</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.91px;">算法</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 11.82px;">经济学</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.91px;">缓存</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 17.27px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 10px;">逻辑学</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 18.18px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">四月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">九月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95/">缓存算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98/">缓存</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E6%8C%87%E6%A0%87/">监控指标</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95/">随机数生成算法</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/">数据压缩算法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 fangzongzhou<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
