@@ -66,6 +66,158 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-计算机/技术文档/MYSQL/13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/" class="article-date">
+  <time datetime="2018-08-23T13:29:57.000Z" itemprop="datePublished">2018-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/">13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法"><a href="#13-3-1—START、TRANSACTION-COMMIT-和ROLLBACK语法" class="headerlink" title="13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法"></a>13.3.1—START、TRANSACTION,COMMIT,和ROLLBACK语法</h2><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">原文地址</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span></span><br><span class="line">    [transaction_characteristic [, transaction_characteristic] ...]</span><br><span class="line"></span><br><span class="line">transaction_characteristic:</span><br><span class="line">    <span class="keyword">WITH</span> <span class="keyword">CONSISTENT</span> <span class="keyword">SNAPSHOT</span></span><br><span class="line">  | <span class="keyword">READ</span> WRITE</span><br><span class="line">  | <span class="keyword">READ</span> <span class="keyword">ONLY</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">BEGIN</span> [<span class="keyword">WORK</span>]</span><br><span class="line"><span class="keyword">COMMIT</span> [<span class="keyword">WORK</span>] [<span class="keyword">AND</span> [<span class="keyword">NO</span>] <span class="keyword">CHAIN</span>] [[<span class="keyword">NO</span>] <span class="keyword">RELEASE</span>]</span><br><span class="line"><span class="keyword">ROLLBACK</span> [<span class="keyword">WORK</span>] [<span class="keyword">AND</span> [<span class="keyword">NO</span>] <span class="keyword">CHAIN</span>] [[<span class="keyword">NO</span>] <span class="keyword">RELEASE</span>]</span><br><span class="line"><span class="keyword">SET</span> autocommit = &#123;<span class="number">0</span> | <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>控制事务的声明</p>
+<ul>
+<li><code>START TRANSACTION</code> / <code>BEGIN</code> 开始一个新的事务</li>
+<li><code>COMMIT</code> 提交当前事务，使修改持久化</li>
+<li><code>ROLLBACK</code> 回滚当前事务，取消当前事务内做的修改</li>
+<li><code>SET autocommit</code>为当前会话开启或关闭autocommit模式</li>
+</ul>
+<p>MySQL默认开启autocommit模式，这意味着一旦你执行一个更新（修改）表的声明，MySQL会持久化地在disk上存储这些更新，这些修改不能被回滚。</p>
+<p>想要使一系列声明操作失效，可以使用<code>START TRANSACTION</code>：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">START</span> <span class="keyword">TRANSACTION</span>;</span><br><span class="line"><span class="keyword">SELECT</span> @A:=<span class="keyword">SUM</span>(salary) <span class="keyword">FROM</span> table1 <span class="keyword">WHERE</span> <span class="keyword">type</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">UPDATE</span> table2 <span class="keyword">SET</span> summary=@A <span class="keyword">WHERE</span> <span class="keyword">type</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/23/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/13-3-1%E2%80%94START%E3%80%81TRANSACTION-COMMIT-%E5%92%8CROLLBACK%E8%AF%AD%E6%B3%95/" data-id="cklf3st8r002iprfe16v6a6q9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/MYSQL/事务" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/" class="article-date">
+  <time datetime="2018-08-21T14:34:47.000Z" itemprop="datePublished">2018-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/">事务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>show VARIABLES like ‘%general_log%’</p>
+<p>set global general_log=”off”;</p>
+<p>mybatis实现事务</p>
+<p>执行失败</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-08-21T15:07:24.809453Z	   70 Query	SET autocommit=0</span><br><span class="line">2018-08-21T15:07:24.814319Z	   70 Query	select * from user_account</span><br><span class="line">2018-08-21T15:07:24.821225Z	   70 Query	select * from user_account</span><br><span class="line">2018-08-21T15:07:24.823496Z	   70 Query	select @@session.transaction_read_only</span><br><span class="line">2018-08-21T15:07:24.823972Z	   70 Query	INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (<span class="string">&#x27;fzz&#x27;</span>,<span class="string">&#x27;10&#x27;</span>,<span class="string">&#x27;1001&#x27;</span>)</span><br><span class="line">2018-08-21T15:07:24.825636Z	   70 Query	rollback</span><br><span class="line">2018-08-21T15:07:24.825907Z	   70 Query	SET autocommit=1</span><br><span class="line">2018-08-21T15:07:24.826190Z	   70 Query	select @@session.transaction_read_only</span><br></pre></td></tr></table></figure>
+
+<p>执行成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">2018-08-21T15:30:17.288694Z	   80 Query	SET autocommit=0</span><br><span class="line">2018-08-21T15:30:17.289481Z	   80 Query	select * from user_account</span><br><span class="line">2018-08-21T15:30:17.291729Z	   80 Query	select * from user_account</span><br><span class="line">2018-08-21T15:30:17.293055Z	   80 Query	select @@session.transaction_read_only</span><br><span class="line">2018-08-21T15:30:17.293494Z	   80 Query	INSERT INTO usercenter.user_account (user_name,id,user_id) VALUE (<span class="string">&#x27;fzz&#x27;</span>,<span class="string">&#x27;6&#x27;</span>,<span class="string">&#x27;1001&#x27;</span>)</span><br><span class="line">2018-08-21T15:30:17.296491Z	   80 Query	commit</span><br><span class="line">2018-08-21T15:30:17.297089Z	   80 Query	SET autocommit=1</span><br><span class="line">2018-08-21T15:30:17.297414Z	   80 Query	select @@session.transaction_read_only</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A事务insert</span><br><span class="line"></span><br><span class="line">B事务insert</span><br><span class="line"></span><br><span class="line">A事务update</span><br><span class="line"></span><br><span class="line">B事务update产生死锁</span><br></pre></td></tr></table></figure>
+
+<p>事务隔离级别会影响死锁的发生的可能性么？</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/">https://fangzongzhou.github.io/2018/08/21/计算机/技术文档/MYSQL/事务/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/21/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/%E4%BA%8B%E5%8A%A1/" data-id="cklf3st8s002nprfe54nj487a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-计算机/技术文档/MYSQL/MYSQL-13-3-事务和锁声明" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/" class="article-date">
+  <time datetime="2018-08-20T14:27:31.000Z" itemprop="datePublished">2018-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a>►<a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/">MYSQL_13.3_事务和锁声明</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="13-3-事务和锁声明"><a href="#13-3-事务和锁声明" class="headerlink" title="13.3_事务和锁声明"></a>13.3_事务和锁声明</h1><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/sql-syntax-transactions.html">原文地址</a></p>
+<p>MYSQL通过像<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">SET autocommit</a></code>，<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">START TRANSACTION</a></code>，<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">COMMIT</a></code>和<code><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/commit.html">ROLLBACK</a></code>支持本地事务(通过指定的客户端会话)，<code><a href="">XA transaction</a></code>也能很好地支持MySQL参与到分布式事务中</p>
+<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/">https://fangzongzhou.github.io/2018/08/20/计算机/技术文档/MYSQL/MYSQL-13-3-事务和锁声明/</a> </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://fangzongzhou.github.io/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MYSQL/MYSQL-13-3-%E4%BA%8B%E5%8A%A1%E5%92%8C%E9%94%81%E5%A3%B0%E6%98%8E/" data-id="cklf3st8s002mprfef6kvbf78" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-计算机/技术栈/MYSQL/事务" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/20/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/MYSQL/%E4%BA%8B%E5%8A%A1/" class="article-date">
@@ -386,140 +538,6 @@
 
 
   
-    <article id="post-计算机/技术栈/Java/并发编程/并发编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" class="article-date">
-  <time datetime="2018-08-01T13:02:56.000Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>►<a class="article-category-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>线程间会共享进程内存，这使得资源共享变得容易，但同时会因此引入一些多线程特有的问题</p>
-<p>因为多线程的使用，使得串行的逻辑中产生了非串行因素。要使得多线程程序行为可以预测，必须对共享数据的访问操作进行协同，以此防止线程间的干扰</p>
-<p>并发编程的两个关键问题:</p>
-<ul>
-<li>线程间的通信,通信指的是线程间交换信息,主要通过共享内存和消息传递</li>
-<li>线程间如何同步</li>
-</ul>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/01/计算机/技术栈/Java/并发编程/并发编程/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/" data-id="cklf3st9f004sprfe6kul7a5c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/技术栈/技术栈" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/" class="article-date">
-  <time datetime="2018-07-31T16:52:12.000Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/">能力栈</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为现在从事的行业和IT相关，这里的人都了解的一个名词叫做”技术栈”，一方面担心自己是否会一直从事相关行业，另一方面也想着从更好的角度看待类似的选择问题，所以用了“能力”这个词来替代”技术”。</p>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>选择掌握一种能力是需要深思熟虑的，很多时候我们努力就是为了获取更多选择的机会，所以在你有机会选择一项技能去学习时，请好好把握机会。</p>
-<p>能力是没有尽头的，按需索取很重要，当然最好能有一定的前瞻性。所有的能力都是用来解决问题的，所以我这里的前瞻性既不是对流行指数的预判，也不是单纯的“价值”，而是自己对未来的规划。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8A%80%E6%9C%AF%E6%A0%88/%E6%8A%80%E6%9C%AF%E6%A0%88/" data-id="cklf3st8e001eprfea8zd1dby" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-计算机/操作系统/线程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/" class="article-date">
-  <time datetime="2018-07-31T16:39:38.000Z" itemprop="datePublished">2018-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/">线程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>是操作系统能够进行运算调度的最小单位。</p>
-<p>线程是独立调度和分派的基本单位。</p>
-<p>线程可以操作系统内核调度的内核线程.</p>
-<p>同一进程中的多条线程将共享该进程中的全部系统资源</p>
-<p>线程是cpu调度的最小单位，多线程编程屏蔽了cpu核心数</p>
-<p>多线程是为了同步完成多项任务，不是为了提高运行效率，而是为了提高资源使用效率来提高系统的效率。</p>
-<p>文章链接 <a href="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/">https://fangzongzhou.github.io/2018/08/01/计算机/操作系统/线程/</a> </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://fangzongzhou.github.io/2018/08/01/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%BA%BF%E7%A8%8B/" data-id="cklf3st8f001iprfe1cnfavm7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -535,7 +553,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8E%9F%E5%88%99/">原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E9%87%8C%E5%AD%A6/">心里学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/">有趣的知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%91%E6%8E%A7/">监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/">缓存</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">如何阅读一本书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/">孟子</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E9%AB%98%E5%A8%84%E7%AB%A0%E5%8F%A5/">高娄章句</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%BB%E8%BE%91%E5%AD%A6/">逻辑学</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/">BPMN</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/BPMN/Process/">Process</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/JVM/">JVM</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/uml/">uml</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%BC%A0%E5%AA%92/">传媒</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8E%9F%E5%88%99/">原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/">基础学科</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/">数学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%9F%BA%E7%A1%80%E5%AD%A6%E7%A7%91/%E6%95%B0%E5%AD%A6/%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/">常微分方程</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B7%A5%E4%B8%9A/">工业</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BD%A2%E5%BC%8F%E5%8C%96%E6%96%B9%E6%B3%95/">形式化方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/">心理学</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%99%AE%E9%80%9A%E5%BF%83%E7%90%86%E5%AD%A6/">普通心理学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/%E6%9C%AF%E8%AF%AD/">术语</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BF%83%E9%87%8C%E5%AD%A6/">心里学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/">技术文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Elasticsearch/">Elasticsearch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Logstash/">Logstash</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/Python%E6%95%99%E7%A8%8B/">Python教程</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E8%83%BD%E8%AE%AD%E7%BB%83/">技能训练</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%B9%E6%B3%95/">方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/">有趣的知识</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9C%AA%E5%88%86%E7%B1%BB/">未分类</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%A1%88%E4%BE%8B/">案例</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE/">测试数据</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%9B%91%E6%8E%A7/">监控</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%A1%8C%E4%B8%9A%E5%88%86%E6%9E%90/">行业分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%AE%89%E5%85%A8/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/">文档</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%96%87%E6%A1%A3/GO/">GO</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/">缓存</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/">设计原则</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">如何阅读一本书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/">孟子</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%9F%E5%AD%90/%E9%AB%98%E5%A8%84%E7%AB%A0%E5%8F%A5/">高娄章句</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%80%9D%E8%80%83%E5%BF%AB%E4%B8%8E%E6%85%A2/">思考快与慢</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/">质量管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">单元测试</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%BB%E8%BE%91%E5%AD%A6/">逻辑学</a></li></ul>
     </div>
   </div>
 
@@ -545,7 +563,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BPMN/" rel="tag">BPMN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%88%99/" rel="tag">原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag">有趣的知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" rel="tag">逻辑学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BPMN/" rel="tag">BPMN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO/" rel="tag">GO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GO%E6%96%87%E6%A1%A3/" rel="tag">GO文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JVM/" rel="tag">JVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logstash/" rel="tag">Logstash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%BA%E7%89%A9/" rel="tag">人物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%9F%E5%88%99/" rel="tag">原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" rel="tag">基本知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E4%B8%9A/" rel="tag">工业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" rel="tag">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%B9%E6%B3%95/" rel="tag">方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" rel="tag">有趣的知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9B%91%E6%8E%A7/" rel="tag">监控</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag">经济学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%93%E5%AD%98/" rel="tag">缓存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BF%BB%E8%AF%91/" rel="tag">翻译</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A/" rel="tag">行业</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" rel="tag">行业报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" rel="tag">计算机通用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" rel="tag">设计原则</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6/" rel="tag">读书</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" rel="tag">质量管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91/" rel="tag">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" rel="tag">逻辑学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
     </div>
   </div>
 
@@ -555,7 +573,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/BPMN/" style="font-size: 10px;">BPMN</a> <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%8E%9F%E5%88%99/" style="font-size: 10px;">原则</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" style="font-size: 16.36px;">有趣的知识</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10.91px;">算法</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 11.82px;">经济学</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.91px;">缓存</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 17.27px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 10px;">逻辑学</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 18.18px;">随笔</a>
+      <a href="/tags/BPMN/" style="font-size: 10px;">BPMN</a> <a href="/tags/Elasticsearch/" style="font-size: 17.27px;">Elasticsearch</a> <a href="/tags/GO/" style="font-size: 11.82px;">GO</a> <a href="/tags/GO%E6%96%87%E6%A1%A3/" style="font-size: 10px;">GO文档</a> <a href="/tags/JVM/" style="font-size: 16.36px;">JVM</a> <a href="/tags/Java/" style="font-size: 10.91px;">Java</a> <a href="/tags/Linux/" style="font-size: 10.91px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 11.82px;">Logstash</a> <a href="/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/tags/Redis/" style="font-size: 12.73px;">Redis</a> <a href="/tags/%E4%BA%BA%E7%89%A9/" style="font-size: 10px;">人物</a> <a href="/tags/%E5%8E%9F%E5%88%99/" style="font-size: 10px;">原则</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/" style="font-size: 10px;">基本知识</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10.91px;">安全</a> <a href="/tags/%E5%B7%A5%E4%B8%9A/" style="font-size: 10.91px;">工业</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10px;">并查集</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 14.55px;">心理学</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 10px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">数据结构</a> <a href="/tags/%E6%96%B9%E6%B3%95/" style="font-size: 10px;">方法</a> <a href="/tags/%E6%9C%89%E8%B6%A3%E7%9A%84%E7%9F%A5%E8%AF%86/" style="font-size: 16.36px;">有趣的知识</a> <a href="/tags/%E6%A8%A1%E6%9D%BF/" style="font-size: 10px;">模板</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 20px;">测试</a> <a href="/tags/%E7%9B%91%E6%8E%A7/" style="font-size: 10px;">监控</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 11.82px;">算法</a> <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" style="font-size: 11.82px;">经济学</a> <a href="/tags/%E7%BC%93%E5%AD%98/" style="font-size: 10.91px;">缓存</a> <a href="/tags/%E7%BF%BB%E8%AF%91/" style="font-size: 15.45px;">翻译</a> <a href="/tags/%E8%A1%8C%E4%B8%9A/" style="font-size: 10px;">行业</a> <a href="/tags/%E8%A1%8C%E4%B8%9A%E6%8A%A5%E5%91%8A/" style="font-size: 10px;">行业报告</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="font-size: 10px;">计算机</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E7%94%A8/" style="font-size: 10px;">计算机通用</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/" style="font-size: 13.64px;">设计原则</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 17.27px;">设计模式</a> <a href="/tags/%E8%AF%BB%E4%B9%A6/" style="font-size: 10px;">读书</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 19.09px;">读书笔记</a> <a href="/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/" style="font-size: 10px;">质量管理</a> <a href="/tags/%E9%80%BB%E8%BE%91/" style="font-size: 10px;">逻辑</a> <a href="/tags/%E9%80%BB%E8%BE%91%E5%AD%A6/" style="font-size: 10px;">逻辑学</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 18.18px;">随笔</a>
     </div>
   </div>
 
@@ -577,23 +595,23 @@
       <ul>
         
           <li>
+            <a href="/2021/04/17/%E5%B7%A5%E4%B8%9A/%E8%A1%A8%E9%9D%A2%E6%B8%85%E6%B4%97/">表面清洗</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/17/%E5%B7%A5%E4%B8%9A/%E7%A6%BB%E5%AD%90%E6%B6%B2%E4%BD%93/">离子液体</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/15/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/%E6%8C%87%E6%95%B0%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95/">指数退避算法</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98%E7%AE%97%E6%B3%95/">缓存算法</a>
           </li>
         
           <li>
             <a href="/2021/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98/">缓存</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/07/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E7%9B%91%E6%8E%A7%E6%8C%87%E6%A0%87/">监控指标</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95/">随机数生成算法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/06/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%AE%97%E6%B3%95/">数据压缩算法</a>
           </li>
         
       </ul>
